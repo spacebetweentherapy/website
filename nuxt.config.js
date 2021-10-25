@@ -5,7 +5,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: (titleChunk) => {
-      return titleChunk ? `${titleChunk} - Space Between` : 'Space Between'
+      return titleChunk ? `${titleChunk} - ${process.env.SITE_TITLE}` : process.env.SITE_TITLE
     },
     htmlAttrs: {
       lang: 'en'
@@ -39,6 +39,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,9 +51,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: true,
-    cache: true,
-    hardSource: true
+    extractCSS: true
   },
 
   // Custom CSS class for active page hrefs
@@ -60,6 +61,8 @@ export default {
 
   // Config variables and defaults
   publicRuntimeConfig: {
+    SITE_TITLE: process.env.SITE_TITLE,
+
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
     CTF_API_URL: process.env.CTF_API_URL || 'cdn.contentful.com',
@@ -68,7 +71,6 @@ export default {
     CTF_CONTENT_TYPE_HOME: process.env.CTF_CONTENT_TYPE_HOME || 'home',
     CTF_CONTENT_TYPE_MENU: process.env.CTF_CONTENT_TYPE_MENU || 'menu',
     CTF_CONTENT_TYPE_CONTACT: process.env.CTF_CONTENT_TYPE_CONTACT || 'contact',
-    CTF_CONTENT_TYPE_TESTIMONIAL: process.env.CTF_CONTENT_TYPE_TESTIMONIAL || 'testimonial',
     CTF_CONTENT_ID_MAIN_MENU: process.env.CTF_CONTENT_ID_MAIN_MENU || 'main-menu',
     CTF_CONTENT_ID_FOOTER_MENU: process.env.CTF_CONTENT_ID_FOOTER_MENU || 'footer-menu'
   },
