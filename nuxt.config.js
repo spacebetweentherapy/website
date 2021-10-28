@@ -82,5 +82,30 @@ export default {
   markdownit: {
     injected: true,
     linkify: true
+  },
+
+  render: {
+    // We don't need JS injected
+    injectScripts: false,
+    resourceHints: false
+  },
+
+  hooks: {
+    // JS tags remain in static files https://github.com/nuxt/nuxt.js/issues/8178
+    'generate:page': page => {
+      const $ = require('cheerio')
+      const doc = $.load(page.html)
+
+      // Clean Vue data- attributes because we don't use client-side JS
+      doc('*').each((i, node) => {
+        Object.keys(node.attribs).forEach((attr) => {
+          if (['data-n-head-ssr', 'data-n-head', 'data-hid', 'data-server-rendered', 'data-fetch-key'].indexOf(attr) >= 0) {
+            doc(node).removeAttr(attr)
+          }
+        })
+      })
+
+      page.html = doc.html()
+    }
   }
 }
