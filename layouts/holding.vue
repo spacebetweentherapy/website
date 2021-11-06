@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 body {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   overflow: hidden;

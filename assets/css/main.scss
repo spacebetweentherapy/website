@@ -1,0 +1,45 @@
+// VARIABLES
+// =================================================
+// ----Colours---------
+$bg-colour: #fff;
+
+// ----Grid------------
+$grid-gutter-small: 5px;
+$grid-gutter-medium: 10px;
+$grid-gutter-large: 20px;
+$header-height: 60px;
+$max-width: 1500px;
+
+// ----Typography------------
+$font-sans: 'Zen Kaku Gothic Antique', sans-serif;
+$font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+
+
+// FUNCTIONS
+// =================================================
+@function sum($a, $b) {
+	@return $a + $b
+}
+
+
+// MIXINS
+// =================================================
+@mixin logo-typography {
+  font-family: $font-serif;
+  letter-spacing: .2em;
+  word-spacing: -.2em;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+@mixin box-reset {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+@mixin hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}

@@ -6,6 +6,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  layout: 'page',
+
   // TODO Load title from CMS
    head () {
     return {
