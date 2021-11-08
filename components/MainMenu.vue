@@ -3,23 +3,10 @@
     <h2>Main menu</h2>
     <ul>
       <li v-for="item in items" :key="item.id">
-        <NuxtLink :to="item.slug">
+        <NuxtLink :to="(item.slug === 'index') ? '/' : item.slug">
           {{ item.title }}
         </NuxtLink>
       </li>
-      <!-- <li>
-        <NuxtLink to="/">
-          Home
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="about">
-          About
-        </NuxtLink>
-      </li>
-      <li>Therapy</li>
-      <li>Blog</li>
-      <li>Contact</li> -->
     </ul>
   </nav>
 </template>
@@ -28,6 +15,7 @@
 import Vue from 'vue'
 import { createClient } from '~/plugins/contentful.js'
 
+// Define our menu item data object
 export interface MenuItem {
   id: string
   title: string
@@ -72,10 +60,14 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 nav {
   position: absolute;
+  top: 0;
+  width: 100vw;
+  max-width: $max-width;
   background-color: $menu-bar-colour;
+  line-height: 4em;
 
   h2 {
     display: none;
@@ -85,17 +77,16 @@ nav {
     display: flex;
     justify-content: flex-end;
     column-gap: $grid-gutter-large;
-    width: 100vw;
-    height: $header-height;
     padding: 0;
     margin: 0;
     list-style: none;
 
     li {
-      font-size: 1.5em;
+      font-size: 1.4em;
       text-transform: uppercase;
 
       a {
+        padding: .5em;
         font-family: $font-serif;
         color: $bg-colour;
         text-decoration: none;

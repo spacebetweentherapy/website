@@ -1,7 +1,6 @@
 <template>
   <div class="content">
-    <img v-if="heroUrl" :src="heroUrl" :width="heroWidth" :height="heroHeight" :alt="heroAltText">
-    <!-- <h1>{{ $data.page.fields.title }}</h1> -->
+    <h1>{{ $data.page.fields.title }}</h1>
   </div>
 </template>
 

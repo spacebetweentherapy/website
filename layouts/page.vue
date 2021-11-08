@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div id="container container-page">
     <header>
       <h1>
         <NuxtLink to="/">
@@ -13,15 +13,3 @@
     <Nuxt keep-alive />
   </div>
 </template>
-
-<style lang="scss" scoped>
-header {
-  h1 {
-    display: none;
-  }
-
-  p {
-    display: none;
-  }
-}
-</style>

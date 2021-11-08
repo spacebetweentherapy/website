@@ -1,6 +1,7 @@
 // VARIABLES
 // =================================================
 // ----Colours---------
+$fg-color: #000;
 $bg-colour: #fff;
 $contrast-colour-dark: #af844d;
 $contrast-colour-light: #cbad88;
@@ -10,8 +11,7 @@ $menu-bar-colour: rgba($color: #000, $alpha: 0.1);
 $grid-gutter-small: 5px;
 $grid-gutter-medium: 10px;
 $grid-gutter-large: 20px;
-$header-height: 60px;
-$max-width: 1500px;
+$max-width: 1200px;
 
 // ----Typography------------
 $font-sans: 'Zen Kaku Gothic Antique', sans-serif;
@@ -45,4 +45,19 @@ $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", G
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+
+// GLOBAL STYLES
+// =================================================
+body {
+	font-family: $font-sans;
+	color: $fg-color;
+	background-color: $bg-colour;
+}
+
+#container {
+	width: 100%;
+	max-width: $max-width;
+	margin: auto;
 }

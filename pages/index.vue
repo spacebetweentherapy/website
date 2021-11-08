@@ -1,6 +1,13 @@
 <template>
   <div class="content">
-    <img v-if="heroUrl" :src="heroUrl" :width="heroWidth" :height="heroHeight" :alt="heroAltText">
+    <img
+      v-if="heroUrl"
+      :src="heroUrl"
+      :width="heroWidth"
+      :height="heroHeight"
+      :alt="heroAltText"
+      class="hero"
+    >
   </div>
 </template>
 
@@ -45,3 +52,11 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.hero {
+  width: 100%;
+  max-width: $max-width;
+  height: auto;
+}
+</style>
