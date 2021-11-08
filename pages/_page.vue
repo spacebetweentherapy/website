@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <img :src="heroUrl" :width="heroWidth" :height="heroHeight" :alt="heroAltText">
+    <img v-if="heroUrl" :src="heroUrl" :width="heroWidth" :height="heroHeight" :alt="heroAltText">
     <!-- <h1>{{ $data.page.fields.title }}</h1> -->
   </div>
 </template>
@@ -40,7 +40,7 @@ export default Vue.extend({
 
   computed: {
     heroUrl () {
-      return this.$data.page.fields.hero.fields.media.fields.file.url
+      return (this.$data.page.fields.hero) ? this.$data.page.fields.hero.fields.media.fields.file.url : ''
     },
 
     heroWidth () {

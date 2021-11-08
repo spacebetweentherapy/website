@@ -17,11 +17,7 @@
 <style lang="scss" scoped>
 header {
   h1 {
-    display: none;
-  }
-
-  p {
-    display: none;
+    @include logo-typography
   }
 }
 </style>
