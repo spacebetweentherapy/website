@@ -1,8 +1,14 @@
 <template>
   <nav class="main-menu">
     <h2>Main menu</h2>
-    <ul>
+
+    <!-- Hamburger for small screens -->
+    <label for="hamburger">&#9776;</label>
+    <input type="checkbox" id="hamburger">
+
+    <ul class="menu-items">
       <li v-for="item in items" :key="item.id">
+        <!-- Make sure the homepage uses index.vue not _page.vue -->
         <NuxtLink :to="(item.slug === 'index') ? '/' : item.slug">
           {{ item.title }}
         </NuxtLink>
@@ -24,6 +30,7 @@ export interface MenuItem {
 
 export default Vue.extend({
   data () {
+    // We will populate an array of menu items from the CMS
     const items: Array<MenuItem> = []
     return {
       items
@@ -31,7 +38,7 @@ export default Vue.extend({
   },
 
   async fetch () {
-    // Retrieve the main menu from the CMS
+    // Retrieve the menu from the CMS
     const client = createClient()
     const mainMenu = await client.getEntries({
       content_type: this.$config.CTF_CONTENT_TYPE_MAIN_MENU
@@ -61,22 +68,30 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-nav {
+.main-menu {
+  display: block;
   position: absolute;
   top: 0;
   width: 100vw;
   max-width: $max-width;
   background-color: $menu-bar-colour;
-  line-height: 4em;
+  z-index: 99;
+  font-family: $font-serif;
+  color: $bg-colour;
+
+  label, #hamburger {
+    display: none;
+  }
 
   h2 {
     display: none;
   }
 
   ul {
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
-    column-gap: $grid-gutter-large;
+    column-gap: .7em;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -86,8 +101,8 @@ nav {
       text-transform: uppercase;
 
       a {
+        display: block;
         padding: .5em;
-        font-family: $font-serif;
         color: $bg-colour;
         text-decoration: none;
 
@@ -96,6 +111,29 @@ nav {
           text-decoration-color: $contrast-colour-dark;
           text-underline-offset: .2em;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-menu {
+    .menu-items {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      background: $contrast-colour-dark;
+      font-size: 1.2em;
+      padding: 10px;
+    }
+
+    input:checked ~ .menu-items {
+      display: block;
+
+      a {
+        background-color: rgba(175, 132, 77, 0.8);
       }
     }
   }

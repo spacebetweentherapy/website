@@ -14,7 +14,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'format-detection', content: 'telephone=yes' },
       { name: 'author', content: 'Mark Crawley' }
     ],
     link: [
@@ -49,13 +49,19 @@ export default {
     '@nuxt/typescript-build',
 
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+
+    // https://google-analytics.nuxtjs.org/setup
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/markdownit',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    
+    // https://www.npmjs.com/package/@nuxtjs/svg
+    '@nuxtjs/svg'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -114,5 +120,10 @@ export default {
 
   styleResources: {
     scss: ['~/assets/css/*.scss']
+  },
+
+  // https://google-analytics.nuxtjs.org/setup
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID || 'G-RS6L04XFVD'
   }
 }

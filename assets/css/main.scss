@@ -1,16 +1,14 @@
 // VARIABLES
 // =================================================
 // ----Colours---------
-$fg-color: #000;
+$fg-colour: #000;
+$fg-colour-light: #848484;
 $bg-colour: #fff;
 $contrast-colour-dark: #af844d;
 $contrast-colour-light: #cbad88;
 $menu-bar-colour: rgba($color: #000, $alpha: 0.1);
 
 // ----Grid------------
-$grid-gutter-small: 5px;
-$grid-gutter-medium: 10px;
-$grid-gutter-large: 20px;
 $max-width: 1200px;
 
 // ----Typography------------
@@ -52,11 +50,12 @@ $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", G
 // =================================================
 body {
 	font-family: $font-sans;
-	color: $fg-color;
+	color: $fg-colour;
 	background-color: $bg-colour;
+	height: 100%;
 }
 
-#container {
+.container {
 	width: 100%;
 	max-width: $max-width;
 	margin: auto;
