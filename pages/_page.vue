@@ -26,6 +26,8 @@ export default Vue.extend({
     const client = createClient()
     const page = await client.getEntries({
       content_type: $config.CTF_CONTENT_TYPE_PAGE,
+      limit: 1,
+      include: 10,
       'fields.slug[match]': slug
     })
 

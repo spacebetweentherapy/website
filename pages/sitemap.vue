@@ -10,6 +10,14 @@
 
     <section>
       <h1>Sitemap goes here</h1>
+      <ul>
+        <li v-for="item in $data.sitemap" :key="item.sys.id">
+          <!-- Make sure the homepage uses index.vue not _page.vue -->
+          <NuxtLink :to="(item.fields.slug === 'index') ? '/' : item.fields.slug">
+            {{ item.fields.title }}
+          </NuxtLink>
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -30,12 +38,21 @@ export default Vue.extend({
     const client = createClient()
     const page = await client.getEntries({
       content_type: $config.CTF_CONTENT_TYPE_PAGE,
+      limit: 1,
+      include: 10,
       'fields.slug[match]': slug
+    })
+
+    // Retrieve all pages to build the sitemap
+    const pages = await client.getEntries({
+      content_type: $config.CTF_CONTENT_TYPE_PAGE,
+      order: 'fields.title'
     })
 
     // Populate a data object called "page" for us to use in our template
     return {
-      page: page.items[0]
+      page: page.items[0],
+      sitemap: pages.items
     }
   },
 

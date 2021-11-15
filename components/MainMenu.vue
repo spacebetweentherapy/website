@@ -70,7 +70,7 @@ export default Vue.extend({
 <style lang="scss">
 .main-menu {
   display: block;
-  position: absolute;
+  position: sticky;
   top: 0;
   width: 100vw;
   max-width: $max-width;
