@@ -103,6 +103,10 @@ export default Vue.extend({
 
   computed: {
     heroUrl () {
+      return (this.$data.page.fields.hero) ? this.$data.page.fields.hero.fields.webPImage.fields.file.url : ''
+    },
+
+    heroFallbackUrl () {
       return (this.$data.page.fields.hero) ? this.$data.page.fields.hero.fields.jpegImage.fields.file.url : ''
     },
 

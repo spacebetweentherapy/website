@@ -6,11 +6,11 @@
         {{ heroText }}
       </p>
     </div>
-    <img
-      :src="heroImageUrl"
-      :alt="heroImageAltText"
-      class="hero-image"
-    >
+    <picture class="hero-image">
+      <source :srcset="heroImageUrl" type="image/webp">
+      <source :srcset="heroImageFallbackUrl" type="image/jpeg">
+      <img :src="heroImageFallbackUrl" :alt="heroImageAltText" class="hero-image">
+    </picture>
   </div>
 </template>
 
@@ -20,6 +20,10 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     heroImageUrl: {
+      type: String,
+      default: ''
+    },
+    heroImageFallbackUrl: {
       type: String,
       default: ''
     },

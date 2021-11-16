@@ -4,11 +4,12 @@
       <HeroImage
         v-if="heroUrl"
         :hero-image-url="heroUrl"
-        :hero-image-width="heroWidth"
-        :hero-image-height="heroHeight"
-        :hero-image-alt-text="heroAltText"
-        :hero-title="heroHeading"
-        :hero-text="heroShortText"
+        :hero-image-fallback-url="heroFallbackUrl"
+        :hero-image-width="$data.page.fields.hero.fields.jpegImage.fields.file.details.image.width"
+        :hero-image-height="$data.page.fields.hero.fields.jpegImage.fields.file.details.image.height"
+        :hero-image-alt-text="$data.page.fields.hero.fields.altText"
+        :hero-title="$data.page.fields.hero.fields.heading"
+        :hero-text="$data.page.fields.hero.fields.shortText"
       />
       <h1>{{ $data.page.fields.title }}</h1>
       <div v-if="$data.page.fields.intro" class="content-intro" v-html="$md.render($data.page.fields.intro)" />
@@ -83,27 +84,11 @@ export default Vue.extend({
 
   computed: {
     heroUrl () {
+      return (this.$data.page.fields.hero) ? this.$data.page.fields.hero.fields.webPImage.fields.file.url : ''
+    },
+
+    heroFallbackUrl () {
       return (this.$data.page.fields.hero) ? this.$data.page.fields.hero.fields.jpegImage.fields.file.url : ''
-    },
-
-    heroWidth () {
-      return this.$data.page.fields.hero.fields.jpegImage.fields.file.details.image.width
-    },
-
-    heroHeight () {
-      return this.$data.page.fields.hero.fields.jpegImage.fields.file.details.image.height
-    },
-
-    heroAltText () {
-      return this.$data.page.fields.hero.fields.altText
-    },
-
-    heroHeading () {
-      return this.$data.page.fields.hero.fields.heading
-    },
-
-    heroShortText () {
-      return this.$data.page.fields.hero.fields.shortText
     }
   }
 })
