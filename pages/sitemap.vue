@@ -1,17 +1,17 @@
 <template>
   <div class="page">
-    <PageContent />
-
-    <section class="sitemap">
-      <ul>
-        <li v-for="item in $data.sitemap" :key="item.sys.id">
-          <!-- Make sure the homepage uses index.vue not _page.vue -->
-          <NuxtLink :to="(item.fields.slug === 'index') ? '/' : item.fields.slug">
-            {{ item.fields.title }}
-          </NuxtLink>
-        </li>
-      </ul>
-    </section>
+    <PageContent>
+      <section class="sitemap">
+        <ul>
+          <li v-for="item in $data.sitemap" :key="item.sys.id">
+            <!-- Make sure the homepage uses index.vue not _page.vue -->
+            <NuxtLink :to="(item.fields.slug === 'index') ? '/' : item.fields.slug">
+              {{ item.fields.title }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
+    </PageContent>
   </div>
 </template>
 

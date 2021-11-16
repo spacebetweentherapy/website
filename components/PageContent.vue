@@ -11,7 +11,9 @@
         :hero-title="$data.page.fields.hero.fields.heading"
         :hero-text="$data.page.fields.hero.fields.shortText"
       />
-      <h1 v-if="$data.slug !== 'index'">{{ $data.page.fields.title }}</h1>
+      <h1 v-if="$data.slug !== 'index'">
+        {{ $data.page.fields.title }}
+      </h1>
       <div v-if="$data.page.fields.intro" class="content-intro" v-html="$md.render($data.page.fields.intro)" />
     </section>
 
@@ -35,6 +37,8 @@
       </div>
       <div v-html="section3Content" />
     </section>
+
+    <slot />
   </div>
 </template>
 
