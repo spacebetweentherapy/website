@@ -3,10 +3,11 @@
 // ----Colours---------
 $fg-colour: #000;
 $fg-colour-light: #848484;
-$bg-colour: #fff;
+$bg-colour: #ebebeb;
+$bg-colour-light: #fff;
 $contrast-colour-dark: #af844d;
 $contrast-colour-light: #cbad88;
-$menu-bar-colour: rgba($color: #000, $alpha: 0.1);
+$menu-bar-colour: rgba($color: #000, $alpha: 0.3);
 
 // ----Grid------------
 $max-width: 1200px;
@@ -51,7 +52,6 @@ $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", G
 body {
 	font-family: $font-sans;
 	color: $fg-colour;
-	background-color: $bg-colour;
 	height: 100%;
 }
 
@@ -59,4 +59,78 @@ body {
 	width: 100%;
 	max-width: $max-width;
 	margin: auto;
+}
+
+.page {
+  margin-top: -3em;
+
+	&.no-hero {
+		margin-top: 0;
+	}
+
+	section:nth-child(odd) {
+		background-color: $contrast-colour-light;
+
+		h1 {
+			color: $bg-colour-light;
+		}
+	}
+
+	section:nth-child(even), section:nth-child(1) {
+		background-color: $bg-colour;
+
+		h1 {
+			color: $contrast-colour-dark;
+			text-transform: uppercase;
+			font-family: $font-serif;
+		}
+	}
+
+	.content {
+		padding: 2em 4em;
+	}
+
+	.content-intro {
+		padding: 0 4em 1em 4em;
+	}
+
+	.intro {
+		font-weight: 700;
+		border-bottom: 2px solid $contrast-colour-dark;
+
+		h1 {
+			margin: 1em 2em 0 2em;
+		}
+	}
+}
+
+.content {
+	display: flex;
+	column-gap: 2em;
+	flex-wrap: nowrap;
+	flex-grow: 1 ;
+
+	h1 {
+		margin: 0;
+		text-transform: uppercase;
+		font-family: $font-serif;
+	}
+
+	ul {
+		column-count: 2;
+		padding: 0;
+
+		li {
+			list-style: none;
+		}
+	}
+}
+
+
+// SMALL SCREENS
+// =================================================
+@media screen and (max-width: 800px) {
+	.content {
+		flex-wrap: wrap;
+	}
 }

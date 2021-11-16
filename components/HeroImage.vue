@@ -2,7 +2,9 @@
   <div class="hero">
     <div class="hero-overlay">
       <h1 v-html="heroTitleHtml" />
-      <p>{{ heroText }}</p>
+      <p v-if="heroText">
+        {{ heroText }}
+      </p>
     </div>
     <img
       :src="heroImageUrl"
@@ -48,7 +50,7 @@ export default Vue.extend({
     heroTitleHtml () {
       const titleText = this.heroTitle
       const titleArray = titleText.split(' ', 2)
-      return '<span class="first-word">' + titleArray[0] + '</span>' + titleArray[1]
+      return '<span class="first-word">' + titleArray[0] + '</span>' + ((titleArray[1]) ? titleArray[1] : '')
     }
   }
 })
@@ -72,10 +74,11 @@ export default Vue.extend({
       transform: translateY(10vw);
       letter-spacing: 0.45rem;
       font-weight: 700;
+      color: $fg-colour !important;
       @include logo-typography;
 
       .first-word {
-        color: $bg-colour;
+        color: $bg-colour-light;
       }
     }
 
@@ -84,7 +87,7 @@ export default Vue.extend({
       font-size: 2.5vw;
       transform: translateY(10vw);
       letter-spacing: 0.45rem;
-      font-weight: 700;
+      font-weight: 500;
     }
   }
 

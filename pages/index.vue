@@ -1,34 +1,63 @@
 <template>
-  <div class="page">
-    <HeroImage
-      v-if="heroUrl"
-      :hero-image-url="heroUrl"
-      :hero-image-width="heroWidth"
-      :hero-image-height="heroHeight"
-      :hero-image-alt-text="heroAltText"
-      :hero-title="heroHeading"
-      :hero-text="heroShortText"
-    />
+  <div class="page" :class="{ 'no-hero' : !heroUrl } ">
+    <section class="intro">
+      <HeroImage
+        v-if="heroUrl"
+        :hero-image-url="heroUrl"
+        :hero-image-width="$data.page.fields.hero.fields.jpegImage.fields.file.details.image.width"
+        :hero-image-height="$data.page.fields.hero.fields.jpegImage.fields.file.details.image.height"
+        :hero-image-alt-text="$data.page.fields.hero.fields.altText"
+        :hero-title="$data.page.fields.hero.fields.heading"
+        :hero-text="$data.page.fields.hero.fields.shortText"
+      />
+      <div v-if="$data.page.fields.intro" class="content-intro" v-html="$md.render($data.page.fields.intro)" />
+    </section>
 
-    <section class="content">
-      <!-- Render the content as HTML -->
-      <div class="content-left" v-html="leftContent" />
-      <div class="content-right" v-html="rightContent" />
+    <section v-if="section1Content" class="content">
+      <div v-if="$data.page.fields.section1Image">
+        <img :src="$data.page.fields.section1Image.fields.file.url">
+      </div>
+      <div v-html="section1Content" />
+    </section>
+
+    <section v-if="section2Content" class="content">
+      <div v-html="section2Content" />
+      <div v-if="$data.page.fields.section2Image">
+        <img :src="$data.page.fields.section2Image.fields.file.url">
+      </div>
+    </section>
+
+    <section v-if="section3Content" class="content">
+      <div v-if="$data.page.fields.section3Image">
+        <img :src="$data.page.fields.section3Image.fields.file.url">
+      </div>
+      <div v-html="section3Content" />
     </section>
 
     <section class="recent-blog-posts">
       <h1>
         <NuxtLink to="/blog">
           Blog
+          <!-- <span v-html="logoSvg" /> -->
         </NuxtLink>
-        <span v-html="logoSvg" />
       </h1>
-      <ol>
-        <li>
-          <h2>Connecting with nature</h2>
-          <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
-        </li>
-      </ol>
+      <div class="posts-container">
+        <ol class="posts">
+          <li>
+            <h2>Connecting with nature</h2>
+            <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
+          </li>
+          <li>
+            <h2>How to find a therapist</h2>
+            <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
+          </li>
+          <li>
+            <h2>Space Between - why the name</h2>
+            <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
+          </li>
+        </ol>
+        <img src="//images.ctfassets.net/eia1ph7h56y6/4QKYgZ75hpQq30yOokKwVj/22bc3ce7275e22feecedcd0d08add050/tor-rocks.jpg">
+      </div>
     </section>
   </div>
 </template>
@@ -50,8 +79,9 @@ export default Vue.extend({
     // Populate a data object called "page" for us to use in our template
     return {
       page: page.items[0],
-      leftContent: $renderRichText(page.items[0].fields.leftContent),
-      rightContent: $renderRichText(page.items[0].fields.rightContent)
+      section1Content: $renderRichText(page.items[0].fields.section1Content),
+      section2Content: $renderRichText(page.items[0].fields.section2Content),
+      section3Content: $renderRichText(page.items[0].fields.section3Content)
     }
   },
 
@@ -76,26 +106,6 @@ export default Vue.extend({
       return (this.$data.page.fields.hero) ? this.$data.page.fields.hero.fields.jpegImage.fields.file.url : ''
     },
 
-    heroWidth () {
-      return this.$data.page.fields.hero.fields.jpegImage.fields.file.details.image.width
-    },
-
-    heroHeight () {
-      return this.$data.page.fields.hero.fields.jpegImage.fields.file.details.image.height
-    },
-
-    heroAltText () {
-      return this.$data.page.fields.hero.fields.altText
-    },
-
-    heroHeading () {
-      return this.$data.page.fields.hero.fields.heading
-    },
-
-    heroShortText () {
-      return this.$data.page.fields.hero.fields.shortText
-    },
-
     logoSvg () {
       return require('~/static/images/logo-venn.svg?raw')
     }
@@ -104,20 +114,19 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.page {
-  margin-top: -3em;
+.content-intro {
+  padding: 2em 6em !important;
 }
 
 .recent-blog-posts {
-  background-color: $contrast-colour-light;
-  padding: 1em;
+  padding: 1em 4em;
 
   h1 {
     display: flex;
 
     a {
       font-family: $font-serif;
-      color: $bg-colour;
+      color: $bg-colour-light;
       text-decoration: underline;
       text-decoration-color: $contrast-colour-dark;
       text-underline-offset: .2em;
@@ -129,6 +138,30 @@ export default Vue.extend({
 
   .logo-circle {
     stroke: #fff;
+  }
+
+  .posts-container {
+    display: flex;
+    column-gap: 2em;
+
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 1em 0;
+        border-bottom: 1px dashed $bg-colour-light;
+
+        &:nth-child(1) {
+          padding-top: 0;
+        }
+
+        &:nth-child(3) {
+          border-bottom: 0;
+        }
+      }
+    }
   }
 }
 </style>

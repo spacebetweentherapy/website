@@ -1,6 +1,19 @@
 <template>
-  <div class="page">
-    <h1>{{ $data.page.fields.title }}</h1>
+  <div class="page" :class="{ 'no-hero' : !heroUrl } ">
+    <HeroImage
+      v-if="heroUrl"
+      :hero-image-url="heroUrl"
+      :hero-image-width="heroWidth"
+      :hero-image-height="heroHeight"
+      :hero-image-alt-text="heroAltText"
+      :hero-title="heroHeading"
+      :hero-text="heroShortText"
+    />
+
+    <section class="intro">
+      <h1>{{ $data.page.fields.title }}</h1>
+      <div v-if="$data.page.fields.intro" v-html="$md.render($data.page.fields.intro)" />
+    </section>
 
     <section class="content">
       <!-- Render the content as HTML -->
@@ -9,7 +22,6 @@
     </section>
 
     <section>
-      <h1>Sitemap goes here</h1>
       <ul>
         <li v-for="item in $data.sitemap" :key="item.sys.id">
           <!-- Make sure the homepage uses index.vue not _page.vue -->

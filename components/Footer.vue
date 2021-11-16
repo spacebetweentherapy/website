@@ -22,7 +22,7 @@
       </ul>
     </div>
     <div class="copyright">
-      &copy; {{ $config.SITE_TITLE }} 2021
+      &copy; {{ $config.SITE_TITLE }} {{ new Date().getFullYear() }}
     </div>
   </footer>
 </template>

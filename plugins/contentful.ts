@@ -67,7 +67,14 @@ const myPlugin: Plugin = (context, inject) => {
         }
       }
     }
-    return documentToHtmlString(richText, options)
+
+    // Render using the Contentful library
+    let markup = documentToHtmlString(richText, options)
+
+    // Replace line breaks with HTML line break tags
+    markup = markup.replace(/\n/g, '<br>')
+
+    return markup
   })
 }
 

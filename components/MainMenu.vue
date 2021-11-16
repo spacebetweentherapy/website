@@ -4,7 +4,7 @@
 
     <!-- Hamburger for small screens -->
     <label for="hamburger">&#9776;</label>
-    <input type="checkbox" id="hamburger">
+    <input id="hamburger" type="checkbox">
 
     <ul class="menu-items">
       <li v-for="item in items" :key="item.id">
