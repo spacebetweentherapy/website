@@ -12,19 +12,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import { createClient } from '~/plugins/contentful.js'
 
 export default Vue.extend({
   // Load content from CMS
-  async asyncData ({ $config, route }) {
+  async asyncData ({ $config, route, $contentful, $renderRichText }) {
     // Parse the "slug" URI of this page
     const slug = route.path.replace('.html', '').replace('/', '')
-    console.log('Parsed slug', slug)
 
     // Retrieve the CMS page which matches this slug
-    const client = createClient()
-    const page = await client.getEntries({
+    const page = await $contentful.getEntries({
       content_type: $config.CTF_CONTENT_TYPE_PAGE,
       limit: 1,
       include: 10,
@@ -33,7 +29,9 @@ export default Vue.extend({
 
     // Populate a data object called "page" for us to use in our template
     return {
-      page: page.items[0]
+      page: page.items[0],
+      leftContent: $renderRichText(page.items[0].fields.leftContent),
+      rightContent: $renderRichText(page.items[0].fields.rightContent)
     }
   },
 
@@ -78,14 +76,6 @@ export default Vue.extend({
 
     heroShortText () {
       return this.$data.page.fields.hero.fields.shortText
-    },
-
-    leftContent () {
-      return documentToHtmlString(this.$data.page.fields.leftContent)
-    },
-
-    rightContent () {
-      return documentToHtmlString(this.$data.page.fields.rightContent)
     }
   }
 })

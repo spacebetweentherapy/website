@@ -29,7 +29,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { createClient } from '~/plugins/contentful.js'
 
 // Define our menu item data object
 export interface MenuItem {
@@ -49,8 +48,7 @@ export default Vue.extend({
 
   async fetch () {
     // Retrieve the menu from the CMS
-    const client = createClient()
-    const mainMenu = await client.getEntries({
+    const mainMenu = await this.$contentful.getEntries({
       content_type: this.$config.CTF_CONTENT_TYPE_FOOTER_MENU
     })
 
