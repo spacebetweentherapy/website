@@ -124,6 +124,20 @@ body {
 			list-style: none;
 		}
 	}
+
+	hr {
+		border: 1px solid $contrast-colour-dark;
+	}
+
+	blockquote {
+		margin: 0;
+
+		p {
+			padding: 1em;
+			font-style: italic;
+			border: 1px dotted black;
+		}
+	}
 }
 
 
