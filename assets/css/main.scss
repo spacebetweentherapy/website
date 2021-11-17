@@ -85,11 +85,7 @@ body {
 			font-family: $font-serif;
 		}
 	}
-
-	.content {
-		padding: 2em 4em;
-	}
-
+	
 	.content-intro {
 		padding: 0 4em 1em 4em;
 	}
@@ -108,7 +104,8 @@ body {
 	display: flex;
 	column-gap: 2em;
 	flex-wrap: nowrap;
-	flex-grow: 1 ;
+	flex-grow: 1;
+	padding: 2em 4em;
 
 	h1 {
 		margin: 0;

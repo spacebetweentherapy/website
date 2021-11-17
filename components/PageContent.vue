@@ -38,6 +38,7 @@
       <div v-html="section3Content" />
     </section>
 
+    <!-- Allow additional markup to be passed in to this component and render it here -->
     <slot />
   </div>
 </template>
