@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="intro">
-      <HeroImage
+      <HeroBanner
         v-if="heroUrl"
         :hero-image-url="heroUrl"
         :hero-image-fallback-url="heroFallbackUrl"

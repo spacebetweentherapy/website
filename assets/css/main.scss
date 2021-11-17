@@ -7,13 +7,13 @@ $bg-colour: #ebebeb;
 $bg-colour-light: #fff;
 $contrast-colour-dark: #af844d;
 $contrast-colour-light: #cbad88;
-$menu-bar-colour: rgba($color: #000, $alpha: 0.3);
+$menu-bar-colour: rgba($color: #000, $alpha: 0.5);
 
 // ----Grid------------
 $max-width: 1200px;
 
 // ----Typography------------
-$font-sans: 'Zen Kaku Gothic Antique', sans-serif;
+$font-sans: 'Rubik', sans-serif;
 $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 
 
@@ -55,12 +55,6 @@ body {
 	height: 100%;
 }
 
-.container {
-	width: 100%;
-	max-width: $max-width;
-	margin: auto;
-}
-
 .page {
   margin-top: -3em;
 
@@ -92,7 +86,7 @@ body {
 
 	.intro {
 		font-weight: 700;
-		border-bottom: 2px solid $contrast-colour-dark;
+		border-bottom: 1px solid $contrast-colour-dark;
 
 		h1 {
 			margin: 1em 2em 0 2em;

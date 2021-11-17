@@ -71,7 +71,6 @@ export default Vue.extend({
   position: sticky;
   top: 0;
   width: 100vw;
-  max-width: $max-width;
   background-color: $menu-bar-colour;
   z-index: 99;
   font-family: $font-serif;
@@ -90,12 +89,12 @@ export default Vue.extend({
     display: flex;
     justify-content: flex-end;
     column-gap: .7em;
-    padding: 0;
+    padding: 0 1em 0 0;
     margin: 0;
     list-style: none;
 
     li {
-      font-size: 1.4em;
+      font-size: 1.3em;
       text-transform: uppercase;
 
       a {

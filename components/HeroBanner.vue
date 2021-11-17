@@ -6,11 +6,7 @@
         {{ heroText }}
       </p>
     </div>
-    <picture class="hero-image">
-      <source :srcset="heroImageUrl" type="image/webp">
-      <source :srcset="heroImageFallbackUrl" type="image/jpeg">
-      <img :src="heroImageFallbackUrl" :alt="heroImageAltText" class="hero-image">
-    </picture>
+    <ResponsiveImage :url="heroImageUrl" :alt="heroImageAltText" className="hero-image" />
   </div>
 </template>
 
@@ -64,7 +60,6 @@ export default Vue.extend({
 .hero {
   position: relative;
   width: 100%;
-  max-width: $max-width;
   height: 50%;
 
   .hero-overlay {
