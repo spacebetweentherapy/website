@@ -9,18 +9,12 @@
         </li>
       </ul>
     </nav>
-    <div class="logos">
-      <ul>
-        <li><img src="/images/bcap-logo.svg" width="245" height="56" alt="British Association for Counselling and Psychotherapy logo"></li>
-        <li>
-          <picture>
-            <source srcset="/images/accredited-registers-quality-mark.webp" type="image/webp">
-            <source srcset="/images/accredited-registers-quality-mark.jpg" type="image/jpeg">
-            <img src="/images/accredited-registers-quality-mark.jpg" width="200" height="96" alt="Professional Standards Authority logo">
-          </picture>
-        </li>
-      </ul>
-    </div>
+    <img src="/images/bcap-logo.svg" width="245" height="56" alt="British Association for Counselling and Psychotherapy logo">
+    <picture>
+      <source srcset="/images/accredited-registers-quality-mark.webp" type="image/webp">
+      <source srcset="/images/accredited-registers-quality-mark.jpg" type="image/jpeg">
+      <img src="/images/accredited-registers-quality-mark.jpg" width="200" height="96" alt="Professional Standards Authority logo">
+    </picture>
     <div class="copyright">
       &copy; {{ $config.SITE_TITLE }} {{ new Date().getFullYear() }}
     </div>
@@ -96,20 +90,6 @@ export default Vue.extend({
           color: $fg-colour-light;
           text-decoration: none;
         }
-      }
-    }
-  }
-
-  .logos {
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 100%;
-      list-style: none;
-
-      li {
-        margin: 0 2em;
       }
     }
   }
