@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-page">
     <section class="intro">
       <HeroBanner
         v-if="heroUrl"
@@ -10,31 +10,40 @@
         :hero-title="$data.page.fields.hero.fields.heading"
         :hero-text="$data.page.fields.hero.fields.shortText"
       />
-      <h1 v-if="$data.slug !== 'index'">
-        {{ $data.page.fields.title }}
-      </h1>
-      <div v-if="$data.page.fields.intro" class="content-intro" v-html="$md.render($data.page.fields.intro)" />
+      <div class="content-main">
+        <h1 v-if="$data.slug !== 'index'">
+          {{ $data.page.fields.title }}
+        </h1>
+        <div v-if="$data.page.fields.intro" class="content-intro" v-html="$md.render($data.page.fields.intro)" />
+        <hr>
+      </div>
     </section>
 
     <section v-if="section1Content" class="content">
-      <div v-if="$data.page.fields.section1Image">
-        <img :src="$data.page.fields.section1Image.fields.file.url">
+      <div class="content-main">
+        <div v-if="$data.page.fields.section1Image">
+          <img :src="$data.page.fields.section1Image.fields.file.url">
+        </div>
+        <div v-html="section1Content" />
       </div>
-      <div v-html="section1Content" />
     </section>
 
     <section v-if="section2Content" class="content">
-      <div v-html="section2Content" />
-      <div v-if="$data.page.fields.section2Image">
-        <img :src="$data.page.fields.section2Image.fields.file.url">
+      <div class="content-main">
+        <div v-html="section2Content" />
+        <div v-if="$data.page.fields.section2Image">
+          <img :src="$data.page.fields.section2Image.fields.file.url">
+        </div>
       </div>
     </section>
 
     <section v-if="section3Content" class="content">
-      <div v-if="$data.page.fields.section3Image">
-        <img :src="$data.page.fields.section3Image.fields.file.url">
+      <div class="content-main">
+        <div v-if="$data.page.fields.section3Image">
+          <img :src="$data.page.fields.section3Image.fields.file.url">
+        </div>
+        <div v-html="section3Content" />
       </div>
-      <div v-html="section3Content" />
     </section>
 
     <!-- Allow additional markup to be passed in to this component and render it here -->
@@ -100,3 +109,10 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.content-main {
+  max-width: $max-width;
+  margin: auto;
+}
+</style>
