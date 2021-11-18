@@ -70,11 +70,13 @@ export default Vue.extend({
   display: block;
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   background-color: $menu-bar-colour;
   z-index: 99;
   font-family: $font-serif;
   color: $bg-colour;
+  box-sizing: border-box;
+  padding-right: 2em;
 
   label, #hamburger {
     display: none;
@@ -89,7 +91,7 @@ export default Vue.extend({
     display: flex;
     justify-content: flex-end;
     column-gap: .7em;
-    padding: 0 2em 0 0;
+    padding: 0;
     margin: 0;
     list-style: none;
 
