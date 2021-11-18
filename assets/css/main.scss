@@ -65,15 +65,17 @@ body {
 	section:nth-child(odd) {
 		background-color: $contrast-colour-light;
 
-		h1 {
+		h1, h2, h3 {
 			color: $bg-colour-light;
+			text-transform: uppercase;
+			font-family: $font-serif;
 		}
 	}
 
 	section:nth-child(even), section:nth-child(1) {
 		background-color: $bg-colour;
 
-		h1 {
+		h1, h2, h3 {
 			color: $contrast-colour-dark;
 			text-transform: uppercase;
 			font-family: $font-serif;
@@ -93,6 +95,7 @@ body {
 
 		hr {
 			margin: 0;
+			background-color: $contrast-colour-dark;
 		}
 	}
 }
