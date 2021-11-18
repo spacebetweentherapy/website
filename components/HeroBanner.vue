@@ -6,7 +6,7 @@
         {{ heroText }}
       </p>
     </div>
-    <ResponsiveImage :url="heroImageUrl" :alt="heroImageAltText" className="hero-image" />
+    <ResponsiveImage :url="heroImageUrl" :alt="heroImageAltText" class-name="hero-image" />
   </div>
 </template>
 
