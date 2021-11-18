@@ -1,12 +1,14 @@
 <template>
-  <div class="hero">
-    <div class="hero-overlay">
-      <h1 v-html="heroTitleHtml" />
-      <p v-if="heroText">
-        {{ heroText }}
-      </p>
+  <div class="hero-container">
+    <div class="hero-banner">
+      <div class="hero-overlay">
+        <h1 v-html="heroTitleHtml" />
+        <p v-if="heroText">
+          {{ heroText }}
+        </p>
+      </div>
+      <ResponsiveImage :url="heroImageUrl" :alt="heroImageAltText" class-name="hero-image" />
     </div>
-    <ResponsiveImage :url="heroImageUrl" :alt="heroImageAltText" class-name="hero-image" />
   </div>
 </template>
 
@@ -57,10 +59,16 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.hero {
+.hero-container {
   position: relative;
   width: 100%;
-  height: 50%;
+  height: 80vh;
+}
+
+.hero-banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
   .hero-overlay {
     position: absolute;
@@ -95,6 +103,9 @@ export default Vue.extend({
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    height: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
   }
 }
 
