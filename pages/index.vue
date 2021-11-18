@@ -41,18 +41,21 @@
   padding: 1em 4em;
 
   h1 {
-    display: flex;
-
     a {
       font-family: $font-serif;
       color: $bg-colour-light;
       text-decoration: underline;
       text-decoration-color: $contrast-colour-dark;
       text-underline-offset: .2em;
-      font-family: $font-serif;
       font-weight: normal;
       text-transform: uppercase;
     }
+  }
+
+  h2 {
+    font-family: $font-sans !important;
+    text-transform: none !important;
+    color: $fg-colour !important;
   }
 
   .logo-circle {
