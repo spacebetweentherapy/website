@@ -2,13 +2,10 @@
   <div class="container-page">
     <section class="intro">
       <HeroBanner
-        v-if="heroUrl"
-        :hero-image-url="heroUrl"
-        :hero-image-width="$data.page.fields.hero.fields.image.fields.file.details.image.width"
-        :hero-image-height="$data.page.fields.hero.fields.image.fields.file.details.image.height"
-        :hero-image-alt-text="$data.page.fields.hero.fields.altText"
-        :hero-title="$data.page.fields.hero.fields.heading"
-        :hero-text="$data.page.fields.hero.fields.shortText"
+        v-if="$data.page.fields.hero"
+        :asset-id="$data.page.fields.hero.fields.image.sys.id"
+        :title="$data.page.fields.hero.fields.heading"
+        :sub-text="$data.page.fields.hero.fields.shortText"
       />
       <div class="content-main">
         <h1 v-if="$data.slug !== 'index'">
@@ -59,8 +56,6 @@ export default Vue.extend({
     return {
       slug: '',
       page: null,
-      heroUrl: '',
-      heroFallbackUrl: '',
       section1Content: null,
       section2Content: null,
       section3Content: null
@@ -84,7 +79,6 @@ export default Vue.extend({
     // Populate a data object called "page" for us to use in our template
     const cmsObject = page.items[0]
     this.$data.page = cmsObject
-    this.$data.heroUrl = (cmsObject.fields.hero) ? cmsObject.fields.hero.fields.image.fields.file.url : ''
     this.$data.section1Content = this.$renderRichText(cmsObject.fields.section1Content)
     this.$data.section2Content = this.$renderRichText(cmsObject.fields.section2Content)
     this.$data.section3Content = this.$renderRichText(cmsObject.fields.section3Content)

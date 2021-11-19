@@ -3,11 +3,11 @@
     <div class="hero-banner">
       <div class="hero-overlay">
         <h1 v-html="heroTitleHtml" />
-        <p v-if="heroText">
-          {{ heroText }}
+        <p v-if="subText">
+          {{ subText }}
         </p>
       </div>
-      <ResponsiveImage :url="heroImageUrl" :alt="heroImageAltText" class-name="hero-image" />
+      <ResponsiveImage :asset-id="assetId" class-name="hero-image" />
     </div>
   </div>
 </template>
@@ -17,36 +17,33 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    heroImageUrl: {
+    assetId: {
+      type: String,
+      required: true,
+      default: ''
+    },
+    title: {
       type: String,
       default: ''
     },
-    heroImageWidth: {
-      type: Number,
-      default: 0
-    },
-    heroImageHeight: {
-      type: Number,
-      default: 0
-    },
-    heroImageAltText: {
+    subText: {
       type: String,
       default: ''
-    },
-    heroTitle: {
-      type: String,
-      default: ''
-    },
-    heroText: {
-      type: String,
-      default: ''
+    }
+  },
+
+  data () {
+    // We will populate an asset from the CMS
+    const cmsAsset: any = null
+    return {
+      cmsAsset
     }
   },
 
   computed: {
     // Highlight the first word of the hero title
     heroTitleHtml () {
-      const titleText = this.heroTitle
+      const titleText = this.title
       const titleArray = titleText.split(' ', 2)
       return '<span class="first-word">' + titleArray[0] + '</span>' + ((titleArray[1]) ? titleArray[1] : '')
     }

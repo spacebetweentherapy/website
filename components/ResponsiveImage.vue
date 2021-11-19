@@ -1,8 +1,8 @@
 <template>
   <picture :class="className">
-    <source :srcset="url + '?fm=webp'" type="image/webp">
-    <source :srcset="url + '?fm=jpg'" type="image/jpeg">
-    <img :src="url" :alt="alt" :class="className">
+    <source :srcset="cmsAsset.fields.file.url + '?fm=webp'" type="image/webp">
+    <source :srcset="cmsAsset.fields.file.url" :type="cmsAsset.fields.file.contentType">
+    <img :src="cmsAsset.fields.file.url" :alt="cmsAsset.fields.description" :class="className">
   </picture>
 </template>
 
@@ -11,18 +11,29 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
+    assetId: {
+      type: String,
+      default: '',
+      required: true
+    },
     className: {
       type: String,
       default: ''
-    },
-    url: {
-      type: String,
-      default: ''
-    },
-    alt: {
-      type: String,
-      default: ''
     }
+  },
+
+  data () {
+    // We will populate an asset from the CMS
+    const cmsAsset: any = null
+    return {
+      cmsAsset
+    }
+  },
+
+  async fetch () {
+    // Retrieve the asset from the CMS
+    const asset = await this.$contentful.getAsset(this.assetId)
+    this.cmsAsset = asset
   }
 })
 </script>
