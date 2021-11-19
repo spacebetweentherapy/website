@@ -34,6 +34,7 @@ const contentfulPlugin: Plugin = (context, inject) => {
   inject('contentful', ctf.createClient(setup))
 
   // Custom rendering for Contentful's special Rich Text data type
+  // See https://www.contentful.com/blog/2021/04/14/rendering-linked-assets-entries-in-contentful/
   inject('renderRichText', (richText: any) => {
     const options: Partial<Options> = {
       renderNode: {
@@ -61,8 +62,20 @@ const contentfulPlugin: Plugin = (context, inject) => {
               node.content[0].value +
               '</a>'
             )
+          } else if (node.data.target.sys.contentType.sys.id === context.$config.CTF_CONTENT_TYPE_CONTACT_INFO) {
+            return (
+              node.data.target.fields.contact
+            )
           } else {
             return node.content[0].value
+          }
+        },
+        // Embedded contact info
+        [INLINES.EMBEDDED_ENTRY]: (node: any) => {
+          if (node.data.target.sys.contentType.sys.id === context.$config.CTF_CONTENT_TYPE_CONTACT_INFO) {
+            return (
+              node.data.target.fields.contact
+            )
           }
         }
       }

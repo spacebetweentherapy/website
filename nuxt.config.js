@@ -83,6 +83,7 @@ export default {
     CTF_API_URL: process.env.CTF_API_URL || 'cdn.contentful.com',
 
     CTF_CONTENT_TYPE_PAGE: process.env.CTF_CONTENT_TYPE_PAGE || 'page',
+    CTF_CONTENT_TYPE_CONTACT_INFO: process.env.CTF_CONTENT_TYPE_CONTACT_INFO || 'contactInfo',
     CTF_CONTENT_TYPE_MAIN_MENU: process.env.CTF_CONTENT_TYPE_MAIN_MENU || 'mainMenu',
     CTF_CONTENT_TYPE_FOOTER_MENU: process.env.CTF_CONTENT_TYPE_FOOTER_MENU || 'footerMenu'
   },
