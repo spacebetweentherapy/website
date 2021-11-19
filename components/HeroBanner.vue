@@ -58,7 +58,7 @@ export default Vue.extend({
 .hero-container {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 50vh;
 }
 
 .hero-banner {
@@ -74,7 +74,7 @@ export default Vue.extend({
     h1 {
       margin-bottom: 0;
       font-size: 5vw;
-      transform: translateY(10vw);
+      transform: translateY(5vw);
       letter-spacing: 0.45rem;
       font-weight: 700;
       color: $fg-colour !important;
@@ -88,7 +88,7 @@ export default Vue.extend({
     p {
       margin: 0;
       font-size: 2.5vw;
-      transform: translateY(10vw);
+      transform: translateY(5vw);
       letter-spacing: 0.45rem;
       font-weight: 500;
     }
@@ -106,7 +106,7 @@ export default Vue.extend({
 }
 
 @media screen and (min-width: 1200px) {
-  .hero {
+  .hero-banner {
     .hero-overlay {
       h1 {
         font-size: 4em;
@@ -115,6 +115,14 @@ export default Vue.extend({
       p {
         font-size: 1.6em;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero-banner {
+    .hero-overlay {
+      display: none;
     }
   }
 }
