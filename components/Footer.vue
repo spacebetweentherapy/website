@@ -9,12 +9,10 @@
         </li>
       </ul>
     </nav>
-    <img src="/images/bcap-logo.svg" width="245" height="56" alt="British Association for Counselling and Psychotherapy logo">
-    <picture>
-      <source srcset="/images/accredited-registers-quality-mark.webp" type="image/webp">
-      <source srcset="/images/accredited-registers-quality-mark.jpg" type="image/jpeg">
-      <img src="/images/accredited-registers-quality-mark.jpg" width="200" height="96" alt="Professional Standards Authority logo">
-    </picture>
+
+    <ResponsiveImage asset-id="1deYNBAn7WGadPd1oCMLMd" />
+    <ResponsiveImage asset-id="7AVljj9Ub7CqWizlZnlDpd" />
+
     <div class="copyright">
       &copy; {{ $config.SITE_TITLE }} {{ new Date().getFullYear() }}
     </div>
@@ -49,9 +47,9 @@ export default Vue.extend({
     // Populate our page data for rendering
     if (mainMenu.items[0]) {
       const menuItem = mainMenu.items[0].fields as any
+
       menuItem.links.forEach((element: any) => {
         const id = element.sys.id
-
         // Locate this ID in the "includes" array
         const menuItemDetails = mainMenu.includes.Entry.filter((entry: any) => {
           return entry.sys.id === id
