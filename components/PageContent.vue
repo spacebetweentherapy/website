@@ -109,10 +109,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<style lang="scss">
-.content-main {
-  max-width: $max-width;
-  margin: auto;
-}
-</style>
