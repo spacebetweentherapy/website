@@ -23,7 +23,7 @@ declare module '@nuxt/types' {
   }
 }
 
-const myPlugin: Plugin = (context, inject) => {
+const contentfulPlugin: Plugin = (context, inject) => {
   // Make Contentful API available
   const ctf = require('contentful')
   const setup = {
@@ -62,7 +62,7 @@ const myPlugin: Plugin = (context, inject) => {
               '</a>'
             )
           } else {
-            return ''
+            return node.content[0].value
           }
         }
       }
@@ -74,8 +74,11 @@ const myPlugin: Plugin = (context, inject) => {
     // Replace line breaks with HTML line break tags
     markup = markup.replace(/\n/g, '<br>')
 
+    // Turn lone links within a paragraph into buttons
+    markup = markup.replace(/<p><a href="(\/[a-z]+)">([a-zA-Z ]+)<\/a><\/p>/g, '<p><a class="button" href="$1">$2</a></p>')
+
     return markup
   })
 }
 
-export default myPlugin
+export default contentfulPlugin

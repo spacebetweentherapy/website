@@ -136,6 +136,22 @@ body {
 			font-style: italic;
 		}
 	}
+
+	a {
+		&.button {
+			display: inline-block;
+			margin-top: .5em;
+			background-color: $bg-colour-light;
+			border: 1px solid $contrast-colour-dark;
+			border-radius: 8px;
+			padding: .5em;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-family: $font-serif;
+			font-weight: bold;
+			color: $fg-colour;
+		}
+	}
 }
 
 .content-main {
