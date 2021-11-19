@@ -24,7 +24,7 @@
                 <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
               </li>
             </ol>
-            <img src="//images.ctfassets.net/eia1ph7h56y6/4QKYgZ75hpQq30yOokKwVj/22bc3ce7275e22feecedcd0d08add050/tor-rocks.jpg">
+            <ResponsiveImage asset-id="5rSJveXPjJQSUezEAa7boo" />
           </div>
         </div>
       </section>
