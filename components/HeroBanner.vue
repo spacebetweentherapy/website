@@ -21,10 +21,6 @@ export default Vue.extend({
       type: String,
       default: ''
     },
-    heroImageFallbackUrl: {
-      type: String,
-      default: ''
-    },
     heroImageWidth: {
       type: Number,
       default: 0
@@ -62,7 +58,7 @@ export default Vue.extend({
 .hero-container {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 70vh;
 }
 
 .hero-banner {
