@@ -76,6 +76,7 @@ export default Vue.extend({
   align-items: center;
   justify-content: space-between;
   padding: 1em;
+  row-gap: 2em;
   color: $fg-colour-light;
 
   .footer-menu {
