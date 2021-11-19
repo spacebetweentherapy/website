@@ -19,7 +19,7 @@
     <section v-if="section1Content" class="content">
       <div class="content-main">
         <div v-if="$data.page.fields.section1Image">
-          <img :src="$data.page.fields.section1Image.fields.file.url">
+          <ResponsiveImage :asset-id="$data.page.fields.section1Image.sys.id" />
         </div>
         <div v-html="section1Content" />
       </div>
@@ -29,7 +29,7 @@
       <div class="content-main">
         <div v-html="section2Content" />
         <div v-if="$data.page.fields.section2Image">
-          <img :src="$data.page.fields.section2Image.fields.file.url">
+          <ResponsiveImage :asset-id="$data.page.fields.section2Image.sys.id" />
         </div>
       </div>
     </section>
@@ -37,7 +37,7 @@
     <section v-if="section3Content" class="content">
       <div class="content-main">
         <div v-if="$data.page.fields.section3Image">
-          <img :src="$data.page.fields.section3Image.fields.file.url">
+          <ResponsiveImage :asset-id="$data.page.fields.section3Image.sys.id" />
         </div>
         <div v-html="section3Content" />
       </div>
