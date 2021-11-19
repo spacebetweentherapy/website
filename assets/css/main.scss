@@ -95,7 +95,8 @@ body {
 
 		hr {
 			margin: 0;
-			background-color: $contrast-colour-dark;
+			border: 0;
+			border-top: 1px solid $contrast-colour-dark;
 		}
 	}
 }
