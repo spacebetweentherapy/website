@@ -153,5 +153,9 @@ export default {
         return [...pages.items.map(entry => entry.fields.slug)];
       });
     }
+  },
+
+  sitemap: {
+    hostname: 'https://spacebetweentherapy.com'
   }
 }
