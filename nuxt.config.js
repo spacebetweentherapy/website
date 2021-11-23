@@ -61,7 +61,10 @@ export default {
     '@nuxtjs/style-resources',
     
     // https://www.npmjs.com/package/@nuxtjs/svg
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+
+    // https://sitemap.nuxtjs.org/guide/setup
+    '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -126,5 +129,29 @@ export default {
   // https://google-analytics.nuxtjs.org/setup
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID || 'G-RS6L04XFVD'
+  },
+
+  // Force generation of our routes from Contentful
+  generate: {
+    subFolders: false,
+    crawler: false,
+    fallback: '404.html',
+
+    routes () {
+      const contentful = require("contentful")
+      const client = contentful.createClient({
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+        host: process.env.CTF_API_URL
+      })
+
+      return Promise.all([
+        client.getEntries({
+          content_type: 'page'
+        })
+      ]).then(([pages]) => {
+        return [...pages.items.map(entry => entry.fields.slug)];
+      });
+    }
   }
 }
