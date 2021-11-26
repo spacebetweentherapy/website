@@ -116,10 +116,17 @@ body {
 
 	ul {
 		column-count: 2;
+		margin: 0;
 		padding: 0;
 
 		li {
 			list-style: none;
+
+			&:first-child {
+				p {
+					margin-top: 0;
+				}
+			}
 		}
 	}
 
