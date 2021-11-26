@@ -10,8 +10,7 @@
       </ul>
     </nav>
 
-    <ResponsiveImage asset-id="1deYNBAn7WGadPd1oCMLMd" />
-    <ResponsiveImage asset-id="7AVljj9Ub7CqWizlZnlDpd" />
+    <ResponsiveImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" />
 
     <div class="copyright">
       &copy; {{ $config.SITE_TITLE }} {{ new Date().getFullYear() }}
@@ -31,10 +30,15 @@ export interface MenuItem {
 
 export default Vue.extend({
   data () {
-    // We will populate an array of menu items from the CMS
+    // Create an array of menu items to show in the footer
     const items: Array<MenuItem> = []
+
+    // Create a list of images to show in the footer
+    const images: Array<any> = []
+
     return {
-      items
+      items,
+      images
     }
   },
 
@@ -61,6 +65,16 @@ export default Vue.extend({
         menuItem.title = menuItemDetails[0].fields.title
         menuItem.slug = menuItemDetails[0].fields.slug
         this.$data.items.push(menuItem)
+      })
+    }
+
+    // Retrieve footer images from the CMS
+    const footerImages = await this.$contentful.getAssets({
+      'metadata.tags.sys.id[in]': 'imageFooter'
+    })
+    if (footerImages.items[0]) {
+      footerImages.items.forEach((element: any) => {
+        this.$data.images.push(element)
       })
     }
   }
