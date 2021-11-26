@@ -147,10 +147,11 @@ export default {
 
       return Promise.all([
         client.getEntries({
-          content_type: 'page'
+          content_type: 'page',
+          'fields.slug[ne]': 'index'
         })
       ]).then(([pages]) => {
-        return [...pages.items.map(entry => entry.fields.slug)];
+        return [...pages.items.map(entry => '/' + entry.fields.slug)];
       });
     }
   },
