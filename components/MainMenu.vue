@@ -2,6 +2,12 @@
   <nav class="main-menu">
     <h2>Main menu</h2>
 
+    <div class="main-menu-logo">
+      <a href="/">
+        <img src="/images/banner_logo.png" width="321" height="46" alt="Logo">
+      </a>
+    </div>
+
     <!-- Hamburger for small screens -->
     <label for="hamburger">&#9776;</label>
     <input id="hamburger" type="checkbox">
@@ -78,6 +84,10 @@ export default Vue.extend({
   box-sizing: border-box;
   padding-right: 2em;
 
+  .main-menu-logo {
+    display: none;
+  }
+
   label, #hamburger {
     display: none;
   }
@@ -117,8 +127,36 @@ export default Vue.extend({
 
 @media screen and (max-width: 800px) {
   .main-menu {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0;
+    height: 46px;
+
+    .main-menu-logo {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      height: 46px;
+
+      a {
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        img {
+          margin: 0;
+          padding: 0;
+          border: 0;
+        }
+      }
+    }
+
     .menu-items {
       display: none;
+      position: absolute;
+      top: 2.5em;
+      right: 0;
     }
 
     label {

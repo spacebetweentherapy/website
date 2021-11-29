@@ -111,4 +111,10 @@ export default Vue.extend({
     align-self: baseline;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .page-footer {
+    display: block;
+  }
+}
 </style>
