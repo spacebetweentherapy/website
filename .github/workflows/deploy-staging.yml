@@ -15,6 +15,12 @@ jobs:
     environment: staging
     steps:
       - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - run: npm ci && SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -22,6 +28,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SBT }}'
           channelId: staging
           projectId: spacebetweentherapy-d8430
-          node-version: 14.x
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
