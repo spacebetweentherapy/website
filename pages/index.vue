@@ -91,6 +91,11 @@
   .recent-blog-posts {
     .posts-container {
       flex-wrap: wrap;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
