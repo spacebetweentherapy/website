@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.8.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg": "^0.3.0",
@@ -22,18 +23,13 @@
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.3",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config-typescript": "^8.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "cheerio": "^1.0.0-rc.10",
     "eslint": "^8.3.0",
     "eslint-plugin-nuxt": "^3.1.0",
-    "eslint-plugin-vue": "^8.1.1",
-    "node-sass": "^6.0.1",
     "sass": "^1.44.0",
     "sass-loader": "10.1.1"
   }
