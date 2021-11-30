@@ -144,7 +144,7 @@ body {
 		}
 	}
 
-	a.button, button {
+	a:only-child, .button, button {
 		display: inline-block;
 		margin-top: .5em;
 		background-color: $bg-colour-light;
