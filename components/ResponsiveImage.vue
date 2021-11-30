@@ -2,7 +2,7 @@
   <picture :class="className">
     <source :srcset="cmsAsset.fields.file.url + '?fm=webp'" type="image/webp">
     <source :srcset="cmsAsset.fields.file.url" :type="cmsAsset.fields.file.contentType">
-    <img :src="cmsAsset.fields.file.url" :alt="cmsAsset.fields.description" :class="className">
+    <img :src="cmsAsset.fields.file.url" :width="cmsAsset.fields.file.details.image.width" :height="cmsAsset.fields.file.details.image.height" :alt="cmsAsset.fields.description" :class="className">
   </picture>
 </template>
 
