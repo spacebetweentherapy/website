@@ -1,10 +1,21 @@
+# 
+# GitHub Action to build and deploy the static site to the staging URL
+# https://spacebetweentherapy-d8430--staging-mleha23p.web.app/
+# 
+
 name: Deploy STAGING
 'on':
+  # Trigger on code pushed to the staging branch
   push:
     branches:
       - staging
-      
-  # Allows you to run this workflow manually from the Actions tab
+
+  # Trigger on Contentful webhook
+  repository_dispatch:
+    types:
+      - ctf-master-publish
+
+  # Allow manual trigger from the Actions tab on github.com
   workflow_dispatch:
   
 jobs:
@@ -13,6 +24,7 @@ jobs:
     env:
       SITE_TITLE: Space Between Therapy
     environment: staging
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,8 +34,11 @@ jobs:
         with:
           node-version: '14'
 
-      - run: npm ci
-      - run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate static website
+        run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
