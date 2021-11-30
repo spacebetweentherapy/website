@@ -125,7 +125,7 @@ export default Vue.extend({
   }
 }
 
-@media screen and (max-width: 800px) {
+@include small-screens {
   .main-menu {
     display: flex;
     justify-content: space-between;

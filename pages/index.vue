@@ -86,4 +86,12 @@
     }
   }
 }
+
+@include small-screens {
+  .recent-blog-posts {
+    .posts-container {
+      flex-wrap: wrap;
+    }
+  }
+}
 </style>
