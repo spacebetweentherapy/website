@@ -1,5 +1,7 @@
 <template>
   <footer class="page-footer">
+    <ResponsiveImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" />
+
     <nav class="footer-menu">
       <ul>
         <li v-for="item in items" :key="item.id">
@@ -9,8 +11,6 @@
         </li>
       </ul>
     </nav>
-
-    <ResponsiveImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" />
 
     <div class="copyright">
       &copy; {{ $config.SITE_TITLE }} {{ new Date().getFullYear() }}
@@ -90,14 +90,34 @@ export default Vue.extend({
   padding: 1em;
   row-gap: 2em;
   color: $fg-colour-light;
+  font-size: .8em;
+
+  picture {
+    flex-basis: 50%;
+
+    &:last-of-type {
+      align-self: baseline;
+      text-align: right;
+    }
+  }
 
   .footer-menu {
+    overflow: hidden;
+    position: relative;
+
     ul {
-      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 0 0 -1px;
       padding: 0;
+      list-style: none;
 
       li {
-        margin-bottom: 1em;
+        flex-grow: 1;
+        flex-basis: auto;
+        margin: 0;
+        padding: 0 .7em;
+        border-left: 1px solid #ccc;
 
         a {
           color: $fg-colour-light;
@@ -115,6 +135,17 @@ export default Vue.extend({
 @include small-screens {
   .page-footer {
     display: block;
+
+    img {
+      margin: 1em 0;
+    }
+
+    .footer-menu {
+      ul {
+        display: block;
+        margin: 1em 0;
+      }
+    }
   }
 }
 </style>
