@@ -106,7 +106,7 @@ export default Vue.extend({
     list-style: none;
 
     li {
-      font-size: 1.3em;
+      font-size: 1.2em;
       text-transform: uppercase;
 
       a {
