@@ -116,6 +116,7 @@ strong {
 			display: flex;
 			column-gap: 4em;
 			align-items: center;
+			flex-wrap: nowrap;
 		}
 	}
 }
@@ -199,6 +200,14 @@ strong {
 		img {
 			max-width: 100%;
 			height: auto;
+		}
+	}
+
+	.page {
+		.intro {
+			.content-intro {
+				flex-wrap: wrap;
+			}
 		}
 	}
 }
