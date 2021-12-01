@@ -111,6 +111,12 @@ strong {
 			border: 0;
 			border-top: 1px solid $contrast-colour-dark;
 		}
+
+		.content-intro {
+			display: flex;
+			column-gap: 4em;
+			align-items: center;
+		}
 	}
 }
 

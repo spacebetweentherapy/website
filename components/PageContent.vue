@@ -11,7 +11,10 @@
         <h1 v-if="$data.slug !== 'index'">
           {{ $data.page.fields.title }}
         </h1>
-        <div v-if="$data.page.fields.intro" class="content-intro" v-html="$md.render($data.page.fields.intro)" />
+        <div v-if="$data.page.fields.intro" class="content-intro">
+          <div v-html="$md.render($data.page.fields.intro)" />
+          <ResponsiveImage v-if="$data.page.fields.introImage" :asset-id="$data.page.fields.introImage.sys.id" />
+        </div>
         <hr>
       </div>
     </section>
