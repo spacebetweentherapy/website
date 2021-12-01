@@ -162,6 +162,11 @@ body {
 		font-family: $font-serif;
 		font-weight: bold;
 		color: $fg-colour;
+
+		&:hover {
+			background-color: $contrast-colour-dark;
+			color: $bg-colour-light;
+		}
 	}
 }
 
