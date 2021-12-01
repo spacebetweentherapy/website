@@ -56,6 +56,7 @@ export default Vue.extend({
   position: relative;
   width: 100%;
   height: 50vh;
+  min-height: 350px;
 }
 
 .hero-banner {
