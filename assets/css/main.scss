@@ -13,8 +13,10 @@ $menu-bar-colour: rgba($color: #000, $alpha: 0.5);
 $max-width: 1200px;
 
 // ----Typography------------
-$font-sans: 'Rubik', sans-serif;
+$font-sans: 'Montserrat', sans-serif;
 $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$font-weight-normal: 300;
+$font-weight-heavy: 500;
 
 
 // FUNCTIONS
@@ -57,8 +59,13 @@ $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", G
 // =================================================
 body {
 	font-family: $font-sans;
+	font-weight: $font-weight-normal;
 	color: $fg-colour;
 	height: 100%;
+}
+
+strong {
+	font-weight: $font-weight-heavy;
 }
 
 .page {
@@ -93,7 +100,7 @@ body {
 	}
 
 	.intro {
-		font-weight: 700;
+		font-weight: $font-weight-heavy;
 
 		h1 {
 			margin: 1em 2em 0 2em;
@@ -152,15 +159,15 @@ body {
 
 	.button, button {
 		display: inline-block;
-		margin-top: .5em;
-		background-color: $bg-colour-light;
+		box-sizing: border-box;
+		margin: .5em auto;
+		padding: 4% 1%;
 		border: 1px solid $contrast-colour-dark;
-		border-radius: 8px;
-		padding: .5em;
-		text-transform: uppercase;
+		border-radius: 50%;
+		text-transform: lowercase;
 		text-decoration: none;
-		font-family: $font-serif;
-		font-weight: bold;
+		background-color: $bg-colour-light;
+		font-weight: $font-weight-heavy;
 		color: $fg-colour;
 
 		&:hover {
