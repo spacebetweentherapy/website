@@ -88,7 +88,7 @@ const contentfulPlugin: Plugin = (context, inject) => {
     markup = markup.replace(/\n/g, '<br>')
 
     // Turn lone links within a paragraph into buttons
-    markup = markup.replace(/<p><a href="(\/[a-z]+)">([a-zA-Z ]+)<\/a><\/p>/g, '<p><a class="button" href="$1">$2</a></p>')
+    markup = markup.replace(/<p><a href="(\/[a-z]+)">([a-zA-Z ]+)<\/a><\/p>/g, '<p class="button-container"><a class="button" href="$1">$2</a></p>')
 
     return markup
   })

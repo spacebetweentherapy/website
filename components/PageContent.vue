@@ -21,6 +21,10 @@
 
     <section v-if="section1Content" class="content">
       <div class="content-main">
+        <!-- Hard code our home page image -->
+        <div v-if="$data.slug === 'index'">
+          <ResponsiveImage asset-id="4QKYgZ75hpQq30yOokKwVj" />
+        </div>
         <div v-html="section1Content" />
       </div>
     </section>
@@ -37,7 +41,7 @@
       </div>
     </section>
 
-    <!-- Allow additional markup to be passed in to this component and render it here -->
+    <!-- Allow additional markup to be passed to this component -->
     <slot />
   </div>
 </template>

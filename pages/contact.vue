@@ -17,9 +17,12 @@
             <label>Email <input type="email"></label>
             <label>Phone <input type="tel"></label>
             <label>Your message <textarea /></label>
-            <button type="submit">
-              Submit
-            </button>
+
+            <div class="button-container">
+              <button type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </section>

@@ -88,7 +88,13 @@
 }
 
 @include small-screens {
+  .content-intro {
+    padding: 1em 2em !important;
+  }
+
   .recent-blog-posts {
+    padding: 1em 2em;
+
     .posts-container {
       flex-wrap: wrap;
 
