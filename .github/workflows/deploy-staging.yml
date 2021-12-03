@@ -2,7 +2,6 @@
 # GitHub Action to build and deploy the static site to the staging URL
 # https://spacebetweentherapy-d8430--staging-mleha23p.web.app/
 # 
-
 name: Deploy STAGING
 'on':
   # Trigger on code pushed to the staging branch
@@ -17,6 +16,10 @@ name: Deploy STAGING
 
   # Allow manual trigger from the Actions tab on github.com
   workflow_dispatch:
+
+concurrency: 
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
   
 jobs:
   build_and_deploy:
