@@ -60,11 +60,13 @@ export default Vue.extend({
         })
 
         // Create a menu item object and add it to page data
-        const menuItem = {} as MenuItem
-        menuItem.id = id
-        menuItem.title = menuItemDetails[0].fields.title
-        menuItem.slug = menuItemDetails[0].fields.slug
-        this.$data.items.push(menuItem)
+        if (menuItemDetails && menuItemDetails[0]) {
+          const menuItem = {} as MenuItem
+          menuItem.id = id
+          menuItem.title = menuItemDetails[0].fields.title
+          menuItem.slug = menuItemDetails[0].fields.slug
+          this.$data.items.push(menuItem)
+        }
       })
     }
 
