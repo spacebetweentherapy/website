@@ -109,7 +109,7 @@ export default Vue.extend({
   }
 }
 
-@media screen and (max-width: 800px) {
+@include small-screens {
   .hero-banner {
     .hero-overlay {
       display: none;
