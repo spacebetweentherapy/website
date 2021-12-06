@@ -43,6 +43,8 @@
 
     <!-- Allow additional markup to be passed to this component -->
     <slot />
+
+    <InspiringQuote v-if="$data.page.fields.quote" :quote-id="$data.page.fields.quote.sys.id" />
   </div>
 </template>
 
