@@ -32,14 +32,6 @@ export default Vue.extend({
     }
   },
 
-  data () {
-    // We will populate an asset from the CMS
-    const cmsAsset: any = null
-    return {
-      cmsAsset
-    }
-  },
-
   computed: {
     // Highlight the first word of the hero title
     heroTitleHtml () {
