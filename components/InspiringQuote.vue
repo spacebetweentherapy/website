@@ -57,7 +57,7 @@ export default Vue.extend({
 
   .quote-overlay {
     position: absolute;
-    top: 40%;
+    top: 30%;
     text-align: center;
     width: 100%;
 
