@@ -220,6 +220,7 @@ export default Vue.extend({
     .content-intro {
       padding: 1em 2em;
       flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }
