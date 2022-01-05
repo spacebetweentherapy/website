@@ -16,7 +16,7 @@
             <label>Name <input type="text"></label>
             <label>Email <input type="email"></label>
             <label>Phone <input type="tel"></label>
-            <label>Your message <textarea /></label>
+            <label>Your message <textarea rows="6" /></label>
 
             <div class="button-container">
               <button type="submit">
@@ -60,14 +60,13 @@ export default Vue.extend({
 <style lang="scss">
 .contact-options {
   ul {
-    display: block;
-    width: 100%;
-    list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     column-gap: 8em;
+    list-style: none;
 
     li {
       display: block;
@@ -84,8 +83,28 @@ export default Vue.extend({
 }
 
 .contact-form {
+  form {
+    width: 100%;
+  }
+
   label {
     display: block;
+    margin: 1em 0;
+  }
+
+  input, textarea {
+    display: block;
+    padding: .2em;
+    width: 100%;
+  }
+}
+
+@include small-screens {
+  .contact-options {
+    ul {
+      flex-wrap: wrap;
+      row-gap: 2em;
+    }
   }
 }
 </style>
