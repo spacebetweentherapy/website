@@ -92,7 +92,8 @@ export default Vue.extend({
   .quote-banner {
     .quote-overlay {
       p {
-        margin: 1em .2em;
+        margin: 1.5em .5em;
+        font-size: 1.2em;
       }
     }
   }
