@@ -7,15 +7,16 @@
         :title="$data.page.fields.hero.fields.heading"
         :sub-text="$data.page.fields.hero.fields.shortText"
       />
-      <div class="content-main">
-        <h1 v-if="$data.slug !== 'index'">
-          {{ $data.page.fields.title }}
-        </h1>
+      <div>
+        <h1 v-if="$data.slug !== 'index'">{{ $data.page.fields.title }}</h1>
         <div v-if="$data.page.fields.intro" class="content-intro">
           <div v-html="$md.render($data.page.fields.intro)" />
-          <ResponsiveImage v-if="$data.page.fields.introImage" :asset-id="$data.page.fields.introImage.sys.id" />
+          <ResponsiveImage
+            v-if="$data.page.fields.introImage"
+            :asset-id="$data.page.fields.introImage.sys.id"
+          />
         </div>
-        <hr>
+        <hr />
       </div>
     </section>
 
@@ -103,3 +104,123 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.intro {
+  font-weight: $font-weight-heavy;
+
+  h1 {
+    margin: 1em 2em 0 3em;
+  }
+
+  hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid $contrast-colour-dark;
+  }
+
+  .content-intro {
+    padding: 2em 6em;
+    display: flex;
+    column-gap: 4em;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+.content-main {
+  margin: auto;
+  padding: 2em 4em;
+  max-width: $max-width;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  column-gap: 2em;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: $font-serif;
+  }
+
+  ul {
+    // column-count: 2;
+    margin: 2em 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      &:first-child {
+        p {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  hr {
+    border: 1px solid $contrast-colour-dark;
+    width: 100%;
+  }
+
+  blockquote {
+    margin: 0 2em;
+    border-left: 5px solid #ccc;
+
+    p {
+      padding: 1em;
+      font-style: italic;
+    }
+  }
+
+  .button-container {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .button,
+    button {
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 40% 1em;
+      border: 1px solid $contrast-colour-dark;
+      border-radius: 50%;
+      text-transform: lowercase;
+      text-decoration: none;
+      background-color: $bg-colour-light;
+      font-weight: $font-weight-heavy;
+      color: $fg-colour;
+
+      &:hover {
+        background-color: $contrast-colour-dark;
+        color: $bg-colour-light;
+      }
+    }
+  }
+}
+
+@include small-screens {
+  .content-main {
+    flex-wrap: wrap;
+    padding: 1em 2em;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .intro {
+    h1 {
+      margin: 1em;
+    }
+
+    .content-intro {
+      padding: 1em 2em;
+      flex-wrap: wrap;
+    }
+  }
+}
+</style>

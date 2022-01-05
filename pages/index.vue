@@ -33,10 +33,6 @@
 </template>
 
 <style lang="scss">
-.content-intro {
-  padding: 2em 6em !important;
-}
-
 .recent-blog-posts {
   padding: 1em 4em;
 
@@ -88,10 +84,6 @@
 }
 
 @include small-screens {
-  .content-intro {
-    padding: 1em 2em !important;
-  }
-
   .recent-blog-posts {
     padding: 1em 2em;
 
