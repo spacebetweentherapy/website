@@ -5,7 +5,7 @@
     <nav class="footer-menu">
       <ul>
         <li v-for="item in items" :key="item.id">
-          <NuxtLink :to="(item.slug === 'index') ? '/' : item.slug">
+          <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
             {{ item.title }}
           </NuxtLink>
         </li>

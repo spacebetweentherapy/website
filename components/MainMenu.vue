@@ -15,7 +15,7 @@
     <ul class="menu-items">
       <li v-for="item in items" :key="item.id">
         <!-- Make sure the homepage uses index.vue not _page.vue -->
-        <NuxtLink :to="(item.slug === 'index') ? '/' : item.slug">
+        <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
           {{ item.title }}
         </NuxtLink>
       </li>
