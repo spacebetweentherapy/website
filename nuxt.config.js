@@ -150,9 +150,15 @@ export default {
         client.getEntries({
           content_type: 'page',
           'fields.slug[ne]': 'index'
+        }),
+        client.getEntries({
+          content_type: 'blogPost'
         })
-      ]).then(([pages]) => {
-        return [...pages.items.map(entry => '/' + entry.fields.slug)];
+      ]).then(([pages, posts]) => {
+        return [
+          ...pages.items.map(entry => '/' + entry.fields.slug),
+          ...posts.items.map(entry => '/blog/' + entry.fields.slug)
+        ];
       });
     }
   },
