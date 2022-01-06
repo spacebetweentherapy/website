@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Mkg5d7uXjnzodImICmz0" name="Architecture overview">
-        <mxGraphModel dx="1780" dy="865" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+        <mxGraphModel dx="740" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -211,12 +211,12 @@
         </mxGraphModel>
     </diagram>
     <diagram id="CdVXFgsFR7m_r02GapWN" name="Content model">
-        <mxGraphModel dx="1780" dy="865" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+        <mxGraphModel dx="740" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
             <root>
                 <mxCell id="AdHHaBCN9igyBftpVZSY-0"/>
                 <mxCell id="AdHHaBCN9igyBftpVZSY-1" parent="AdHHaBCN9igyBftpVZSY-0"/>
                 <mxCell id="AdHHaBCN9igyBftpVZSY-38" value="Blog Post" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="AdHHaBCN9igyBftpVZSY-1" vertex="1">
-                    <mxGeometry x="60" y="180" width="160" height="206" as="geometry"/>
+                    <mxGeometry x="60" y="180" width="160" height="236" as="geometry"/>
                 </mxCell>
                 <mxCell id="AdHHaBCN9igyBftpVZSY-39" value="Title (title) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
@@ -227,14 +227,17 @@
                 <mxCell id="AdHHaBCN9igyBftpVZSY-41" value="Date (date) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
                     <mxGeometry y="86" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="K2w6RIRNlaqobmhVj6cy-0" value="Image (image) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
+                <mxCell id="tskMyM2nQvEOwGcbwbo0-0" value="Hero Banner (hero)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="AdHHaBCN9igyBftpVZSY-38">
                     <mxGeometry y="116" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="-xKk2QJ8TAz8bX0EzuVJ-0" value="Intro Text (intro) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
                     <mxGeometry y="146" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="AdHHaBCN9igyBftpVZSY-42" value="Content (content) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
+                <mxCell id="K2w6RIRNlaqobmhVj6cy-0" value="Image (image) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
                     <mxGeometry y="176" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="AdHHaBCN9igyBftpVZSY-42" value="Content (content) *" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="AdHHaBCN9igyBftpVZSY-38" vertex="1">
+                    <mxGeometry y="206" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="AdHHaBCN9igyBftpVZSY-49" value="Hero Banner" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="AdHHaBCN9igyBftpVZSY-1" vertex="1">
                     <mxGeometry x="320" y="146" width="160" height="146" as="geometry"/>
