@@ -10,25 +10,51 @@
             </NuxtLink>
           </h1>
           <ol class="posts">
-            <li>
-              <h2>Connecting with nature</h2>
-              <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
-            </li>
-            <li>
-              <h2>How to find a therapist</h2>
-              <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
-            </li>
-            <li>
-              <h2>Space Between - why the name</h2>
-              <p>There's nothing better than waking up under the stars. Wild camping is a great way to do something fun and get out into the wild. This is just some text to see what it...</p>
+            <li v-for="post in posts" :key="post.sys.id">
+              <h2>{{ post.fields.title }}</h2>
+              <p>{{ post.fields.intro }}</p>
             </li>
           </ol>
-          <ResponsiveImage asset-id="5rSJveXPjJQSUezEAa7boo" />
+          <ResponsiveImage :asset-id="blogImageId" />
         </div>
       </section>
     </PageContent>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  data () {
+    return {
+      posts: []
+    }
+  },
+
+  async fetch () {
+    // Retrieve recent blog posts
+    const posts = await this.$contentful.getEntries({
+      content_type: this.$config.CTF_CONTENT_TYPE_BLOG_POST,
+      order: '-fields.date',
+      include: 3
+    })
+    this.$data.posts = posts.items
+  },
+
+  computed: {
+    blogImageId () {
+      let imageId = ''
+      for (let i = 0; i < this.$data.posts.length; i++) {
+        if (this.$data.posts[i].fields.image) {
+          imageId = this.$data.posts[i].fields.image.sys.id
+          break
+        }
+      }
+      return imageId
+    }
+  }
+})
+</script>
 
 <style lang="scss">
 .recent-blog-posts {
