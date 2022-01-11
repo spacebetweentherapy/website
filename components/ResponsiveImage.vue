@@ -1,5 +1,6 @@
 <template>
   <picture v-if="cmsAsset.fields" :class="className">
+    <source :srcset="cmsAsset.fields.file.url + '?fm=avif'" type="image/avif">
     <source :srcset="cmsAsset.fields.file.url + '?fm=webp'" type="image/webp">
     <source :srcset="cmsAsset.fields.file.url" :type="cmsAsset.fields.file.contentType">
     <img :src="cmsAsset.fields.file.url" :width="cmsAsset.fields.file.details.image.width" :height="cmsAsset.fields.file.details.image.height" :alt="cmsAsset.fields.description" :class="className">
