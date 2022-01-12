@@ -112,7 +112,7 @@ export default Vue.extend({
   h1 {
     display: block;
     max-width: $max-width;
-    margin: 1em auto -1em auto;
+    margin: 1em auto -1.25em auto;
     font-size: 2.5em;
   }
 
