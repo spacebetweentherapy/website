@@ -48,7 +48,7 @@ export default Vue.extend({
   position: relative;
   width: 100%;
   height: 50vh;
-  min-height: 350px;
+  min-height: 500px;
 }
 
 .hero-banner {
@@ -77,7 +77,7 @@ export default Vue.extend({
 
     p {
       margin: 0;
-      font-size: 2.5vw;
+      font-size: 2vw;
       transform: translateY(5vw);
       letter-spacing: 0.45rem;
       font-weight: 500;
@@ -103,7 +103,7 @@ export default Vue.extend({
       }
 
       p {
-        font-size: 1.6em;
+        font-size: 1.5em;
       }
     }
   }
