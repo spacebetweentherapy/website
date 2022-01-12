@@ -16,7 +16,7 @@
             :asset-id="$data.page.fields.introImage.sys.id"
           />
         </div>
-        <hr />
+        <hr>
       </div>
     </section>
 
@@ -112,8 +112,8 @@ export default Vue.extend({
   h1 {
     display: block;
     max-width: $max-width;
-    margin: 1em auto 0 auto;
-
+    margin: 1em auto -1em auto;
+    font-size: 2.5em;
   }
 
   hr {
@@ -146,7 +146,7 @@ export default Vue.extend({
     margin: 0;
     text-transform: uppercase;
     font-family: $font-serif;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-heavy;
   }
 
   ul {
