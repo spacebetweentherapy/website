@@ -226,7 +226,7 @@ export default Vue.extend({
 
   .intro {
     h1 {
-      margin: 1em;
+      margin: .5em 0 -1em .8em;
     }
 
     .content-intro {
