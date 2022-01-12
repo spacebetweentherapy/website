@@ -71,6 +71,14 @@ strong {
 	font-weight: $font-weight-heavy;
 }
 
+a {
+	color: $contrast-colour-dark;
+
+	&:visited {
+		color: $contrast-colour-dark;
+	}
+}
+
 .page {
   margin-top: -3em;
 
@@ -88,6 +96,14 @@ strong {
 
 	section:nth-child(odd) {
 		background-color: $contrast-colour-light;
+
+		a {
+			color: #fff;
+
+			&:visited {
+				color: #fff;
+			}
+		}
 
 		h1, h2, h3 {
 			color: $bg-colour-light;
