@@ -146,7 +146,7 @@ export default Vue.extend({
 
         img {
           margin: 0;
-          padding: 0;
+          padding: .25em;
           border: 0;
         }
       }
