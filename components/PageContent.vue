@@ -26,7 +26,7 @@
         <div v-if="$data.slug === 'index'">
           <ResponsiveImage asset-id="4QKYgZ75hpQq30yOokKwVj" />
         </div>
-        <div class="content-wrapper" v-html="section1Content" />
+        <div class="content-wrapper" :style="($data.slug === 'index' ? 'padding:0' : '')" v-html="section1Content" />
       </div>
     </section>
 
