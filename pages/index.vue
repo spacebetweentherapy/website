@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page page-home">
     <PageContent>
       <section class="recent-blog-posts">
         <div class="posts-container">
