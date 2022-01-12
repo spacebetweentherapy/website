@@ -80,6 +80,7 @@ export default Vue.extend({
     .quote-mark {
       color: $contrast-colour-dark;
       font-family: $font-sans;
+      font-size: 1.5em;
     }
   }
 
