@@ -13,7 +13,7 @@ $menu-bar-colour: rgba($color: #000, $alpha: 0.5);
 $max-width: 1000px;
 
 // ----Typography------------
-$font-sans: 'Roboto', sans-serif;
+$font-sans: 'Open Sans', sans-serif;
 $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 $font-weight-normal: 300;
 $font-weight-medium: 400;
@@ -61,6 +61,7 @@ $font-weight-heavy: 500;
 body {
 	font-family: $font-sans;
 	font-weight: $font-weight-normal;
+	-webkit-font-smoothing: antialiased;
 	color: $fg-colour;
 	height: 100%;
 	line-height: 1.5;
