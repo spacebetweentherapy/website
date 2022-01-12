@@ -146,6 +146,7 @@ export default Vue.extend({
     margin: 0;
     text-transform: uppercase;
     font-family: $font-serif;
+    font-weight: $font-weight-medium;
   }
 
   ul {

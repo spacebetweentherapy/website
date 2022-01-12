@@ -13,10 +13,11 @@ $menu-bar-colour: rgba($color: #000, $alpha: 0.5);
 $max-width: 1000px;
 
 // ----Typography------------
-$font-sans: 'Roboto', sans-serif;
+$font-sans: 'Open Sans', sans-serif;
 $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 $font-weight-normal: 300;
-$font-weight-heavy: 400;
+$font-weight-medium: 400;
+$font-weight-heavy: 500;
 
 
 // FUNCTIONS
@@ -76,13 +77,19 @@ strong {
 		margin-top: 0;
 	}
 
+	section {
+		h1, h2, h3 {
+			text-transform: uppercase;
+			font-family: $font-serif;
+			font-weight: $font-weight-medium !important;
+		}
+	}
+
 	section:nth-child(odd) {
 		background-color: $contrast-colour-light;
 
 		h1, h2, h3 {
 			color: $bg-colour-light;
-			text-transform: uppercase;
-			font-family: $font-serif;
 		}
 	}
 
@@ -91,8 +98,6 @@ strong {
 
 		h1, h2, h3 {
 			color: $contrast-colour-dark;
-			text-transform: uppercase;
-			font-family: $font-serif;
 		}
 	}
 }
