@@ -4,7 +4,7 @@
       <section class="content contact-details">
         <div class="content-main contact-options">
           <ul>
-            <li><ResponsiveImage asset-id="62rXvksqqpbAiheFLBYaZu" /> <span>{{ email }}</span></li>
+            <li><ResponsiveImage asset-id="62rXvksqqpbAiheFLBYaZu" /> <span><a :href="'mailto:' + email">{{ email }}</a></span></li>
             <li><ResponsiveImage asset-id="75RbcrOfwy8PjWst9Hf5yc" /> <span>{{ phone }}</span></li>
           </ul>
         </div>
@@ -18,7 +18,7 @@
             <label>Phone <input type="tel" name="Field6" required></label>
             <label>Your message <textarea name="Field7" rows="6" required /></label>
 
-            <input type="hidden" id="idstamp" name="idstamp" value="zJOOG5E6T+Sqm6owgEeXsA==">
+            <input id="idstamp" type="hidden" name="idstamp" value="zJOOG5E6T+Sqm6owgEeXsA==">
 
             <div class="button-container">
               <button type="submit">
