@@ -22,7 +22,7 @@
 
     <section v-if="section1Content" class="content">
       <div class="content-main">
-        <!-- Hard code our home page image -->
+        <!-- TODO Hard code our home page image -->
         <div v-if="$data.slug === 'index'">
           <ResponsiveImage asset-id="4QKYgZ75hpQq30yOokKwVj" />
         </div>
@@ -110,7 +110,10 @@ export default Vue.extend({
   font-weight: $font-weight-heavy;
 
   h1 {
-    margin: 1em 2em 0 3em;
+    display: block;
+    max-width: $max-width;
+    margin: 1em auto 0 auto;
+
   }
 
   hr {
@@ -125,6 +128,8 @@ export default Vue.extend({
     column-gap: 4em;
     align-items: center;
     flex-wrap: nowrap;
+    max-width: $max-width;
+    margin: auto;
   }
 }
 
