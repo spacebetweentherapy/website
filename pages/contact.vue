@@ -13,10 +13,10 @@
       <section class="content contact-form">
         <div class="content-main">
           <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://crawlem.wufoo.com/forms/space-between-therapy/">
-            <label>Name <input type="text" name="Field3"></label>
-            <label>Email <input type="email" name="Field4"></label>
-            <label>Phone <input type="tel" name="Field6"></label>
-            <label>Your message <textarea name="Field7" rows="6" /></label>
+            <label>Name <input type="text" name="Field3" required></label>
+            <label>Email <input type="email" name="Field4" required></label>
+            <label>Phone <input type="tel" name="Field6" required></label>
+            <label>Your message <textarea name="Field7" rows="6" required /></label>
 
             <input type="hidden" id="idstamp" name="idstamp" value="zJOOG5E6T+Sqm6owgEeXsA==">
 
