@@ -3,7 +3,7 @@
     <div class="quote-banner">
       <div class="quote-overlay">
         <p>
-          {{ cmsAsset.fields.text}}
+          <span class="quote-mark">&ldquo;</span>{{ cmsAsset.fields.text}}<span class="quote-mark">&rdquo;</span>
         </p>
         <p class="author">
           {{ cmsAsset.fields.author }}
@@ -65,15 +65,19 @@ export default Vue.extend({
       margin: 1em 6em;
       font-size: 2em;
       transform: translateY(5vw);
-      letter-spacing: 0.45rem;
+      // letter-spacing: 0.45rem;
       color: $bg-colour-light;
       font-family: $font-serif;
-      font-weight: 500;
+      font-weight: $font-weight-heavy;
 
       &.author {
         font-family: $font-sans;
         font-size: 1em;
       }
+    }
+
+    .quote-mark {
+      color: $contrast-colour-dark;
     }
   }
 
