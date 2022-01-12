@@ -16,8 +16,7 @@ $max-width: 1000px;
 $font-sans: 'Open Sans', sans-serif;
 $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 $font-weight-normal: 300;
-$font-weight-medium: 400;
-$font-weight-heavy: 500;
+$font-weight-heavy: 600;
 
 
 // FUNCTIONS
@@ -82,7 +81,7 @@ strong {
 		h1, h2, h3 {
 			text-transform: uppercase;
 			font-family: $font-serif;
-			font-weight: $font-weight-medium !important;
+			font-weight: $font-weight-heavy;
 		}
 	}
 
