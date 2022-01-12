@@ -208,6 +208,8 @@ export default Vue.extend({
 }
 
 .content-wrapper {
+  padding: 0 8em;
+
   p:nth-child(1) {
     margin-top: 0;
   }
@@ -234,6 +236,10 @@ export default Vue.extend({
       flex-wrap: wrap;
       justify-content: center;
     }
+  }
+
+  .content-wrapper {
+    padding: 0;
   }
 }
 </style>
