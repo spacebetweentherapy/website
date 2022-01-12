@@ -136,7 +136,7 @@ export default Vue.extend({
 
 @include small-screens {
   .page-footer {
-    display: block;
+    // display: block;
 
     img {
       margin: 1em 0;
