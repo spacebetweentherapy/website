@@ -215,6 +215,22 @@ export default Vue.extend({
   }
 }
 
+// TODO Hardcode logo image on homepage Hero Banner
+.page-home {
+  .hero-overlay {
+    p:after {
+      box-sizing: border-box;
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      width: 300px;
+      margin-left: -75px;
+      text-align: center;
+      content: url('../static/images/logo-venn.svg');
+    }
+  }
+}
+
 @include small-screens {
   .content-main {
     flex-wrap: wrap;

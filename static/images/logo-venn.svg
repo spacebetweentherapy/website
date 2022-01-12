@@ -13,7 +13,7 @@
            d="m 1753.94,1671.9 c 45.2367,35.202 60.2626,102.6017 34.2475,153.6788 -8.5583,14.8044 -21.4503,38.8905 -36.9039,40.7533 -45.2559,-37.1521 -57.8299,-107.0412 -28.3623,-157.6351 7.8691,-14.0936 18.4653,-26.6514 31.0187,-36.797 z"
            id="path71" />
       </g>
-      <g transform="translate(271.412,-24.9476)" id="g77" stroke="#000" class="logo-circle">
+      <g transform="translate(271.412,-24.9476)" id="g77" stroke="#fff" class="logo-circle">
         <circle
            cx="1404.14"
            cy="1433.66"
@@ -21,7 +21,7 @@
            style="fill:none;stroke-width:4.17px"
            id="circle75" />
       </g>
-      <g transform="translate(430.189,-24.9476)" id="g81" stroke="#000" class="logo-circle">
+      <g transform="translate(430.189,-24.9476)" id="g81" stroke="#fff" class="logo-circle">
         <circle
            cx="1404.14"
            cy="1433.66"
