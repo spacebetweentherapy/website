@@ -26,19 +26,19 @@
         <div v-if="$data.slug === 'index'">
           <ResponsiveImage asset-id="4QKYgZ75hpQq30yOokKwVj" />
         </div>
-        <div v-html="section1Content" />
+        <div class="content-wrapper" v-html="section1Content" />
       </div>
     </section>
 
     <section v-if="section2Content" class="content">
       <div class="content-main">
-        <div v-html="section2Content" />
+        <div class="content-wrapper" v-html="section2Content" />
       </div>
     </section>
 
     <section v-if="section3Content" class="content">
       <div class="content-main">
-        <div v-html="section3Content" />
+        <div class="content-wrapper" v-html="section3Content" />
       </div>
     </section>
 
@@ -203,6 +203,12 @@ export default Vue.extend({
         color: $bg-colour-light;
       }
     }
+  }
+}
+
+.content-wrapper {
+  p:nth-child(1) {
+    margin-top: 0;
   }
 }
 
