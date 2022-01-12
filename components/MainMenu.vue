@@ -4,7 +4,7 @@
 
     <div class="main-menu-logo">
       <a href="/">
-        <img src="/images/banner_logo.png" width="321" height="46" alt="Logo">
+        <img src="/images/banner_logo.png" width="321" height="37" alt="Logo">
       </a>
     </div>
 
