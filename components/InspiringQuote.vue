@@ -58,19 +58,23 @@ export default Vue.extend({
   height: 100%;
 
   .quote-overlay {
-    margin: auto;
     position: absolute;
-    top: 35%;
-    text-align: center;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    margin: auto;
     width: 100%;
+    max-width: $max-width;
+    text-align: center;
 
     p {
-      margin: 0 6em;
+      margin: 1em 6em;
       font-size: 2em;
-      // transform: translateY(5vw);
+      transform: translateY(-5vh);
       color: $bg-colour-light;
       font-family: $font-serif;
       font-weight: $font-weight-heavy;
+      line-height: 1.5em;
 
       &.author {
         font-family: $font-sans;
@@ -100,7 +104,7 @@ export default Vue.extend({
   .quote-banner {
     .quote-overlay {
       p {
-        margin: .5em;
+        margin: 1em;
         font-size: 1.4em;
       }
     }
