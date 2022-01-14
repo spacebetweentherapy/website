@@ -49,7 +49,7 @@ export default Vue.extend({
   position: relative;
   width: 100%;
   height: 50vh;
-  min-height: 350px;
+  min-height: 500px;
 }
 
 .quote-banner {
@@ -68,7 +68,7 @@ export default Vue.extend({
     text-align: center;
 
     p {
-      margin: 1em 6em;
+      margin: 1em 4em;
       font-size: 2em;
       transform: translateY(-5vh);
       color: $bg-colour-light;
@@ -105,7 +105,7 @@ export default Vue.extend({
     .quote-overlay {
       p {
         margin: 1em;
-        font-size: 1.4em;
+        font-size: 1.3em;
       }
     }
   }
