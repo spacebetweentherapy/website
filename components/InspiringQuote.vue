@@ -58,10 +58,12 @@ export default Vue.extend({
   height: 100%;
 
   .quote-overlay {
+    margin: auto;
     position: absolute;
-    top: 30%;
+    top: 35%;
     text-align: center;
     width: 100%;
+    // max-width: $max-width;
 
     p {
       margin: 1em 6em;
@@ -99,7 +101,7 @@ export default Vue.extend({
   .quote-banner {
     .quote-overlay {
       p {
-        margin: 2.7em .5em;
+        margin: .5em;
         font-size: 1.4em;
       }
     }
