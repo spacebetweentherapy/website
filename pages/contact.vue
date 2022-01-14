@@ -12,13 +12,13 @@
 
       <section class="content contact-form">
         <div class="content-main">
-          <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://crawlem.wufoo.com/forms/space-between-therapy/">
-            <label>Name <input type="text" name="Field3" required></label>
-            <label>Email <input type="email" name="Field4" required></label>
-            <label>Phone <input type="tel" name="Field6" required></label>
-            <label>Your message <textarea name="Field7" rows="6" required /></label>
+          <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
+            <label>Name <input type="text" name="q4_typeA" required></label>
+            <label>Email <input type="email" name="q5_email" required></label>
+            <label>Phone <input type="tel" name="q8_typeA8" required></label>
+            <label>Your message <textarea name="q7_typeA7" rows="6" required /></label>
 
-            <input id="idstamp" type="hidden" name="idstamp" value="zJOOG5E6T+Sqm6owgEeXsA==">
+            <input type="hidden" name="formID" value="220134543182042" />
 
             <div class="button-container">
               <button type="submit">
