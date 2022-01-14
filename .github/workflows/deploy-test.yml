@@ -1,32 +1,20 @@
 # 
-# GitHub Action to build and deploy the static site to the production URL
-# https://spacebetweentherapy.com/
+# GitHub Action to build and deploy the static site to a temporary test URL
 # 
-name: Deploy PRODUCTION
+name: Deploy STAGING
 'on':
-  # Trigger on code pushed to the staging branch
-  push:
-    branches:
-      - master
-
-  # Trigger on Contentful webhook
-  repository_dispatch:
-    types:
-      - ctf-master-publish
+  # Trigger on code pull request
+  pull_request:
 
   # Allow manual trigger from the Actions tab on github.com
   workflow_dispatch:
-
-concurrency: 
-  group: production
-  cancel-in-progress: true
   
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     env:
       SITE_TITLE: Space Between Therapy
-    environment: staging
+    environment: dev
 
     steps:
       - name: Checkout code
