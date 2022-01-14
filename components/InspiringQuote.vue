@@ -63,12 +63,11 @@ export default Vue.extend({
     top: 35%;
     text-align: center;
     width: 100%;
-    // max-width: $max-width;
 
     p {
-      margin: 1em 6em;
+      margin: 0 6em;
       font-size: 2em;
-      transform: translateY(5vw);
+      // transform: translateY(5vw);
       color: $bg-colour-light;
       font-family: $font-serif;
       font-weight: $font-weight-heavy;
