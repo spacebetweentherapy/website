@@ -77,6 +77,7 @@ export default Vue.extend({
       line-height: 1.5em;
 
       &.author {
+        margin: 0;
         font-family: $font-sans;
         font-size: 1em;
       }
