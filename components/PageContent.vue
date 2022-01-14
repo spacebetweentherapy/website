@@ -174,6 +174,11 @@ export default Vue.extend({
     }
   }
 
+  img {
+    border: 3px solid $bg-colour-light;
+    border-radius: 5px;
+  }
+
   .button-container {
     display: inline-block;
     position: relative;

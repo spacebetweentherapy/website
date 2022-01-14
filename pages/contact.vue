@@ -82,6 +82,10 @@ export default Vue.extend({
       }
     }
   }
+
+  img {
+    border: 0;
+  }
 }
 
 .contact-form {
