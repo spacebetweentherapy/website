@@ -184,7 +184,7 @@ export default Vue.extend({
     button {
       display: inline-block;
       box-sizing: border-box;
-      padding: 40% 1.2em;
+      padding: 35% 1.2em;
       border: 1px solid $contrast-colour-dark;
       border-radius: 50%;
       text-transform: lowercase;
