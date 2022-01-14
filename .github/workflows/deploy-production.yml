@@ -1,0 +1,53 @@
+# 
+# GitHub Action to build and deploy the static site to the production URL
+# https://spacebetweentherapy.com/
+# 
+name: Deploy STAGING
+'on':
+  # Trigger on code pushed to the staging branch
+  push:
+    branches:
+      - master
+
+  # Trigger on Contentful webhook
+  repository_dispatch:
+    types:
+      - ctf-master-publish
+
+  # Allow manual trigger from the Actions tab on github.com
+  workflow_dispatch:
+
+concurrency: 
+  group: production
+  cancel-in-progress: true
+  
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    env:
+      SITE_TITLE: Space Between Therapy
+    environment: staging
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate static website
+        run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SBT }}'
+          projectId: spacebetweentherapy-d8430
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
