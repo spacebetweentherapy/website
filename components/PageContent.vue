@@ -150,13 +150,7 @@ export default Vue.extend({
   }
 
   ul {
-    // column-count: 2;
-    margin: 2em 0;
-    padding: 0;
-
     li {
-      list-style: none;
-
       &:first-child {
         p {
           margin-top: 0;
