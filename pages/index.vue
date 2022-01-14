@@ -11,8 +11,10 @@
           </h1>
           <ol class="posts">
             <li v-for="post in posts" :key="post.sys.id">
-              <h2>{{ post.fields.title }}</h2>
-              <p>{{ post.fields.intro }}</p>
+              <NuxtLink :to="'/blog/' + post.fields.slug">
+                <h2>{{ post.fields.title }}</h2>
+                <p>{{ post.fields.intro }}</p>
+              </NuxtLink>
             </li>
           </ol>
           <ResponsiveImage :asset-id="blogImageId" />
@@ -95,6 +97,11 @@ export default Vue.extend({
 
         &:nth-child(3) {
           border-bottom: 0;
+        }
+
+        a, a:visited {
+          text-decoration: none;
+          color: $fg-colour;
         }
 
         h2 {
