@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="container-post">
+    <div class="container-page">
       <section class="intro">
         <HeroBanner
           v-if="$data.page.fields.hero"
