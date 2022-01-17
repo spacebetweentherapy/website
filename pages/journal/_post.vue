@@ -47,7 +47,7 @@ export default Vue.extend({
   // Load content from CMS
   async fetch () {
     // Parse the "slug" URI of this page
-    const slug = this.$route.path.replace('.html', '').replace('/', '').replace('blog/', '') || 'index'
+    const slug = this.$route.path.replace('.html', '').replace('/', '').replace('journal/', '') || 'index'
     this.$data.slug = slug
 
     // Retrieve the CMS page which matches this slug
