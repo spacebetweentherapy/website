@@ -1,10 +1,10 @@
 <template>
   <div class="page">
-    <PageContent>
+    <CmsPage>
       <!-- A featured post (i.e. the most recent) -->
       <section class="higlighted-post">
         <div class="content-main">
-          <ResponsiveImage :asset-id="mainPost.fields.image.sys.id" />
+          <CmsImage :asset-id="mainPost.fields.image.sys.id" />
           <h2>{{ mainPost.fields.title }}</h2>
           <p>{{ mainPost.fields.intro }}</p>
           <p class="button-container">
@@ -29,7 +29,7 @@
           </BlogPostList>
         </div>
       </section>
-    </PageContent>
+    </CmsPage>
   </div>
 </template>
 
@@ -85,7 +85,7 @@ export default Vue.extend({
       display: table;
       margin: auto;
       padding: 1em 0;
-      text-transform: none;
+      text-transform: none !important;
     }
   }
 }
@@ -98,7 +98,7 @@ export default Vue.extend({
       display: table;
       margin: auto;
       padding: 1em 0;
-      text-transform: none;
+      text-transform: none !important;
     }
   }
 }

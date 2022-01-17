@@ -1,30 +1,20 @@
 <template>
   <div class="page">
     <div class="container-page">
-      <section class="intro">
-        <HeroBanner
-          v-if="$data.page.fields.hero"
-          :asset-id="$data.page.fields.hero.fields.image.sys.id"
-          :title="$data.page.fields.hero.fields.heading"
-          :sub-text="$data.page.fields.hero.fields.shortText"
-        />
-        <div>
-          <h1 v-if="$data.slug !== 'index'">
-            {{ $data.page.fields.title }}
-          </h1>
-          <div v-if="$data.page.fields.intro" class="content-intro">
-            <div v-html="$md.render($data.page.fields.intro)" />
-            <ResponsiveImage
-              v-if="$data.page.fields.introImage"
-              :asset-id="$data.page.fields.introImage.sys.id"
-            />
-          </div>
-          <hr>
-        </div>
-      </section>
+      <PageIntro :title="$data.page.fields.title" :intro-text="$data.page.fields.intro">
+        <template #hero>
+          <CmsHero
+            v-if="$data.page.fields.hero"
+            :asset-id="$data.page.fields.hero.fields.image.sys.id"
+            :title="$data.page.fields.hero.fields.heading"
+            :sub-text="$data.page.fields.hero.fields.shortText"
+          />
+        </template>
+      </PageIntro>
 
       <section class="content">
         <div class="content-main">
+          <!-- eslint-disable -->
           <div v-html="content" />
         </div>
       </section>

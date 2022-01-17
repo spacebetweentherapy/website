@@ -1,11 +1,11 @@
 <template>
   <div class="page">
-    <PageContent>
+    <CmsPage>
       <section class="content contact-details">
         <div class="content-main contact-options">
           <ul>
-            <li><ResponsiveImage asset-id="62rXvksqqpbAiheFLBYaZu" /> <span><a :href="'mailto:' + email">{{ email }}</a></span></li>
-            <li><ResponsiveImage asset-id="75RbcrOfwy8PjWst9Hf5yc" /> <span>{{ phone }}</span></li>
+            <li><CmsImage asset-id="62rXvksqqpbAiheFLBYaZu" /> <span><a :href="'mailto:' + email">{{ email }}</a></span></li>
+            <li><CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" /> <span>{{ phone }}</span></li>
           </ul>
         </div>
       </section>
@@ -28,7 +28,7 @@
           </form>
         </div>
       </section>
-    </PageContent>
+    </CmsPage>
   </div>
 </template>
 

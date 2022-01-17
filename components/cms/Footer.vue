@@ -1,6 +1,6 @@
 <template>
   <footer class="page-footer">
-    <ResponsiveImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" />
+    <CmsImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" />
 
     <nav class="footer-menu">
       <ul>

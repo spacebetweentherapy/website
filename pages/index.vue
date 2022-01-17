@@ -1,6 +1,6 @@
 <template>
   <div class="page page-home">
-    <PageContent>
+    <CmsPage>
       <section class="recent-blog-posts">
         <BlogPostList :posts="posts">
           <template #prepend>
@@ -11,11 +11,11 @@
             </h1>
           </template>
           <template #append>
-            <ResponsiveImage :asset-id="blogImageId" />
+            <CmsImage :asset-id="blogImageId" />
           </template>
         </BlogPostList>
       </section>
-    </PageContent>
+    </CmsPage>
   </div>
 </template>
 

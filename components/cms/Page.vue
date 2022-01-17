@@ -1,43 +1,43 @@
 <template>
   <div class="container-page">
-    <section class="intro">
-      <HeroBanner
-        v-if="$data.page.fields.hero"
-        :asset-id="$data.page.fields.hero.fields.image.sys.id"
-        :title="$data.page.fields.hero.fields.heading"
-        :sub-text="$data.page.fields.hero.fields.shortText"
-      />
-      <div>
-        <h1 v-if="$data.slug !== 'index'">{{ $data.page.fields.title }}</h1>
-        <div v-if="$data.page.fields.intro" class="content-intro">
-          <div v-html="$md.render($data.page.fields.intro)" />
-          <ResponsiveImage
-            v-if="$data.page.fields.introImage"
-            :asset-id="$data.page.fields.introImage.sys.id"
-          />
-        </div>
-        <hr>
-      </div>
-    </section>
+    <PageIntro :title="title" :intro-text="$data.page.fields.intro">
+      <template #hero>
+        <CmsHero
+          v-if="$data.page.fields.hero"
+          :asset-id="$data.page.fields.hero.fields.image.sys.id"
+          :title="$data.page.fields.hero.fields.heading"
+          :sub-text="$data.page.fields.hero.fields.shortText"
+        />
+      </template>
+      <template #introImage>
+        <CmsImage
+          v-if="$data.page.fields.introImage"
+          :asset-id="$data.page.fields.introImage.sys.id"
+        />
+      </template>
+    </PageIntro>
 
     <section v-if="section1Content" class="content">
       <div class="content-main">
         <!-- TODO Hard code our home page image -->
         <div v-if="$data.slug === 'index'">
-          <ResponsiveImage asset-id="4QKYgZ75hpQq30yOokKwVj" />
+          <CmsImage asset-id="4QKYgZ75hpQq30yOokKwVj" />
         </div>
+        <!-- eslint-disable -->
         <div class="content-wrapper" :style="($data.slug === 'index' ? 'padding:0' : '')" v-html="section1Content" />
       </div>
     </section>
 
     <section v-if="section2Content" class="content">
       <div class="content-main">
+        <!-- eslint-disable -->
         <div class="content-wrapper" v-html="section2Content" />
       </div>
     </section>
 
     <section v-if="section3Content" class="content">
       <div class="content-main">
+        <!-- eslint-disable -->
         <div class="content-wrapper" v-html="section3Content" />
       </div>
     </section>
@@ -45,7 +45,7 @@
     <!-- Allow additional markup to be passed to this component -->
     <slot />
 
-    <InspiringQuote v-if="$data.page.fields.quote" :quote-id="$data.page.fields.quote.sys.id" />
+    <CmsQuote v-if="$data.page.fields.quote" :quote-id="$data.page.fields.quote.sys.id" />
   </div>
 </template>
 
@@ -101,38 +101,19 @@ export default Vue.extend({
         }
       ]
     }
+  },
+
+  computed: {
+    title () {
+      const slug = this.$data.slug
+      const pageTitle = this.$data.page.fields.title
+      return (slug !== 'index') ? pageTitle : ''
+    }
   }
 })
 </script>
 
 <style lang="scss">
-.intro {
-  font-weight: $font-weight-heavy;
-
-  h1 {
-    display: block;
-    max-width: $max-width;
-    margin: 1em auto -1.25em auto;
-    font-size: 2.5em;
-  }
-
-  hr {
-    margin: 0;
-    border: 0;
-    border-top: 1px solid $contrast-colour-dark;
-  }
-
-  .content-intro {
-    padding: 2em 6em;
-    display: flex;
-    column-gap: 4em;
-    align-items: center;
-    flex-wrap: nowrap;
-    max-width: $max-width;
-    margin: auto;
-  }
-}
-
 .content-main {
   margin: auto;
   padding: 2em 4em;
@@ -214,22 +195,6 @@ export default Vue.extend({
   }
 }
 
-// TODO Hardcode logo image on homepage Hero Banner
-.page-home {
-  .hero-overlay {
-    p:after {
-      box-sizing: border-box;
-      position: absolute;
-      top: 2em;
-      left: 50%;
-      width: 300px;
-      margin-left: -75px;
-      text-align: center;
-      content: url('../static/images/logo-venn.svg');
-    }
-  }
-}
-
 @include small-screens {
   .content-main {
     flex-wrap: wrap;
@@ -238,18 +203,6 @@ export default Vue.extend({
     img {
       max-width: 100%;
       height: auto;
-    }
-  }
-
-  .intro {
-    h1 {
-      margin: .5em 0 -1em .8em;
-    }
-
-    .content-intro {
-      padding: 1em 2em;
-      flex-wrap: wrap;
-      justify-content: center;
     }
   }
 

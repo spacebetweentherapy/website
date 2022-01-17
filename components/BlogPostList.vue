@@ -58,9 +58,9 @@ export default Vue.extend({
         color: $fg-colour;
 
         h2 {
-          font-family: $font-sans;
-          text-transform: none;
-          color: $fg-colour;
+          font-family: $font-sans !important;
+          text-transform: none !important;
+          color: $fg-colour !important;
         }
 
         p {

@@ -87,11 +87,14 @@ a {
 	}
 
 	section {
-		h1, h2, h3 {
-			text-align: left;
-			text-transform: uppercase;
-			font-family: $font-serif;
-			font-weight: $font-weight-heavy;
+		.content-main {
+			h1, h2, h3 {
+				text-align: left;
+				text-transform: uppercase;
+				font-family: $font-serif;
+				font-weight: $font-weight-heavy;
+				line-height: 1.1em;
+			}
 		}
 	}
 
@@ -106,16 +109,20 @@ a {
 			}
 		}
 
-		h1, h2, h3 {
-			color: $bg-colour-light;
+		.content-main {
+			h1, h2, h3 {
+				color: $bg-colour-light;
+			}
 		}
 	}
 
 	section:nth-child(even), section:nth-child(1) {
 		background-color: $bg-colour;
 
-		h1, h2, h3 {
-			color: $contrast-colour-dark;
+		.content-main {
+			h1, h2, h3 {
+				color: $contrast-colour-dark;
+			}
 		}
 	}
 }

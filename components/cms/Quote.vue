@@ -11,7 +11,7 @@
           {{ cmsAsset.fields.author }}
         </p>
       </div>
-      <ResponsiveImage :asset-id="cmsAsset.fields.image.sys.id" class-name="quote-image" />
+      <CmsImage :asset-id="cmsAsset.fields.image.sys.id" class-name="quote-image" />
     </div>
   </div>
 </template>
