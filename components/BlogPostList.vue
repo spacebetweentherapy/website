@@ -3,7 +3,7 @@
     <slot name="prepend" />
     <ol class="posts">
       <li v-for="post in posts" :key="post.sys.id">
-        <NuxtLink :to="'/blog/' + post.fields.slug">
+        <NuxtLink :to="'/journal/' + post.fields.slug">
           <h2>{{ post.fields.title }}</h2>
           <p>{{ post.fields.intro }}</p>
         </NuxtLink>

@@ -8,7 +8,7 @@
           <h2>{{ mainPost.fields.title }}</h2>
           <p>{{ mainPost.fields.intro }}</p>
           <p class="button-container">
-            <NuxtLink :to="'/blog/' + mainPost.fields.slug" class="button">
+            <NuxtLink :to="'/journal/' + mainPost.fields.slug" class="button">
               read
             </NuxtLink>
           </p>

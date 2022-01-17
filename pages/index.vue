@@ -5,7 +5,7 @@
         <BlogPostList :posts="posts">
           <template #prepend>
             <h1>
-              <NuxtLink to="/blog">
+              <NuxtLink to="/journal">
                 Blog
               </NuxtLink>
             </h1>

@@ -157,7 +157,7 @@ export default {
       ]).then(([pages, posts]) => {
         return [
           ...pages.items.map(entry => '/' + entry.fields.slug),
-          ...posts.items.map(entry => '/blog/' + entry.fields.slug)
+          ...posts.items.map(entry => '/journal/' + entry.fields.slug)
         ];
       });
     }
