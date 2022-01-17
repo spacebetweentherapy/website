@@ -68,6 +68,7 @@ export default Vue.extend({
       letter-spacing: 0.45rem;
       font-weight: 700;
       color: $fg-colour !important;
+      text-align: center;
       @include logo-typography;
 
       .first-word {
