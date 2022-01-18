@@ -1,10 +1,10 @@
 <template>
-  <footer class="page-footer">
-    <CmsImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" />
+  <footer class="footer">
+    <CmsImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" class-name="footer__image" />
 
-    <nav class="footer-menu">
-      <ul>
-        <li v-for="item in items" :key="item.id">
+    <nav class="footer__nav">
+      <ul class="footer__menu-list">
+        <li v-for="item in items" :key="item.id" class="footer__menu-item">
           <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
             {{ item.title }}
           </NuxtLink>
@@ -12,7 +12,7 @@
       </ul>
     </nav>
 
-    <div class="copyright">
+    <div class="footer__copyright">
       &copy; {{ $config.SITE_TITLE }} {{ new Date().getFullYear() }}
     </div>
   </footer>
@@ -83,8 +83,8 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.page-footer {
+<style lang="scss" scoped>
+.footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -93,61 +93,55 @@ export default Vue.extend({
   row-gap: 2em;
   color: $fg-colour-light;
   font-size: .8em;
+}
 
-  picture {
-    flex-basis: 50%;
+.footer__image {
+  flex-basis: 50%;
 
-    &:last-of-type {
-      align-self: baseline;
-      text-align: right;
-    }
-  }
-
-  .footer-menu {
-    overflow: hidden;
-    position: relative;
-
-    ul {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 0 0 -1px;
-      padding: 0;
-      list-style: none;
-
-      li {
-        flex-grow: 1;
-        flex-basis: auto;
-        margin: 0;
-        padding: 0 .7em;
-        border-left: 1px solid #ccc;
-
-        a {
-          color: $fg-colour-light;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-
-  .copyright {
+  &:last-of-type {
     align-self: baseline;
+    text-align: right;
   }
 }
 
+.footer__nav {
+  overflow: hidden;
+  position: relative;
+}
+
+.footer__menu-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0 -1px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__menu-item {
+  flex-grow: 1;
+  flex-basis: auto;
+  margin: 0;
+  padding: 0 .7em;
+  border-left: 1px solid #ccc;
+
+  a {
+    color: $fg-colour-light;
+    text-decoration: none;
+  }
+}
+
+.footer__copyright {
+  align-self: baseline;
+}
+
 @include small-screens {
-  .page-footer {
-    // display: block;
+  .footer__image {
+    margin: 1em 0;
+  }
 
-    img {
-      margin: 1em 0;
-    }
-
-    .footer-menu {
-      ul {
-        display: block;
-        margin: 1em 0;
-      }
-    }
+  .footer__menu-list  {
+    display: block;
+    margin: 1em 0;
   }
 }
 </style>
