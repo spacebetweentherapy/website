@@ -71,7 +71,8 @@ export default Vue.extend({
 }
 
 .hero__title {
-  margin-bottom: 0;
+  margin-bottom: -.2em;
+  padding-top: .6em;
   font-size: 5vw;
   transform: translateY(5vw);
   letter-spacing: 0.45rem;
@@ -103,10 +104,10 @@ export default Vue.extend({
       position: absolute;
       top: 2em;
       left: 50%;
-      width: 300px;
-      margin-left: -75px;
+      width: 250px;
+      margin-left: -125px;
       text-align: center;
-      content: url('../../static/images/logo-venn.svg');
+      content: url('../../static/images/circles.png');
     }
   }
 }
