@@ -60,6 +60,11 @@ $font-weight-heavy: 600;
 	}
 }
 
+@mixin content-image {
+	border: 3px solid $bg-colour-light;
+  border-radius: 5px;
+}
+
 
 // GLOBAL STYLES
 // =================================================

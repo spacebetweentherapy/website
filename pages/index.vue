@@ -58,10 +58,10 @@ export default Vue.extend({
   padding-bottom: 5em;
 
   h1 {
-    margin-top: 1.5em;
+    margin-top: 1.2em;
     margin-bottom: 0;
     flex: 0 0 100%;
-    font-size: 2.7em;
+    font-size: 3em;
     font-weight: $font-weight-heavy;
 
     a {
@@ -74,6 +74,10 @@ export default Vue.extend({
       text-transform: uppercase;
     }
   }
+}
+
+.recent-blog-post-image img {
+  @include content-image;
 }
 
 @include medium-screens {
