@@ -86,6 +86,12 @@ export default Vue.extend({
   margin-top: -2em;
   margin-left: 2em;
 }
+
+@include small-screens {
+  .post-item__image {
+    margin-top: 0;
+  }
+}
 </style>
 
 <!-- Not scoped or this doesn't work -->
