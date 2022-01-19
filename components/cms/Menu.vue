@@ -1,19 +1,19 @@
 <template>
-  <nav class="main-menu">
-    <h2>Main menu</h2>
+  <nav class="menu">
+    <h2 class="menu__title">Main menu</h2>
 
-    <div class="main-menu-logo">
+    <div class="menu__logo">
       <a href="/">
-        <img src="/images/banner_logo.png" width="321" height="37" alt="Logo">
+        <img src="/images/banner_logo.png" width="321" height="37" alt="Logo" class="menu__logo-image">
       </a>
     </div>
 
     <!-- Hamburger for small screens -->
-    <label for="hamburger">&#9776;</label>
+    <label for="hamburger" class="menu__hamburger">&#9776;</label>
     <input id="hamburger" type="checkbox">
 
-    <ul class="menu-items">
-      <li v-for="item in items" :key="item.id">
+    <ul class="menu__list">
+      <li v-for="item in items" :key="item.id" class="menu__item">
         <!-- Make sure the homepage uses index.vue not _page.vue -->
         <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
           {{ item.title }}
@@ -71,8 +71,8 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.main-menu {
+<style lang="scss" scoped>
+.menu {
   display: block;
   position: sticky;
   top: 0;
@@ -83,95 +83,95 @@ export default Vue.extend({
   color: $bg-colour;
   box-sizing: border-box;
   padding-right: 2em;
+}
 
-  .main-menu-logo {
-    display: none;
-  }
+.menu__title {
+  display: none;
+}
 
-  label, #hamburger {
-    display: none;
-  }
+.menu__logo {
+  display: none;
+}
 
-  h2 {
-    display: none;
-  }
+.menu__hamburger, #hamburger {
+  display: none;
+}
 
-  ul {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-end;
-    column-gap: .7em;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+.menu__list {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: .7em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-    li {
-      font-size: 1.2em;
-      text-transform: uppercase;
+.menu__item {
+  font-size: 1.2em;
+  text-transform: uppercase;
 
-      a {
-        display: block;
-        padding: .5em;
-        color: $bg-colour;
-        text-decoration: none;
+  a, a:visited {
+    display: block;
+    padding: .5em;
+    color: $bg-colour;
+    text-decoration: none;
 
-        &.current {
-          text-decoration: underline;
-          text-decoration-color: $contrast-colour-dark;
-          text-underline-offset: .2em;
-        }
-      }
+    &.current {
+      text-decoration: underline;
+      text-decoration-color: $contrast-colour-dark;
+      text-underline-offset: .2em;
     }
   }
 }
 
 @include small-screens {
-  .main-menu {
+  .menu {
     display: flex;
     justify-content: space-between;
     padding-right: 0;
     height: 46px;
+  }
 
-    .main-menu-logo {
-      display: block;
+  .menu__logo {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 46px;
+
+    a {
       margin: 0;
       padding: 0;
       border: 0;
-      height: 46px;
-
-      a {
-        margin: 0;
-        padding: 0;
-        border: 0;
-
-        img {
-          margin: 0;
-          padding: .25em;
-          border: 0;
-        }
-      }
     }
+  }
 
-    .menu-items {
-      display: none;
-      position: absolute;
-      top: 2.5em;
-      right: 0;
-    }
+  .menu__logo-image {
+    margin: 0;
+    padding: .25em;
+    border: 0;
+  }
 
-    label {
-      display: inline-block;
-      background: $contrast-colour-dark;
-      font-size: 1.2em;
-      padding: 10px;
-    }
+  .menu__list {
+    display: none;
+    position: absolute;
+    top: 2.5em;
+    right: 0;
+  }
 
-    input:checked ~ .menu-items {
-      display: block;
+  .menu__hamburger {
+    display: inline-block;
+    background: $contrast-colour-dark;
+    font-size: 1.2em;
+    padding: 10px;
+  }
 
-      a {
-        background-color: rgba(175, 132, 77, 0.8);
-      }
+  #hamburger:checked ~ .menu__list {
+    display: block;
+
+    a {
+      background-color: rgba(175, 132, 77, 0.8);
     }
   }
 }

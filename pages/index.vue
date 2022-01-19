@@ -11,7 +11,7 @@
             </h1>
           </template>
           <template #append>
-            <CmsImage :asset-id="blogImageId" />
+            <CmsImage :asset-id="blogImageId" class-name="recent-blog-post-image" />
           </template>
         </BlogPostList>
       </section>
@@ -73,6 +73,11 @@ export default Vue.extend({
 @include small-screens {
   .recent-blog-posts {
     padding: 1em 2em;
+  }
+
+  .recent-blog-post-image {
+    width: 100%;
+    height: auto;
   }
 }
 </style>

@@ -3,8 +3,8 @@
     <CmsImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" class-name="footer__image" />
 
     <nav class="footer__nav">
-      <ul class="footer__menu-list">
-        <li v-for="item in items" :key="item.id" class="footer__menu-item">
+      <ul class="footer__list">
+        <li v-for="item in items" :key="item.id" class="footer__item">
           <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
             {{ item.title }}
           </NuxtLink>
@@ -109,7 +109,7 @@ export default Vue.extend({
   position: relative;
 }
 
-.footer__menu-list {
+.footer__list {
   display: flex;
   justify-content: space-between;
   margin: 0 0 0 -1px;
@@ -117,7 +117,7 @@ export default Vue.extend({
   list-style: none;
 }
 
-.footer__menu-item {
+.footer__item {
   flex-grow: 1;
   flex-basis: auto;
   margin: 0;
@@ -139,7 +139,7 @@ export default Vue.extend({
     margin: 1em 0;
   }
 
-  .footer__menu-list  {
+  .footer__list  {
     display: block;
     margin: 1em 0;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <CmsNav />
+    <CmsMenu />
     <Nuxt />
     <CmsFooter />
   </div>
