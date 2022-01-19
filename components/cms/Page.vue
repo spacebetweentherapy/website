@@ -116,7 +116,7 @@ export default Vue.extend({
 <style lang="scss">
 .content-main {
   margin: auto;
-  padding: 2em 4em;
+  padding: 4em;
   max-width: $max-width;
   display: flex;
   flex-wrap: nowrap;

@@ -54,6 +54,12 @@ $font-weight-heavy: 600;
 	}
 }
 
+@mixin medium-screens {
+	@media screen and (max-width: $max-width) {
+		@content;
+	}
+}
+
 
 // GLOBAL STYLES
 // =================================================

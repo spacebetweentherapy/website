@@ -55,14 +55,19 @@ export default Vue.extend({
 
 <style lang="scss">
 .recent-blog-posts {
+  padding-bottom: 5em;
+
   h1 {
+    margin-top: 1.5em;
+    margin-bottom: 0;
     flex: 0 0 100%;
-    font-size: 2.5em;
+    font-size: 2.7em;
+    font-weight: $font-weight-heavy;
 
     a {
       font-family: $font-serif;
       color: $bg-colour-light;
-      text-decoration: underline;
+      text-decoration: none;
       text-decoration-color: $contrast-colour-dark;
       text-underline-offset: .2em;
       font-weight: normal;
@@ -71,7 +76,7 @@ export default Vue.extend({
   }
 }
 
-@include small-screens {
+@include medium-screens {
   .recent-blog-posts {
     padding: 1em 2em;
   }

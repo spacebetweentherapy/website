@@ -1,6 +1,6 @@
 <template>
   <li class="post-item">
-    <NuxtLink :to="'/journal/' + slug" class="post-item__link">
+    <NuxtLink :to="slug" class="post-item__link">
       <h2 class="post-item__title">
         {{ title }}
       </h2>
@@ -38,7 +38,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .post-item {
   padding: 1em 0;
-  border-bottom: 1px dashed $bg-colour-light;
+  border-bottom: 5px dotted $bg-colour-light;
 }
 
 .post-item__link, .post-item__link:visited {
@@ -51,6 +51,7 @@ export default Vue.extend({
   text-transform: none !important;
   color: $fg-colour !important;
   text-align: left;
+  font-size: 1.2em;
 }
 
 p.post-item__text {
@@ -63,10 +64,6 @@ p.post-item__text {
 .post-item {
   &:nth-child(1) {
     padding-top: 0;
-  }
-
-  &:nth-last-child(1) {
-    border-bottom: 0;
   }
 }
 </style>

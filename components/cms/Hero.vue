@@ -112,7 +112,7 @@ export default Vue.extend({
   }
 }
 
-@media screen and (min-width: 1200px) {
+@include medium-screens {
   .hero__title {
     font-size: 4em;
   }

@@ -38,7 +38,7 @@ export default Vue.extend({
   flex: 1;
 }
 
-@include small-screens {
+@include medium-screens {
  .posts {
     flex-wrap: wrap;
   }
