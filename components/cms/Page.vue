@@ -194,19 +194,23 @@ export default Vue.extend({
   }
 }
 
-@include small-screens {
+@include medium-screens {
   .content-main {
     flex-wrap: wrap;
     padding: 1em 2em;
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
   }
 
   .content-wrapper {
     padding: 0;
+  }
+}
+
+@include small-screens {
+  .content-main {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 </style>

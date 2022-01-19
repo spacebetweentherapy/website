@@ -41,6 +41,7 @@ export default Vue.extend({
 .intro__title {
   display: block;
   max-width: $max-width;
+  padding: 0 2.4em;
   margin: 1em auto -1em auto;
   font-size: 2.5em;
   text-align: left;
@@ -72,8 +73,12 @@ export default Vue.extend({
 }
 
 @include small-screens {
+  .intro__title {
+    padding: 0 .8em;
+  }
+
   .intro__text {
-    padding: 1em 2em;
+    padding: 1.2em 2em;
     flex-wrap: wrap;
     justify-content: center;
   }
