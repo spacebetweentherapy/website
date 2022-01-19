@@ -6,7 +6,7 @@
           <template #prepend>
             <h1>
               <NuxtLink to="/journal">
-                Blog
+                Journal
               </NuxtLink>
             </h1>
           </template>
@@ -57,6 +57,7 @@ export default Vue.extend({
 .recent-blog-posts {
   h1 {
     flex: 0 0 100%;
+    font-size: 2.5em;
 
     a {
       font-family: $font-serif;
