@@ -38,8 +38,16 @@ export default Vue.extend({
   data () {
     // We will populate an asset from the CMS
     const cmsAsset: any = null
+    const imageUrl: String = ''
+    const imageWidth: Number = 0
+    const imageHeight: Number = 0
+    const imageAlt: String = ''
     return {
-      cmsAsset
+      cmsAsset,
+      imageUrl,
+      imageWidth,
+      imageHeight,
+      imageAlt
     }
   },
 
@@ -47,21 +55,10 @@ export default Vue.extend({
     // Retrieve the asset from the CMS
     const asset = await this.$contentful.getAsset(this.assetId)
     this.$data.cmsAsset = asset
-  },
-
-  computed: {
-    imageUrl () {
-      return this.$data.cmsAsset.fields.file.url + '?w=' + this.imageWidth + '&h=' + this.imageHeight
-    },
-    imageWidth () {
-      return (this.width) ? this.width : this.$data.cmsAsset.fields.file.details.image.width
-    },
-    imageHeight () {
-      return (this.height) ? this.height : this.$data.cmsAsset.fields.file.details.image.height
-    },
-    imageAlt () {
-      return (this.$data.cmsAsset.fields.description) ? this.$data.cmsAsset.fields.description : null
-    }
+    this.$data.imageWidth = (this.width) ? this.width : asset.fields.file.details.image.width
+    this.$data.imageHeight = (this.height) ? this.height : asset.fields.file.details.image.height
+    this.$data.imageUrl = asset.fields.file.url + '?w=' + this.imageWidth + '&h=' + this.imageHeight
+    this.$data.imageAlt = (asset.fields.description) ? asset.fields.description : null
   }
 })
 </script>
