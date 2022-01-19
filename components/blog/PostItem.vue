@@ -10,8 +10,8 @@
       <CmsImage
         v-if="assetId"
         :asset-id="assetId"
-        width="150"
-        height="100"
+        :width="150"
+        :height="100"
         class="post-item__image"
       />
     </NuxtLink>
