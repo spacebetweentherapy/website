@@ -52,6 +52,7 @@ export default Vue.extend({
     // Retrieve recent blog posts
     const posts = await this.$contentful.getEntries({
       content_type: this.$config.CTF_CONTENT_TYPE_BLOG_POST,
+      order: '-fields.date',
       include: 10
     })
 
