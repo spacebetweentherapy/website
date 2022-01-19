@@ -7,6 +7,13 @@
       <p class="post-item__text">
         {{ intro }}
       </p>
+      <CmsImage
+        v-if="assetId"
+        :asset-id="assetId"
+        width="150"
+        height="100"
+        class="post-item__image"
+      />
     </NuxtLink>
   </li>
 </template>
@@ -30,6 +37,10 @@ export default Vue.extend({
       type: String,
       default: '',
       required: true
+    },
+    assetId: {
+      type: String,
+      default: ''
     }
   }
 })
@@ -37,16 +48,22 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .post-item {
-  padding: 1em 0;
-  border-bottom: 5px dotted $bg-colour-light;
+  padding: 0 0 1em 0;
 }
 
 .post-item__link, .post-item__link:visited {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
   text-decoration: none;
   color: $fg-colour;
 }
 
 .post-item__title {
+  width: 100%;
+  flex: 0 0 100%;
+  margin: 0 2em 0 0;
   font-family: $font-sans !important;
   text-transform: none !important;
   color: $fg-colour !important;
@@ -54,16 +71,28 @@ export default Vue.extend({
   font-size: 1.2em;
 }
 
-p.post-item__text {
+.post-item__text {
+  flex: 1;
+  display: block;
+  width: 100%;
+  padding: 0 0 2em 0;
   color: $fg-colour;
+  border-bottom: 5px dotted $bg-colour-light;
+}
+
+.post-item__image {
+  flex: 0 0 150px;
+  width: 150px;
+  margin-top: -2em;
+  margin-left: 2em;
 }
 </style>
 
-<!-- This can't be scoped as it styles the whole list via nth child? -->
+<!-- Not scoped or this doesn't work -->
 <style lang="scss">
-.post-item {
-  &:nth-child(1) {
-    padding-top: 0;
+.post-item__image {
+  img {
+    @include content-image;
   }
 }
 </style>

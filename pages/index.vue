@@ -10,9 +10,6 @@
               </NuxtLink>
             </h1>
           </template>
-          <template #append>
-            <CmsImage :asset-id="blogImageId" class-name="recent-blog-post-image" />
-          </template>
         </BlogPostList>
       </section>
     </CmsPage>
@@ -36,19 +33,6 @@ export default Vue.extend({
       include: 3
     })
     this.$data.posts = posts.items
-  },
-
-  computed: {
-    blogImageId () {
-      let imageId = ''
-      for (let i = 0; i < this.$data.posts.length; i++) {
-        if (this.$data.posts[i].fields.image) {
-          imageId = this.$data.posts[i].fields.image.sys.id
-          break
-        }
-      }
-      return imageId
-    }
   }
 })
 </script>

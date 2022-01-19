@@ -2,7 +2,14 @@
   <div class="posts">
     <slot name="prepend" />
     <ol class="posts__list">
-      <BlogPostItem v-for="post in posts" :key="post.sys.id" :slug="'/journal/' + post.fields.slug" :title="post.fields.title" :intro="post.fields.intro" />
+      <BlogPostItem
+        v-for="post in posts"
+        :key="post.sys.id"
+        :slug="'/journal/' + post.fields.slug"
+        :title="post.fields.title"
+        :intro="post.fields.intro"
+        :asset-id="getAssetId(post)"
+      />
     </ol>
     <slot name="append" />
   </div>
@@ -17,6 +24,12 @@ export default Vue.extend({
       type: Array,
       default: () => [],
       required: true
+    }
+  },
+
+  methods: {
+    getAssetId (post: any): string {
+      return (post.fields.image) ? post.fields.image.sys.id : ''
     }
   }
 })

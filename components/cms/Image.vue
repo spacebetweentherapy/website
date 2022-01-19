@@ -1,9 +1,15 @@
 <template>
   <picture v-if="cmsAsset.fields" :class="className">
-    <source :srcset="cmsAsset.fields.file.url + '?fm=avif'" type="image/avif">
-    <source :srcset="cmsAsset.fields.file.url + '?fm=webp'" type="image/webp">
-    <source :srcset="cmsAsset.fields.file.url" :type="cmsAsset.fields.file.contentType">
-    <img :src="cmsAsset.fields.file.url" :width="cmsAsset.fields.file.details.image.width" :height="cmsAsset.fields.file.details.image.height" :alt="cmsAsset.fields.description" :class="className">
+    <source :srcset="imageUrl + '&fm=avif'" type="image/avif">
+    <source :srcset="imageUrl + '&fm=webp'" type="image/webp">
+    <source :srcset="imageUrl" :type="cmsAsset.fields.file.contentType">
+    <img
+      :src="imageUrl"
+      :width="imageWidth"
+      :height="imageHeight"
+      :alt="imageAlt"
+      :class="className"
+    >
   </picture>
 </template>
 
@@ -20,6 +26,12 @@ export default Vue.extend({
     className: {
       type: String,
       default: ''
+    },
+    width: {
+      type: Number
+    },
+    height: {
+      type: Number
     }
   },
 
@@ -34,7 +46,22 @@ export default Vue.extend({
   async fetch () {
     // Retrieve the asset from the CMS
     const asset = await this.$contentful.getAsset(this.assetId)
-    this.cmsAsset = asset
+    this.$data.cmsAsset = asset
+  },
+
+  computed: {
+    imageUrl () {
+      return this.$data.cmsAsset.fields.file.url + '?w=' + this.imageWidth + '&h=' + this.imageHeight
+    },
+    imageWidth () {
+      return (this.width) ? this.width : this.$data.cmsAsset.fields.file.details.image.width
+    },
+    imageHeight () {
+      return (this.height) ? this.height : this.$data.cmsAsset.fields.file.details.image.height
+    },
+    imageAlt () {
+      return (this.$data.cmsAsset.fields.description) ? this.$data.cmsAsset.fields.description : null
+    }
   }
 })
 </script>
