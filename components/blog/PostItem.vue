@@ -72,12 +72,22 @@ export default Vue.extend({
 }
 
 .post-item__text {
+  position: relative;
   flex: 1;
   display: block;
   width: 100%;
   padding: 0 0 2em 0;
   color: $fg-colour;
   border-bottom: 5px dotted $bg-colour-light;
+
+  &:after {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -1em;
+    right: 0;
+    width: 20px;
+    content: url('../../static/images/icon-arrow.png');
+  }
 }
 
 .post-item__image {
@@ -89,7 +99,7 @@ export default Vue.extend({
 
 @include small-screens {
   .post-item__image {
-    margin-top: 0;
+    display: none;
   }
 }
 </style>
