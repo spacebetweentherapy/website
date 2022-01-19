@@ -1,6 +1,8 @@
 <template>
   <nav class="menu">
-    <h2 class="menu__title">Main menu</h2>
+    <h2 class="menu__title">
+      Main menu
+    </h2>
 
     <div class="menu__logo">
       <a href="/">

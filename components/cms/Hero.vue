@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div class="hero__wrapper">
-      <div  class="hero__content">
+      <div class="hero__content">
         <h1 v-if="title" class="hero__title">
           <span class="hero__first-word">{{ firstWord }}</span> {{ otherWords }}
         </h1>
