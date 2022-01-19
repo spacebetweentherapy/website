@@ -156,7 +156,7 @@ export default Vue.extend({
   .menu__list {
     display: none;
     position: absolute;
-    top: 2.5em;
+    top: 2.8em;
     right: 0;
   }
 
