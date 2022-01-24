@@ -76,15 +76,18 @@ export default Vue.extend({
   font-size: 5vw;
   transform: translateY(5vw);
   letter-spacing: 0.45rem;
-  font-weight: 700;
-  color: $fg-colour;
+  color: $colour-text;
   text-align: center;
-  @include logo-typography;
+  font-family: $font-serif;
+  letter-spacing: .2em;
+  word-spacing: -.2em;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .hero__first-word {
   display: inline-block;
-  color: $bg-colour-light;
+  color: $colour-bg-lightest;
   margin-right: -.2em;
 }
 

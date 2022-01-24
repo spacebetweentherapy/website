@@ -17,7 +17,7 @@
     <ul class="menu__list">
       <li v-for="item in items" :key="item.id" class="menu__item">
         <!-- Make sure the homepage uses index.vue not _page.vue -->
-        <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
+        <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug" class="menu__link">
           {{ item.title }}
         </NuxtLink>
       </li>
@@ -79,10 +79,10 @@ export default Vue.extend({
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: $menu-bar-colour;
+  background-color: rgba($color: #000, $alpha: 0.5);
   z-index: 99;
   font-family: $font-serif;
-  color: $bg-colour;
+  color: $colour-bg;
   box-sizing: border-box;
   padding-right: 2em;
 }
@@ -112,19 +112,23 @@ export default Vue.extend({
 .menu__item {
   font-size: 1.2em;
   text-transform: uppercase;
+}
 
-  a, a:visited {
-    display: block;
-    padding: .5em;
-    color: $bg-colour;
-    text-decoration: none;
+.menu__link, .menu__link:visited {
+  display: block;
+  padding: .5em;
+  color: $colour-bg;
+  text-decoration: none;
 
-    &.current {
-      text-decoration: underline;
-      text-decoration-color: $contrast-colour-dark;
-      text-underline-offset: .2em;
-    }
+  &.current {
+    text-decoration: underline;
+    text-decoration-color: $colour-highlight;
+    text-underline-offset: .2em;
   }
+}
+
+.menu__link:hover {
+  color: $colour-highlight;
 }
 
 @include small-screens {
@@ -164,7 +168,7 @@ export default Vue.extend({
 
   .menu__hamburger {
     display: inline-block;
-    background: $contrast-colour-dark;
+    background: $colour-highlight;
     font-size: 1.2em;
     padding: 10px;
   }

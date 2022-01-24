@@ -1,13 +1,15 @@
 // VARIABLES
 // =================================================
 // ----Colours---------
-$fg-colour: #000;
-$fg-colour-light: #848484;
-$bg-colour: #ebebeb;
-$bg-colour-light: #fff;
-$contrast-colour-dark: #af844d;
-$contrast-colour-light: #cbad88;
-$menu-bar-colour: rgba($color: #000, $alpha: 0.5);
+$colour-text: #000;
+$colour-text-light: #848484;
+
+$colour-bg: #ebebeb;
+$colour-bg-light: #cbad88;
+$colour-bg-lightest: #fff;
+
+$colour-highlight: #af844d;
+
 
 // ----Grid------------
 $max-width: 1000px;
@@ -15,27 +17,14 @@ $max-width: 1000px;
 // ----Typography------------
 $font-sans: 'Open Sans', sans-serif;
 $font-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-$font-weight-normal: 300;
-$font-weight-heavy: 600;
-
-
-// FUNCTIONS
-// =================================================
-@function sum($a, $b) {
-	@return $a + $b
-}
+$weight-normal: 300;
+$weight-heavy: 600;
+$size-page-title: 2.5em;
+$size-section-title: 2em;
 
 
 // MIXINS
 // =================================================
-@mixin logo-typography {
-  font-family: $font-serif;
-  letter-spacing: .2em;
-  word-spacing: -.2em;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
 @mixin box-reset {
 	padding: 0;
 	border: 0;
@@ -61,7 +50,7 @@ $font-weight-heavy: 600;
 }
 
 @mixin content-image {
-	border: 3px solid $bg-colour-light;
+	border: 3px solid $colour-bg-lightest;
   border-radius: 5px;
 }
 
@@ -70,23 +59,23 @@ $font-weight-heavy: 600;
 // =================================================
 body {
 	font-family: $font-sans;
-	font-weight: $font-weight-normal;
+	font-weight: $weight-normal;
 	-webkit-font-smoothing: antialiased;
-	color: $fg-colour;
+	color: $colour-text;
 	height: 100%;
 	line-height: 1.5;
 	text-align: justify;
 }
 
 strong {
-	font-weight: $font-weight-heavy;
+	font-weight: $weight-heavy;
 }
 
 a {
-	color: $contrast-colour-dark;
+	color: $colour-highlight;
 
 	&:visited {
-		color: $contrast-colour-dark;
+		color: $colour-highlight;
 	}
 }
 
@@ -103,14 +92,14 @@ a {
 				text-align: left;
 				text-transform: uppercase;
 				font-family: $font-serif;
-				font-weight: $font-weight-heavy;
+				font-weight: $weight-heavy;
 				line-height: 1.1em;
 			}
 		}
 	}
 
 	section:nth-child(odd) {
-		background-color: $contrast-colour-light;
+		background-color: $colour-bg-light;
 
 		a {
 			color: #fff;
@@ -122,17 +111,17 @@ a {
 
 		.content-main {
 			h1, h2, h3 {
-				color: $bg-colour-light;
+				color: $colour-bg-lightest;
 			}
 		}
 	}
 
 	section:nth-child(even), section:nth-child(1) {
-		background-color: $bg-colour;
+		background-color: $colour-bg;
 
 		.content-main {
 			h1, h2, h3 {
-				color: $contrast-colour-dark;
+				color: $colour-highlight;
 			}
 		}
 	}
@@ -148,17 +137,17 @@ a {
       display: inline-block;
       box-sizing: border-box;
       padding: 35% 1.2em;
-      border: 1px solid $contrast-colour-dark;
+      border: 1px solid $colour-highlight;
       border-radius: 50%;
       text-transform: lowercase;
       text-decoration: none;
-      background-color: $bg-colour-light;
-      font-weight: $font-weight-heavy;
-      color: $fg-colour;
+      background-color: $colour-bg-lightest;
+      font-weight: $weight-heavy;
+      color: $colour-text;
 
       &:hover {
-        background-color: $contrast-colour-dark;
-        color: $bg-colour-light;
+        background-color: $colour-highlight;
+        color: $colour-bg-lightest;
       }
     }
   }

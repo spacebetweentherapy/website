@@ -127,7 +127,8 @@ export default Vue.extend({
     margin: 0;
     text-transform: uppercase;
     font-family: $font-serif;
-    font-weight: $font-weight-heavy;
+    font-weight: $weight-heavy;
+    font-size: $size-section-title;
   }
 
   ul {
@@ -141,7 +142,7 @@ export default Vue.extend({
   }
 
   hr {
-    border: 1px solid $contrast-colour-dark;
+    border: 1px solid $colour-highlight;
     width: 100%;
   }
 

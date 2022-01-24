@@ -43,13 +43,13 @@ export default Vue.extend({
   max-width: $max-width;
   padding: 0 2.4em;
   margin: 1em auto -1em auto;
-  font-size: 2.5em;
+  font-size: $size-page-title;
   text-align: left;
   text-transform: uppercase;
   font-family: $font-serif;
-  font-weight: $font-weight-heavy;
+  font-weight: $weight-heavy;
   line-height: 1.1em;
-  color: $contrast-colour-dark;
+  color: $colour-highlight;
 }
 
 .intro__text {
@@ -63,13 +63,14 @@ export default Vue.extend({
 }
 
 .cms-markdown {
-  font-weight: $font-weight-heavy;
+  font-weight: $weight-heavy;
 }
 
 .intro__line {
-  margin: 0;
+  margin: auto;
   border: 0;
-  border-top: 1px solid $contrast-colour-dark;
+  border-top: 1px solid $colour-highlight;
+  width: 80%;
 }
 
 @include small-screens {
@@ -81,6 +82,10 @@ export default Vue.extend({
     padding: 1.2em 2em;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .intro__line {
+    width: 100%;
   }
 }
 </style>

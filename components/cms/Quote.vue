@@ -73,9 +73,9 @@ export default Vue.extend({
   margin: 1em 4em;
   font-size: 2em;
   transform: translateY(-5vh);
-  color: $bg-colour-light;
+  color: $colour-bg-lightest;
   font-family: $font-serif;
-  font-weight: $font-weight-heavy;
+  font-weight: $weight-heavy;
   line-height: 1.5em;
 }
 
@@ -86,7 +86,7 @@ export default Vue.extend({
 }
 
 .quote__quote-mark {
-  color: $contrast-colour-dark;
+  color: $colour-highlight;
   font-family: $font-sans;
   font-size: 1.5em;
 }

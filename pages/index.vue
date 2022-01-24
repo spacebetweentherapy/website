@@ -46,13 +46,13 @@ export default Vue.extend({
     margin-bottom: 0;
     flex: 0 0 100%;
     font-size: 3em;
-    font-weight: $font-weight-heavy;
+    font-weight: $weight-heavy;
 
     a {
       font-family: $font-serif;
-      color: $bg-colour-light;
+      color: $colour-bg-lightest;
       text-decoration: none;
-      text-decoration-color: $contrast-colour-dark;
+      text-decoration-color: $colour-highlight;
       text-underline-offset: .2em;
       font-weight: normal;
       text-transform: uppercase;

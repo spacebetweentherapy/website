@@ -57,7 +57,7 @@ export default Vue.extend({
   justify-content: space-between;
   width: 100%;
   text-decoration: none;
-  color: $fg-colour;
+  color: $colour-text;
 }
 
 .post-item__title {
@@ -66,7 +66,7 @@ export default Vue.extend({
   margin: 0 2em 0 0;
   font-family: $font-sans !important;
   text-transform: none !important;
-  color: $fg-colour !important;
+  color: $colour-text !important;
   text-align: left;
   font-size: 1.2em;
 }
@@ -77,15 +77,18 @@ export default Vue.extend({
   display: block;
   width: 100%;
   padding: 0 0 2em 0;
-  color: $fg-colour;
-  border-bottom: 5px dotted $bg-colour-light;
+  color: $colour-text;
+  background-image: radial-gradient(circle, #fff 1.25px, rgba(255,255,255,0) 2.5px);
+  background-position: bottom;
+  background-size: 15px 5px;
+  background-repeat: repeat-x;
 
   &:after {
     box-sizing: border-box;
     position: absolute;
     bottom: -1em;
     right: 0;
-    width: 20px;
+    width: 30px;
     content: url('../../static/images/icon-arrow.png');
   }
 }

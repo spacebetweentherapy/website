@@ -91,7 +91,7 @@ export default Vue.extend({
   justify-content: space-between;
   padding: 1em;
   row-gap: 2em;
-  color: $fg-colour-light;
+  color: $colour-text-light;
   font-size: .8em;
 }
 
@@ -125,7 +125,7 @@ export default Vue.extend({
   border-left: 1px solid #ccc;
 
   a {
-    color: $fg-colour-light;
+    color: $colour-text-light;
     text-decoration: none;
   }
 }
