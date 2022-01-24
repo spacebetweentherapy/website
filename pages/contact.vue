@@ -1,22 +1,44 @@
 <template>
   <div class="page">
     <CmsPage>
-      <section class="content contact-details">
-        <div class="content-main contact-options">
-          <ul>
-            <li><CmsImage asset-id="62rXvksqqpbAiheFLBYaZu" /> <span><a :href="'mailto:' + email">{{ email }}</a></span></li>
-            <li><CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" /> <span>{{ phone }}</span></li>
+      <section>
+        <div class="contact">
+          <ul class="contact__list">
+            <li class="contact__item">
+              <CmsImage asset-id="62rXvksqqpbAiheFLBYaZu" class-name="contact__image" />
+              <span class="contact__label">
+                <a :href="'mailto:' + email">{{ email }}</a>
+              </span>
+            </li>
+            <li class="contact__item">
+              <CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" class-name="contact__image" />
+              <span class="contact__label">
+                {{ phone }}
+              </span>
+            </li>
           </ul>
         </div>
       </section>
 
-      <section class="content contact-form">
-        <div class="content-main">
+      <section>
+        <div class="form">
           <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
-            <label>Name <input type="text" name="q4_typeA" required></label>
-            <label>Email <input type="email" name="q5_email" required></label>
-            <label>Phone <input type="tel" name="q8_typeA8" required></label>
-            <label>Your message <textarea name="q7_typeA7" rows="6" required /></label>
+            <label class="form__label">
+              Name
+              <input type="text" name="q4_typeA" class="form__input" required>
+            </label>
+            <label class="form__label">
+              Email
+              <input type="email" name="q5_email" class="form__input" required>
+            </label>
+            <label class="form__label">
+              Phone
+              <input type="tel" name="q8_typeA8" class="form__input" required>
+            </label>
+            <label class="form__label">
+              Your message
+              <textarea name="q7_typeA7" rows="6" class="form__input" required />
+            </label>
 
             <input type="hidden" name="formID" value="220134543182042">
 
@@ -59,58 +81,65 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.contact-options {
-  ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    column-gap: 8em;
-    list-style: none;
-
-    li {
-      display: block;
-
-      img {
-        vertical-align: middle;
-      }
-
-      span {
-        vertical-align: middle;
-      }
-    }
-  }
-
-  img {
-    border: 0;
-  }
+<style lang="scss" scoped>
+.contact {
+  padding: 4em 1em;
 }
 
-.contact-form {
+.contact__list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 8em;
+  list-style: none;
+}
+
+.contact__item {
+  display: block;
+}
+
+.contact__image {
+  border: 0;
+  vertical-align: middle;
+}
+
+.contact__label {
+  vertical-align: middle;
+}
+
+.form {
+  margin: auto;
+  padding: 1em 0;
+  max-width: $max-width;
+
   form {
     width: 100%;
   }
+}
 
-  label {
-    display: block;
-    margin: 1em 0;
-  }
+.form__label {
+  display: block;
+  margin: 1em 0;
+}
 
-  input, textarea {
-    display: block;
-    padding: .2em;
-    width: 100%;
+.form__input {
+  display: block;
+  padding: .2em;
+  width: 100%;
+}
+
+@include medium-screens {
+  .form {
+    padding: 1em;
   }
 }
 
 @include small-screens {
-  .contact-options {
-    ul {
-      flex-wrap: wrap;
-      row-gap: 2em;
-    }
+  .contact__list {
+    flex-wrap: wrap;
+    row-gap: 2em;
   }
 }
 </style>

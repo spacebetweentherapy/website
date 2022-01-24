@@ -158,32 +158,6 @@ export default Vue.extend({
   img {
     @include content-image;
   }
-
-  .button-container {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    .button,
-    button {
-      display: inline-block;
-      box-sizing: border-box;
-      padding: 35% 1.2em;
-      border: 1px solid $contrast-colour-dark;
-      border-radius: 50%;
-      text-transform: lowercase;
-      text-decoration: none;
-      background-color: $bg-colour-light;
-      font-weight: $font-weight-heavy;
-      color: $fg-colour;
-
-      &:hover {
-        background-color: $contrast-colour-dark;
-        color: $bg-colour-light;
-      }
-    }
-  }
 }
 
 .content-wrapper {
