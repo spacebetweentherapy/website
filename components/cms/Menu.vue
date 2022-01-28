@@ -6,7 +6,7 @@
 
     <div class="menu__logo">
       <a href="/">
-        <img src="/images/banner_logo.png" width="321" height="37" alt="Logo" class="menu__logo-image">
+        <img src="/images/banner_logo.png" width="321" height="27" alt="Logo" class="menu__logo-image">
       </a>
     </div>
 
@@ -138,6 +138,7 @@ export default Vue.extend({
   .menu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-right: 0;
     height: 46px;
   }
@@ -147,7 +148,7 @@ export default Vue.extend({
     margin: 0;
     padding: 0;
     border: 0;
-    height: 46px;
+    height: 27px;
 
     a {
       margin: 0;
@@ -158,7 +159,7 @@ export default Vue.extend({
 
   .menu__logo-image {
     margin: 0;
-    padding: .25em;
+    padding: 0 0 0 .25em;
     border: 0;
   }
 
