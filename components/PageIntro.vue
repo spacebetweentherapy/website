@@ -70,7 +70,7 @@ export default Vue.extend({
   margin: auto;
   border: 0;
   border-top: 1px solid $colour-highlight;
-  width: 80%;
+  width: 85%;
 }
 
 @include small-screens {
