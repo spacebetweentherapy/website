@@ -13,7 +13,7 @@
             <li class="contact__item">
               <CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" class-name="contact__image" />
               <span class="contact__label">
-                {{ phone }}
+                <a :href="'tel:' + phone">{{ phone }}</a>
               </span>
             </li>
           </ul>
