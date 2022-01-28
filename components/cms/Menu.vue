@@ -129,6 +129,9 @@ export default Vue.extend({
 
 .menu__link:hover {
   color: $colour-highlight;
+  text-decoration: underline;
+  text-decoration-color: $colour-bg-lightest;
+  text-underline-offset: .2em;
 }
 
 @include small-screens {
