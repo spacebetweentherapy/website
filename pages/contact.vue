@@ -97,16 +97,19 @@ export default Vue.extend({
 }
 
 .contact__item {
-  display: block;
+  display: flex;
+  align-items: center;
+  column-gap: .5em;
 }
 
-.contact__image {
+.contact__image, .contact__image img {
   border: 0;
-  vertical-align: middle;
+  width: 30px;
+  height: 30px;
 }
 
 .contact__label {
-  vertical-align: middle;
+  display: block;
 }
 
 .form {
