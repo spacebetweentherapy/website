@@ -12,11 +12,24 @@
         </template>
       </PageIntro>
 
-      <section class="content">
-        <div class="content-main">
+      <section>
+        <div class="post-content">
           <!-- eslint-disable -->
           <div v-html="content" />
+          <CmsImage :asset-id="page.fields.image.sys.id" className="post-content__image" />
         </div>
+      </section>
+
+      <section class="recent-blog-posts">
+        <BlogPostList :posts="posts">
+          <template #prepend>
+            <h1>
+              <NuxtLink to="/journal">
+                Other Posts
+              </NuxtLink>
+            </h1>
+          </template>
+        </BlogPostList>
       </section>
     </div>
   </div>
@@ -30,7 +43,8 @@ export default Vue.extend({
     return {
       slug: '',
       page: null,
-      content: ''
+      content: '',
+      posts: []
     }
   },
 
@@ -52,6 +66,17 @@ export default Vue.extend({
     const cmsObject = page.items[0]
     this.$data.page = cmsObject
     this.$data.content = this.$renderRichText(cmsObject.fields.content)
+
+    // Retrieve recent blog posts (excluding this one)
+    const posts = await this.$contentful.getEntries({
+      content_type: this.$config.CTF_CONTENT_TYPE_BLOG_POST,
+      'sys.id[ne]': cmsObject.sys.id,
+      order: '-fields.date',
+      include: 10
+    })
+
+    // Populate a data object for us to use in our template
+    this.$data.posts = posts.items
   },
 
   // Load metadata from CMS
@@ -73,3 +98,39 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.post-content {
+  margin: auto;
+  padding: 4em;
+  max-width: $max-width;
+}
+
+.recent-blog-posts {
+  padding-bottom: 5em;
+
+  h1 {
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    flex: 0 0 100%;
+    font-weight: $weight-heavy;
+
+    a {
+      font-family: $font-serif;
+      color: $colour-bg-lightest;
+      text-decoration: none;
+      text-decoration-color: $colour-highlight;
+      text-underline-offset: .2em;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+}
+</style>
+
+<!-- Not scoped to apply to templated image -->
+<style lang="scss">
+img.post-content__image {
+  @include content-image;
+}
+</style>

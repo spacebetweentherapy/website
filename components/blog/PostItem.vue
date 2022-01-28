@@ -87,7 +87,7 @@ export default Vue.extend({
     box-sizing: border-box;
     position: absolute;
     bottom: -1em;
-    right: 0;
+    right: -.2em;
     width: 30px;
     content: url('../../static/images/icon-arrow.png');
   }

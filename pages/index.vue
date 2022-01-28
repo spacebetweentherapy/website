@@ -37,7 +37,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .recent-blog-posts {
   padding-bottom: 5em;
 
@@ -58,10 +58,6 @@ export default Vue.extend({
       text-transform: uppercase;
     }
   }
-}
-
-.recent-blog-post-image img {
-  @include content-image;
 }
 
 @include medium-screens {
