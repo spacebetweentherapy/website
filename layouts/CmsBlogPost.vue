@@ -139,6 +139,10 @@ export default Vue.extend({
 }
 
 @include medium-screens {
+  .post-content {
+    padding: 1em 2em;
+  }
+
   .recent-blog-posts {
     padding: 1em 2em;
   }
