@@ -1,56 +1,54 @@
 <template>
-  <div class="page">
-    <CmsPage>
-      <section>
-        <div class="contact">
-          <ul class="contact__list">
-            <li class="contact__item">
-              <CmsImage asset-id="62rXvksqqpbAiheFLBYaZu" class-name="contact__image" />
-              <span class="contact__label">
-                <a :href="'mailto:' + email">{{ email }}</a>
-              </span>
-            </li>
-            <li class="contact__item">
-              <CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" class-name="contact__image" />
-              <span class="contact__label">
-                <a :href="'tel:' + phone">{{ phone }}</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </section>
+  <div>
+    <section>
+      <div class="contact">
+        <ul class="contact__list">
+          <li class="contact__item">
+            <CmsImage asset-id="62rXvksqqpbAiheFLBYaZu" class-name="contact__image" />
+            <span class="contact__label">
+              <a :href="'mailto:' + email">{{ email }}</a>
+            </span>
+          </li>
+          <li class="contact__item">
+            <CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" class-name="contact__image" />
+            <span class="contact__label">
+              <a :href="'tel:' + phone">{{ phone }}</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-      <section>
-        <div class="form">
-          <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
-            <label class="form__label">
-              Name
-              <input type="text" name="q4_typeA" class="form__input" required>
-            </label>
-            <label class="form__label">
-              Email
-              <input type="email" name="q5_email" class="form__input" required>
-            </label>
-            <label class="form__label">
-              Phone
-              <input type="tel" name="q8_typeA8" class="form__input" required>
-            </label>
-            <label class="form__label">
-              Your message
-              <textarea name="q7_typeA7" rows="6" class="form__input" required />
-            </label>
+    <section>
+      <div class="form">
+        <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
+          <label class="form__label">
+            Name
+            <input type="text" name="q4_typeA" class="form__input" required>
+          </label>
+          <label class="form__label">
+            Email
+            <input type="email" name="q5_email" class="form__input" required>
+          </label>
+          <label class="form__label">
+            Phone
+            <input type="tel" name="q8_typeA8" class="form__input" required>
+          </label>
+          <label class="form__label">
+            Your message
+            <textarea name="q7_typeA7" rows="6" class="form__input" required />
+          </label>
 
-            <input type="hidden" name="formID" value="220134543182042">
+          <input type="hidden" name="formID" value="220134543182042">
 
-            <div class="button-container">
-              <button type="submit">
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </CmsPage>
+          <div class="button-container">
+            <button type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -58,6 +56,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  layout: 'CmsPage',
+
   // Load content from CMS
   async asyncData ({ $config, $contentful }) {
     // Retrieve email address content

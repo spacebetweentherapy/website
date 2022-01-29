@@ -9,7 +9,7 @@
       </h1>
       <div v-if="introText" class="intro__text">
         <!-- eslint-disable -->
-        <div v-html="$md.render(introText)" class="cms-markdown" />
+        <div v-html="$md.render(introText)" />
 
         <!-- Allow an inline image to be added by the parent -->
         <slot name="introImage" />
@@ -38,11 +38,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.intro {
+  background-color: $colour-bg !important;
+}
+
 .intro__title {
   display: block;
   max-width: $max-width;
-  padding: 0 2.4em;
-  margin: 1em auto -1em auto;
+  padding: 1em 2.4em 0 2.4em;
+  margin: 0 auto -1em auto;
   font-size: $size-page-title;
   text-align: left;
   text-transform: uppercase;
@@ -60,9 +64,6 @@ export default Vue.extend({
   flex-wrap: nowrap;
   max-width: $max-width;
   margin: auto;
-}
-
-.cms-markdown {
   font-weight: $weight-heavy;
 }
 

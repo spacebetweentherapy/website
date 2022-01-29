@@ -1,35 +1,33 @@
 <template>
-  <div class="page">
-    <CmsPage>
-      <!-- A featured post (i.e. the most recent) -->
-      <section class="higlighted-post">
-        <div class="content-main">
-          <CmsImage :asset-id="mainPost.fields.image.sys.id" />
-          <h2>{{ mainPost.fields.title }}</h2>
-          <p>{{ mainPost.fields.intro }}</p>
-          <p class="button-container">
-            <NuxtLink :to="'/journal/' + mainPost.fields.slug" class="button">
-              read
-            </NuxtLink>
-          </p>
-        </div>
-      </section>
+  <div>
+    <!-- A featured post (i.e. the most recent) -->
+    <section class="higlighted-post">
+      <div class="content-main">
+        <CmsImage :asset-id="mainPost.fields.image.sys.id" />
+        <h2>{{ mainPost.fields.title }}</h2>
+        <p>{{ mainPost.fields.intro }}</p>
+        <p class="button-container">
+          <NuxtLink :to="'/journal/' + mainPost.fields.slug" class="button">
+            read
+          </NuxtLink>
+        </p>
+      </div>
+    </section>
 
-      <!-- A list of other recent posts -->
-      <section class="recent-blog-posts">
-        <div class="content-main">
-          <BlogPostList :posts="otherPosts">
-            <template #prepend>
-              <div class="other-posts">
-                <h2>
-                  Other Posts
-                </h2>
-              </div>
-            </template>
-          </BlogPostList>
-        </div>
-      </section>
-    </CmsPage>
+    <!-- A list of other recent posts -->
+    <section class="recent-blog-posts">
+      <div class="content-main">
+        <BlogPostList :posts="otherPosts">
+          <template #prepend>
+            <div class="other-posts">
+              <h2>
+                Other Posts
+              </h2>
+            </div>
+          </template>
+        </BlogPostList>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -37,6 +35,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  layout: 'CmsPage',
+
   data () {
     return {
       posts: []

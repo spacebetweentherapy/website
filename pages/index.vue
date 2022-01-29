@@ -1,24 +1,22 @@
 <template>
-  <div class="page page-home">
-    <CmsPage>
-      <section class="recent-blog-posts">
-        <BlogPostList :posts="posts">
-          <template #prepend>
-            <h1>
-              <NuxtLink to="/journal">
-                Journal
-              </NuxtLink>
-            </h1>
-          </template>
-        </BlogPostList>
-      </section>
-    </CmsPage>
-  </div>
+  <section class="recent-blog-posts">
+    <BlogPostList :posts="posts">
+      <template #prepend>
+        <h1>
+          <NuxtLink to="/journal">
+            Journal
+          </NuxtLink>
+        </h1>
+      </template>
+    </BlogPostList>
+  </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
+  layout: 'CmsPage',
+
   data () {
     return {
       posts: []

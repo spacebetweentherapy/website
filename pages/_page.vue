@@ -1,5 +1,8 @@
-<template>
-  <div class="page">
-    <CmsPage />
-  </div>
-</template>
+<template></template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  layout: 'CmsPage'
+})
+</script>

@@ -98,7 +98,7 @@ a {
 		}
 	}
 
-	section:nth-child(odd) {
+	section:nth-child(even) {
 		background-color: $colour-bg-light;
 
 		a {
@@ -116,7 +116,7 @@ a {
 		}
 	}
 
-	section:nth-child(even), section:nth-child(1) {
+	section:nth-child(odd) {
 		background-color: $colour-bg;
 
 		.content-main {
