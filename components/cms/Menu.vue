@@ -184,5 +184,9 @@ export default Vue.extend({
       background-color: rgba(175, 132, 77, 0.8);
     }
   }
+
+  .menu__link:hover {
+    color: $colour-bg-lightest;
+  }
 }
 </style>
