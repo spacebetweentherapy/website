@@ -21,7 +21,7 @@
       <div class="content-main">
         <!-- TODO Hard code our home page image -->
         <div v-if="$data.slug === 'index'">
-          <CmsImage asset-id="4QKYgZ75hpQq30yOokKwVj" className="page-home__image" />
+          <CmsImage asset-id="4QKYgZ75hpQq30yOokKwVj" class-name="page-home__image" />
         </div>
         <!-- eslint-disable -->
         <div class="content-wrapper" :style="($data.slug === 'index' ? 'padding:0' : '')" v-html="section1Content" />
