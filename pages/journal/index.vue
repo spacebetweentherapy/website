@@ -76,6 +76,8 @@ export default Vue.extend({
 .higlighted-post {
   .content-main {
     display: block;
+    margin: auto;
+    max-width: $max-width;
 
     img {
       display: block;
@@ -103,10 +105,22 @@ export default Vue.extend({
     }
   }
 }
+
+@include medium-screens {
+  .higlighted-post {
+    .content-main {
+      padding: 1em;
+    }
+  }
+
+  .recent-blog-posts {
+    padding: 1em 2em;
+  }
+}
 </style>
 
 <style lang="scss">
-@include small-screens {
+@include medium-screens {
   .content-main__image {
     max-width: 100%;
     height: auto;
