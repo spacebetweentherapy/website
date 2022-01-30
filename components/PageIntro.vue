@@ -76,7 +76,7 @@ export default Vue.extend({
 
 @include small-screens {
   .intro__title {
-    padding: 0 .8em;
+    padding: .5em .8em;
   }
 
   .intro__text {

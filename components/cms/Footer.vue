@@ -135,6 +135,11 @@ export default Vue.extend({
 }
 
 @include small-screens {
+  .footer {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
   .footer__image {
     margin: 1em 0;
   }

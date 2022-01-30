@@ -22,7 +22,12 @@
         <div class="post-content">
           <!-- eslint-disable -->
           <div v-html="content" />
-          <CmsImage :asset-id="$data.page.fields.image.sys.id" className="post-content__image" />
+          <CmsImage
+            :asset-id="$data.page.fields.image.sys.id"
+            className="post-content__image"
+            :show-border="true"
+            :focus="true"
+          />
         </div>
       </section>
 
@@ -149,15 +154,6 @@ export default Vue.extend({
 
   .recent-blog-post-image {
     width: 100%;
-    height: auto;
-  }
-}
-</style>
-
-<style lang="scss">
-@include medium-screens {
-  img.post-content__image {
-    max-width: 100%;
     height: auto;
   }
 }

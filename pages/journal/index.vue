@@ -3,7 +3,7 @@
     <!-- A featured post (i.e. the most recent) -->
     <section class="higlighted-post">
       <div class="content-main">
-        <CmsImage :asset-id="mainPost.fields.image.sys.id" />
+        <CmsImage :asset-id="mainPost.fields.image.sys.id" :show-border="true" class-name="content-main__image" />
         <h2>{{ mainPost.fields.title }}</h2>
         <p>{{ mainPost.fields.intro }}</p>
         <p class="button-container">
@@ -101,6 +101,15 @@ export default Vue.extend({
       padding: 1em 0;
       text-transform: none !important;
     }
+  }
+}
+</style>
+
+<style lang="scss">
+@include small-screens {
+  .content-main__image {
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>

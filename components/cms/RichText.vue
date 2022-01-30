@@ -3,7 +3,7 @@
     <div class="content-main">
       <!-- TODO Hard code our home page image -->
       <div v-if="slug === 'index'">
-        <CmsImage asset-id="4QKYgZ75hpQq30yOokKwVj" class-name="page-home__image" />
+        <CmsImage asset-id="4QKYgZ75hpQq30yOokKwVj" class-name="page-home__image" :show-border="true" />
       </div>
       <!-- eslint-disable -->
       <div class="content-wrapper" :style="(slug === 'index' ? 'padding:0' : '')" v-html="markup" />
@@ -99,6 +99,15 @@ export default Vue.extend({
       max-width: 100%;
       height: auto;
     }
+  }
+}
+</style>
+
+<style lang="scss">
+@include small-screens {
+  .page-home__image {
+    width: 100%;
+    height: auto;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <picture v-if="cmsAsset.fields" :class="className">
+  <picture v-if="cmsAsset.fields" :class="classes">
     <source :srcset="imageUrl + '&fm=avif'" type="image/avif">
     <source :srcset="imageUrl + '&fm=webp'" type="image/webp">
     <source :srcset="imageUrl" :type="cmsAsset.fields.file.contentType">
@@ -8,7 +8,7 @@
       :width="imageWidth"
       :height="imageHeight"
       :alt="imageAlt"
-      :class="className"
+      :class="classes"
     >
   </picture>
 </template>
@@ -28,10 +28,20 @@ export default Vue.extend({
       default: ''
     },
     width: {
-      type: Number
+      type: Number,
+      default: 0
     },
     height: {
-      type: Number
+      type: Number,
+      default: 0
+    },
+    showBorder: {
+      type: Boolean,
+      default: false
+    },
+    focus: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -59,6 +69,28 @@ export default Vue.extend({
     this.$data.imageHeight = (this.height) ? this.height : asset.fields.file.details.image.height
     this.$data.imageUrl = asset.fields.file.url + '?w=' + this.imageWidth + '&h=' + this.imageHeight
     this.$data.imageAlt = (asset.fields.description) ? asset.fields.description : null
+  },
+
+  computed: {
+    classes () {
+      let returnValue = 'image'
+      returnValue += (this.showBorder) ? ' image--border' : ''
+      returnValue += (this.focus) ? ' image--focus' : ''
+      returnValue += (this.className) ? ' ' + this.className : ''
+      return returnValue
+    }
   }
 })
 </script>
+
+<style lang="scss" scoped>
+img.image--border {
+  border: 3px solid $colour-bg-lightest;
+  border-radius: 5px;
+}
+
+.image--focus {
+  max-width: 100%;
+  height: auto;
+}
+</style>
