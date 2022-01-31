@@ -4,13 +4,27 @@
       <div class="contact">
         <ul class="contact__list">
           <li class="contact__item">
-            <CmsImage asset-id="62rXvksqqpbAiheFLBYaZu" class-name="contact__image" />
+            <img
+              srcset="/images/icon-email-3x.png 3x, /images/icon-email-2x.png 2x, /images/icon-email.png 1x"
+              src="/images/icon-email.png"
+              width="30"
+              height="30"
+              alt="Email icon"
+              class="contact__image"
+            >
             <span class="contact__label">
               <a :href="'mailto:' + email">{{ email }}</a>
             </span>
           </li>
           <li class="contact__item">
-            <CmsImage asset-id="75RbcrOfwy8PjWst9Hf5yc" class-name="contact__image" />
+            <img
+              srcset="/images/icon-phone-3x.png 3x, /images/icon-phone-2x.png 2x, /images/icon-phone.png 1x"
+              src="/images/icon-phone.png"
+              width="30"
+              height="30"
+              alt="Telephone icon"
+              class="contact__image"
+            >
             <span class="contact__label">
               <a :href="'tel:' + phone">{{ phone }}</a>
             </span>
