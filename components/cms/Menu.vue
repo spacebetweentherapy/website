@@ -6,7 +6,7 @@
 
     <div class="menu__logo">
       <a href="/">
-        <img src="/images/banner_logo.png" width="321" height="27" alt="Logo" class="menu__logo-image">
+        <img srcset="/images/banner-logo-3x.png 3x, /images/banner-logo-2x.png 2x, /images/banner-logo.png 1x" src="/images/banner-logo.png" width="321" height="27" alt="Logo" class="menu__logo-image">
       </a>
     </div>
 
