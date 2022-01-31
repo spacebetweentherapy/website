@@ -79,11 +79,6 @@ export default Vue.extend({
     margin: auto;
     max-width: $max-width;
 
-    img {
-      display: block;
-      margin: auto;
-    }
-
     h2 {
       display: table;
       margin: auto;
@@ -120,6 +115,11 @@ export default Vue.extend({
 </style>
 
 <style lang="scss">
+.content-main__image {
+  display: block;
+  margin: auto;
+}
+
 @include medium-screens {
   .content-main__image {
     max-width: 100%;
