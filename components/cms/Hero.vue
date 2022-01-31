@@ -141,7 +141,8 @@ export default Vue.extend({
       text-align: center;
       content: image-set(
       url('../../static/images/circles.png') 1x,
-      url('../../static/images/circles-2x.png') 2x
+      url('../../static/images/circles-2x.png') 2x,
+      url('../../static/images/circles-3x.png') 3x
     );
     }
   }
