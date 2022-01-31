@@ -21,7 +21,7 @@
       <section class="post">
         <div class="post-content">
           <!-- eslint-disable -->
-          <div v-html="content" />
+          <div v-html="content" class="content-wrapper" />
           <CmsImage
             :asset-id="$data.page.fields.image.sys.id"
             className="post-content__image"
@@ -119,6 +119,13 @@ export default Vue.extend({
   margin: auto;
   padding: 4em;
   max-width: $max-width;
+}
+
+.post-content__image {
+  display: block;
+  margin: auto;
+  width: 744px;
+  height: 495px;
 }
 
 .recent-blog-posts {
