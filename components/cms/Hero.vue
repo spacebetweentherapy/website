@@ -124,7 +124,7 @@ export default Vue.extend({
   margin-right: auto;
   width: 100%;
   height: 100%;
-  object-position: 15% 15%;
+  object-position: 15% 25%;
   object-fit: cover;
 }
 
