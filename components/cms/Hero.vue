@@ -139,7 +139,10 @@ export default Vue.extend({
       width: 250px;
       margin-left: -125px;
       text-align: center;
-      content: url('../../static/images/circles.png');
+      content: image-set(
+      url('../../static/images/circles.png') 1x,
+      url('../../static/images/circles-2x.png') 2x
+    );
     }
   }
 }
