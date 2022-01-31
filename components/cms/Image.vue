@@ -1,8 +1,8 @@
 <template>
   <picture v-if="cmsAsset.fields" :class="classes">
-    <source :srcset="imageUrl + '&fm=avif'" type="image/avif">
-    <source :srcset="imageUrl + '&fm=webp'" type="image/webp">
-    <source :srcset="imageUrl" :type="cmsAsset.fields.file.contentType">
+    <source :srcset="srcSet('avif')" type="image/avif">
+    <source :srcset="srcSet('webp')" type="image/webp">
+    <source :srcset="srcSet()" :type="cmsAsset.fields.file.contentType">
     <img
       :src="imageUrl"
       :width="imageWidth"
@@ -42,6 +42,10 @@ export default Vue.extend({
     focus: {
       type: Boolean,
       default: false
+    },
+    include2x: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -49,12 +53,14 @@ export default Vue.extend({
     // We will populate an asset from the CMS
     const cmsAsset: any = null
     const imageUrl: String = ''
-    const imageWidth: Number = 0
-    const imageHeight: Number = 0
+    const imageUrl2x: String = ''
+    const imageWidth: number = 0
+    const imageHeight: number = 0
     const imageAlt: String = ''
     return {
       cmsAsset,
       imageUrl,
+      imageUrl2x,
       imageWidth,
       imageHeight,
       imageAlt
@@ -68,6 +74,7 @@ export default Vue.extend({
     this.$data.imageWidth = (this.width) ? this.width : asset.fields.file.details.image.width
     this.$data.imageHeight = (this.height) ? this.height : asset.fields.file.details.image.height
     this.$data.imageUrl = asset.fields.file.url + '?w=' + this.imageWidth + '&h=' + this.imageHeight
+    this.$data.imageUrl2x = asset.fields.file.url + '?w=' + (this.imageWidth * 2) + '&h=' + (this.imageHeight * 2)
     this.$data.imageAlt = (asset.fields.description) ? asset.fields.description : null
   },
 
@@ -77,6 +84,20 @@ export default Vue.extend({
       returnValue += (this.showBorder) ? ' image--border' : ''
       returnValue += (this.focus) ? ' image--focus' : ''
       returnValue += (this.className) ? ' ' + this.className : ''
+      return returnValue
+    }
+  },
+
+  methods: {
+    srcSet (format: String) {
+      let returnValue = this.imageUrl
+      if (this.include2x) {
+        let formatParameter = ''
+        if (format && format !== '') {
+          formatParameter = '&fm=' + format
+        }
+        returnValue = this.imageUrl2x + formatParameter + ' 2x, ' + this.imageUrl + formatParameter + ' 1x'
+      }
       return returnValue
     }
   }

@@ -12,6 +12,7 @@
         :asset-id="assetId"
         :width="150"
         :height="100"
+        :include2x="true"
         class="post-item__image"
       />
     </NuxtLink>
