@@ -100,6 +100,7 @@ export default Vue.extend({
       margin: auto;
       padding: 1em 0;
       text-transform: none !important;
+      font-size: $size-section-title;
     }
   }
 }
