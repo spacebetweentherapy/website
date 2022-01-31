@@ -89,7 +89,11 @@ export default Vue.extend({
     bottom: -1em;
     right: -.2em;
     width: 30px;
-    content: url('../../static/images/icon-arrow.png');
+    content: image-set(
+      url('../../static/images/icon-arrow.png') 1x,
+      url('../../static/images/icon-arrow-2x.png') 2x,
+      url('../../static/images/icon-arrow-3x.png') 3x
+    );
   }
 }
 
