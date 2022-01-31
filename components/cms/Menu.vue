@@ -6,7 +6,14 @@
 
     <div class="menu__logo">
       <a href="/">
-        <img srcset="/images/banner-logo-3x.png 3x, /images/banner-logo-2x.png 2x, /images/banner-logo.png 1x" src="/images/banner-logo.png" width="321" height="27" alt="Logo" class="menu__logo-image">
+        <img
+          srcset="/images/banner-logo-3x.png 3x, /images/banner-logo-2x.png 2x, /images/banner-logo.png 1x"
+          src="/images/banner-logo.png"
+          width="321"
+          height="27"
+          alt="Logo"
+          class="menu__logo-image"
+        >
       </a>
     </div>
 
@@ -140,7 +147,7 @@ export default Vue.extend({
     justify-content: space-between;
     align-items: center;
     padding-right: 0;
-    height: 46px;
+    height: 49px;
   }
 
   .menu__logo {
@@ -166,7 +173,7 @@ export default Vue.extend({
   .menu__list {
     display: none;
     position: absolute;
-    top: 2.8em;
+    top: 49px;
     right: 0;
   }
 
