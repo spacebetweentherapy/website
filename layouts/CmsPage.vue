@@ -8,7 +8,7 @@
   <div class="container">
     <CmsMenu />
 
-    <div class="page">
+    <div :class="pageClasses">
       <CmsHero
         v-if="$data.page.fields.hero"
         :asset-id="$data.page.fields.hero.fields.image.sys.id"
@@ -91,6 +91,14 @@ export default Vue.extend({
       const slug = this.$data.slug
       const pageTitle = this.$data.page.fields.title
       return (slug !== 'index') ? pageTitle : ''
+    },
+
+    pageClasses () {
+      let classes = 'page'
+      if (this.$data.slug === 'index') {
+        classes += ' page-home'
+      }
+      return classes
     }
   }
 })

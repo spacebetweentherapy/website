@@ -99,22 +99,6 @@ export default Vue.extend({
   font-weight: 500;
 }
 
-// TODO Remove this hardcoded logo on homepage Hero
-.page-home {
-  .hero__content {
-    p:after {
-      box-sizing: border-box;
-      position: absolute;
-      top: 2em;
-      left: 50%;
-      width: 250px;
-      margin-left: -125px;
-      text-align: center;
-      content: url('../../static/images/circles.png');
-    }
-  }
-}
-
 @include medium-screens {
   .hero__title {
     font-size: 4em;
@@ -132,6 +116,7 @@ export default Vue.extend({
 }
 </style>
 
+<!-- Unscoped styles -->
 <style lang="scss">
 .hero__image {
   display: block;
@@ -141,5 +126,21 @@ export default Vue.extend({
   height: 100%;
   object-position: 15% 50%;
   object-fit: cover;
+}
+
+// TODO Remove this hardcoded logo on homepage Hero
+.page-home {
+  .hero__content {
+    p:after {
+      box-sizing: border-box;
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      width: 250px;
+      margin-left: -125px;
+      text-align: center;
+      content: url('../../static/images/circles.png');
+    }
+  }
 }
 </style>
