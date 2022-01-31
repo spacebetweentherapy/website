@@ -52,6 +52,7 @@ export default Vue.extend({
   text-transform: uppercase;
   font-family: $font-serif;
   font-weight: $weight-heavy;
+  word-wrap: break-word;
   line-height: 1.1em;
   color: $colour-highlight;
 }
