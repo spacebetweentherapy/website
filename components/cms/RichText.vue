@@ -36,7 +36,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .content-main {
   margin: auto;
   padding: 4em;
@@ -45,6 +45,10 @@ export default Vue.extend({
   flex-wrap: nowrap;
   flex-grow: 1;
   column-gap: 2em;
+}
+
+.content-wrapper {
+  padding: 0 8em;
 
   h1 {
     margin: 0;
@@ -72,10 +76,6 @@ export default Vue.extend({
   img {
     @include content-image;
   }
-}
-
-.content-wrapper {
-  padding: 0 8em;
 
   p:nth-child(1) {
     margin-top: 0;
@@ -90,20 +90,14 @@ export default Vue.extend({
 
   .content-wrapper {
     padding: 0;
-  }
-}
 
-@include small-screens {
-  .content-main {
     img {
       max-width: 100%;
       height: auto;
     }
   }
 }
-</style>
 
-<style lang="scss">
 @include small-screens {
   .page-home__image {
     width: 100%;
