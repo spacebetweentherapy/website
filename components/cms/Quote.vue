@@ -89,6 +89,7 @@ export default Vue.extend({
   color: $colour-highlight;
   font-family: $font-sans;
   font-size: 1.5em;
+  line-height: .8em;
 }
 
 @include small-screens {
