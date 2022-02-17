@@ -18,9 +18,13 @@
 
       <PageIntro :title="title" :intro-text="$data.page.fields.intro">
         <template #introImage>
+          <!-- Force the intro image to 200x200 assuming the Media asset in CMS is 400x400 -->
           <CmsImage
             v-if="$data.page.fields.introImage"
             :asset-id="$data.page.fields.introImage.sys.id"
+            :width="200"
+            :height="200"
+            :include2x="true"
           />
         </template>
       </PageIntro>
@@ -99,6 +103,10 @@ export default Vue.extend({
         classes += ' page-home'
       }
       return classes
+    },
+
+    isHomepage () {
+      return this.$data.slug === 'index'
     }
   }
 })
