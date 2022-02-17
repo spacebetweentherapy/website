@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/markdownit": "^2.0.0",
     "contentful": "^9.1.4",
-    "core-js": "^3.19.2",
+    "core-js": "^3.21.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.7"
   },
