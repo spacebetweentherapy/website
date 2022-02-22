@@ -26,6 +26,9 @@ export default {
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'true' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap' }
+    ],
+    script: [
+      { src: '/js/ga.js', type: 'module', body: true }
     ]
   },
 
