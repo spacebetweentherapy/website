@@ -136,7 +136,7 @@ export default {
   generate: {
     subFolders: false,
     crawler: false,
-    fallback: '404.html',
+    // fallback: '404.html',
 
     routes () {
       const contentful = require("contentful")
