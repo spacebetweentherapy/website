@@ -2,7 +2,7 @@
   <section class="content">
     <div class="content-main">
       <!-- TODO Hard code our home page image -->
-      <div v-if="slug === 'index'">
+      <div v-if="slug === 'index'" class="content__image">
         <CmsImage asset-id="4QKYgZ75hpQq30yOokKwVj" class-name="page-home__image" :show-border="true" />
       </div>
       <!-- eslint-disable -->
@@ -86,6 +86,11 @@ export default Vue.extend({
   .content-main {
     flex-wrap: wrap;
     padding: 1em 2em;
+  }
+
+  .content__image {
+    width: 100%;
+    text-align: center;
   }
 
   .content-wrapper {
