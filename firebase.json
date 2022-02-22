@@ -6,12 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
+    // "rewrites": [
+    //   {
+    //     "source": "**",
+    //     "destination": "/index.html"
+    //   }
+    // ],
+    // Prevent ".html" at the end of links
     "cleanUrls": true
   }
 }
