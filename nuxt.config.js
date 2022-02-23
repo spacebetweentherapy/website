@@ -25,10 +25,12 @@ export default {
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'true' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.css' }
     ],
     script: [
-      { src: '/js/ga.js', type: 'module', body: true }
+      { src: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js', body: true, defer: true },
+      { src: '/js/cookie-consent-init.js', body: true, defer: true }
     ]
   },
 
