@@ -61,8 +61,8 @@ export default Vue.extend({
 .quote__overlay {
   position: absolute;
   left: 50%;
-  top: 25%;
-  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin: auto;
   width: 100%;
   max-width: $max-width;
@@ -72,7 +72,6 @@ export default Vue.extend({
 .quote__text, .quote__author {
   margin: 1em 4em;
   font-size: 2em;
-  transform: translateY(-5vh);
   color: $colour-bg-lightest;
   font-family: $font-serif;
   font-weight: $weight-heavy;
