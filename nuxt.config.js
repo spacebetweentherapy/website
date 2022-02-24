@@ -28,14 +28,16 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap' }
     ],
     script: [
-      { src: '/js/ga.js', type: 'module', body: true }
+      { src: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js', body: true, defer: true },
+      { src: '/js/cookie-consent-init.js', body: true, defer: true }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'normalize.css/normalize.css',
-    '~/assets/css/main'
+    '~/assets/css/main',
+    '~/assets/css/cookie-consent'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

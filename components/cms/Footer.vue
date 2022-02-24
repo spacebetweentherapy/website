@@ -9,6 +9,9 @@
             {{ item.title }}
           </NuxtLink>
         </li>
+        <li class="footer__item">
+          <a href="#" data-cc="c-settings">Cookie Settings</a>
+        </li>
       </ul>
     </nav>
 

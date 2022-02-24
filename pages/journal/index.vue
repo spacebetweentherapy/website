@@ -5,7 +5,9 @@
       <div class="content-main">
         <div class="content-wrapper">
           <CmsImage :asset-id="mainPost.fields.image.sys.id" :show-border="true" class-name="content-main__image" />
-          <h2 class="highlighted-post__title">{{ mainPost.fields.title }}</h2>
+          <h2 class="highlighted-post__title">
+            {{ mainPost.fields.title }}
+          </h2>
           <p>{{ mainPost.fields.intro }}</p>
           <p class="button-container">
             <NuxtLink :to="'/journal/' + mainPost.fields.slug" class="button">
