@@ -1,57 +1,44 @@
 <mxfile host="65bd71144e">
     <diagram id="Mkg5d7uXjnzodImICmz0" name="Architecture overview">
-        <mxGraphModel dx="500" dy="183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+        <mxGraphModel dx="974" dy="1131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <object placeholders="1" c4Name="Public" c4Type="Person" c4Description="Public internet user" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="2">
+                <object placeholders="1" c4Name="Public" c4Type="Person" c4Description="Web browser" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="2">
                     <mxCell style="html=1;dashed=0;whitespace=wrap;fillColor=#08427b;strokeColor=none;fontColor=#ffffff;shape=mxgraph.c4.person;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" vertex="1">
-                        <mxGeometry x="185" y="30" width="110.00000000000001" height="140" as="geometry"/>
+                        <mxGeometry x="550" y="30" width="110.00000000000001" height="140" as="geometry"/>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Name="CloudFlare" c4Type="Software System" c4Description="CDN &amp; DNS records for spacebetweentherapy.com" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="3">
+                <object placeholders="1" c4Name="CloudFlare" c4Type="Software System" c4Description="CDN, DNS nameservers" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="3">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
                         <mxGeometry x="100" y="270" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
                 <object placeholders="1" c4Name="Zoho" c4Type="Software System" c4Description="Email services" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="5">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="1260" y="580" width="160" height="110.00000000000001" as="geometry"/>
+                        <mxGeometry x="380" y="660" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
                 <object placeholders="1" c4Name="GitHub" c4Type="Software System" c4Description="Code repos, CI/CD automation pipelines" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="6">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="590" y="440" width="160" height="110.00000000000001" as="geometry"/>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Name="Rich" c4Type="Person" c4Description="Website owner" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="11">
-                    <mxCell style="html=1;dashed=0;whitespace=wrap;fillColor=#08427b;strokeColor=none;fontColor=#ffffff;shape=mxgraph.c4.person;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" vertex="1">
-                        <mxGeometry x="930" y="95" width="110.00000000000001" height="140" as="geometry"/>
+                        <mxGeometry x="380" y="475" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
                 <object placeholders="1" c4Name="Contentful" c4Type="Software System" c4Description="Content Management System" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="14">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="920" y="490" width="160" height="110.00000000000001" as="geometry"/>
+                        <mxGeometry x="380" y="280" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Manage content" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="18">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="11" target="14" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="710" y="675" as="sourcePoint"/>
-                            <mxPoint x="870" y="675" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Retrieve content" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="20">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=1;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.006;entryY=0.182;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="14" edge="1">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Retrieve&#10;content" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="20">
+                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0.75;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="14" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
                             <mxPoint x="690" y="537" as="sourcePoint"/>
                             <mxPoint x="920" y="550" as="targetPoint"/>
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Notify content changes" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="22">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="14" target="6" edge="1">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Notify content&#10;changes" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="22">
+                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0.25;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="14" target="6" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
                             <mxPoint x="916" y="585" as="sourcePoint"/>
                             <mxPoint x="691" y="585" as="targetPoint"/>
@@ -61,28 +48,20 @@
                 <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Deploy website" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="25">
                     <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="6" target="34" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="485" y="560" as="sourcePoint"/>
-                            <mxPoint x="605" y="705" as="targetPoint"/>
+                            <mxPoint x="485" y="545" as="sourcePoint"/>
+                            <mxPoint x="605" y="690" as="targetPoint"/>
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="POP3" c4Description="Retrieve emails" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="27">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="11" target="5" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="1110" y="355" as="sourcePoint"/>
-                            <mxPoint x="1270" y="355" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Browse website" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="29">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="2" target="3" edge="1">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Browse&#10;website" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="29">
+                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0.25;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="2" target="3" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
                             <mxPoint x="540" y="275" as="sourcePoint"/>
                             <mxPoint x="700" y="275" as="targetPoint"/>
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Retrieve website files" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="30">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Retrieve website&#10;files" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="30">
                     <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="3" target="34" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
                             <mxPoint x="40" y="435" as="sourcePoint"/>
@@ -90,123 +69,50 @@
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Manage nameservers" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="32">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="35" target="33" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="840" y="125" as="sourcePoint"/>
-                            <mxPoint x="1000" y="125" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Name="123-reg" c4Type="Software System" c4Description="Manage nameservers" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="33">
-                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="590" y="730" width="160" height="110.00000000000001" as="geometry"/>
-                    </mxCell>
-                </object>
                 <object placeholders="1" c4Name="Google Firebase" c4Type="Software System" c4Description="Static website hosting" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="34">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="295" y="440" width="160" height="110.00000000000001" as="geometry"/>
+                        <mxGeometry x="100" y="465" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Name="Mark" c4Type="Person" c4Description="Website developer" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="35">
-                    <mxCell style="html=1;dashed=0;whitespace=wrap;fillColor=#08427b;strokeColor=none;fontColor=#ffffff;shape=mxgraph.c4.person;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" vertex="1">
-                        <mxGeometry x="120" y="660" width="110.00000000000001" height="140" as="geometry"/>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="SSH" c4Description="Update source code" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="36">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="35" target="6" edge="1">
-                        <mxGeometry x="0.1932" y="8" width="160" relative="1" as="geometry">
-                            <mxPoint x="470" y="735" as="sourcePoint"/>
-                            <mxPoint x="630" y="735" as="targetPoint"/>
-                            <mxPoint as="offset"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Name="JotForm" c4Type="Software System" c4Description="Contact us form" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="37">
+                <object placeholders="1" c4Name="JotForm" c4Type="Software System" c4Description="Contact form emails" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="37">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="500" y="75" width="160" height="110.00000000000001" as="geometry"/>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Configure content model" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="38">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="35" target="14" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="770" y="385" as="sourcePoint"/>
-                            <mxPoint x="930" y="385" as="targetPoint"/>
-                        </mxGeometry>
+                        <mxGeometry x="900" y="280" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
                 <object placeholders="1" c4Name="Google Analytics" c4Type="Software System" c4Description="Measure website traffic" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="39">
                     <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
-                        <mxGeometry x="500" y="250" width="160" height="110.00000000000001" as="geometry"/>
+                        <mxGeometry x="660" y="280" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Track website activity" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="40">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="2" target="39" edge="1">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Track website&#10;activity" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="40">
+                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0.645;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="2" target="39" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
                             <mxPoint x="30" y="145" as="sourcePoint"/>
                             <mxPoint x="190" y="145" as="targetPoint"/>
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Monitor website usage" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="41">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="11" target="39" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="520" y="205" as="sourcePoint"/>
-                            <mxPoint x="680" y="205" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="POP3" c4Description="Retrieve emails" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="42">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="35" target="5" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="980" y="800" as="sourcePoint"/>
-                            <mxPoint x="1140" y="800" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Administer DNS" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="43">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="35" target="3" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="130" y="750" as="sourcePoint"/>
-                            <mxPoint x="290" y="750" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Manage form fields" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="44">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="11" target="37" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="730" y="100" as="sourcePoint"/>
-                            <mxPoint x="890" y="100" as="targetPoint"/>
-                        </mxGeometry>
-                    </mxCell>
-                </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Fill in form" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="45">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="2" target="37" edge="1">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Submit contact&#10;form" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="45">
+                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0.75;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="2" target="37" edge="1">
                         <mxGeometry width="160" relative="1" as="geometry">
                             <mxPoint x="340" y="70" as="sourcePoint"/>
                             <mxPoint x="500" y="70" as="targetPoint"/>
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Check build status" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="46">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="11" target="6" edge="1">
+                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Retrieve&#10;images" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="49">
+                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="14">
                         <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="730" y="350" as="sourcePoint"/>
-                            <mxPoint x="890" y="350" as="targetPoint"/>
+                            <mxPoint x="504.55555555555566" y="180" as="sourcePoint"/>
+                            <mxPoint x="546.7777777777778" y="280" as="targetPoint"/>
                         </mxGeometry>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Manage account" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="47">
-                    <mxCell style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;strokeColor=#707070;strokeWidth=2;fontColor=#707070;jumpStyle=none;dashed=1;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};" parent="1" source="35" target="34" edge="1">
-                        <mxGeometry width="160" relative="1" as="geometry">
-                            <mxPoint x="290" y="620" as="sourcePoint"/>
-                            <mxPoint x="450" y="620" as="targetPoint"/>
-                        </mxGeometry>
+                <object placeholders="1" c4Name="123-reg" c4Type="Software System" c4Description="Domain registrar" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="51">
+                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#1168BD;metaEdit=1;metaData={&quot;c4Type&quot;:{&quot;editable&quot;:false}};points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+                        <mxGeometry x="100" y="660" width="160" height="110.00000000000001" as="geometry"/>
                     </mxCell>
                 </object>
-                <mxCell id="48" value="spacebetweentherapy.com is a static website, produced using Vue.js &amp;amp; Nuxt.js and hosted on Firebase. &lt;br&gt;&lt;br&gt;Contentful is the CMS and fires webhooks back to GitHub to trigger builds on content changes." style="shape=note;strokeWidth=2;fontSize=14;size=20;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#666600;" parent="1" vertex="1">
-                    <mxGeometry x="1180" y="95" width="270" height="160" as="geometry"/>
-                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>

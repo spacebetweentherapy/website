@@ -1,25 +1,40 @@
 # space-between-therapy
 
-Public website of spacebetweentherapy.com.
-
-This site is built using:
-
+Public website of spacebetweentherapy.com built using:
 - [Vue.js](https://vuejs.org/)
 - [Nuxt.js](https://nuxtjs.org/)
-- [Contentful](https://www.contentful.com/)
+- [Cookie Consent](https://github.com/orestbida/cookieconsent)
+
+Behind the scenes, spacebetweentherapy.com is a static website built using a set of free services:
+
+- [Contentful](https://www.contentful.com/) CMS
+- [GitHub](https://github.com/) including GitHub Actions
+- [JotForm](https://www.jotform.com/) for the contact form
+- [Firebase](https://firebase.google.com/) hosting
+- [Cloudflare](https://www.cloudflare.com/en-gb/) CDN
+
+These services are used as described in the below diagram.
+
+![Architecture overview diagram](/doc/overview.png?raw=true "Architecture overview")
 
 ## Build setup
 
 ### Environment variables
 
-Before building the following environment variables are needed:
+Before building the following environment variables are needed at minimum:
 
-- `SITE_TITLE` The title of this site (used in `<head><title>` and other areas)
 - `CTF_SPACE_ID` The Contentful space ID
 - `CTF_CDA_ACCESS_TOKEN` The Contentful access token to pass in requests
-- `GOOGLE_ANALYTICS_ID` The Google Analytics UA ID to embed
 
 These can be set in a `.env` file locally or passed as environment variables in shell.
+
+Optionally, you can connect to the Contentful preview API to see content in "Draft" state. To enable this, ensure a "preview" API token is populated in the environment variable above, and add the following environment variable:
+
+- `CTF_API_URL=preview.contentful.com`
+
+The site title can be overriden from its default:
+
+- `SITE_TITLE` The title of this site (used in `<head><title>` and other areas)
 
 ### Running a build
 
