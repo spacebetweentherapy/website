@@ -82,10 +82,10 @@ cc.run({
         blocks: [
           {
             title: 'Cookie usage 📢',
-            description: 'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/privacy-and-cookies" class="cc-link">privacy policy</a>.'
+            description: 'We use cookies to ensure the basic functionality of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/privacy-and-cookies" class="cc-link">privacy policy</a>.'
           }, {
             title: 'Strictly necessary cookies',
-            description: 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly',
+            description: 'These cookies are essential for the proper functioning of the website.',
             toggle: {
               value: 'necessary',
               enabled: true,
@@ -93,7 +93,7 @@ cc.run({
             }
           }, {
             title: 'Performance and Analytics cookies',
-            description: 'These cookies allow the website to remember the choices you have made in the past',
+            description: 'These cookies allow us to measure how the website is being used.',
             toggle: {
               value: 'analytics',     // your cookie category
               enabled: false,
@@ -104,14 +104,8 @@ cc.run({
                 col1: '^_ga',       // match all cookies starting with "_ga"
                 col2: 'google.com',
                 col3: '2 years',
-                col4: 'description ...',
+                col4: 'Measurement cookie tracking website usage',
                 is_regex: true
-              },
-              {
-                col1: '_gid',
-                col2: 'google.com',
-                col3: '1 day',
-                col4: 'description ...',
               }
             ]
           }, {
