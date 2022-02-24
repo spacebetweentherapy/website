@@ -25,8 +25,7 @@ export default {
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'true' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.css' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap' }
     ],
     script: [
       { src: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js', body: true, defer: true },
@@ -37,7 +36,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'normalize.css/normalize.css',
-    '~/assets/css/main'
+    '~/assets/css/main',
+    '~/assets/css/cookie-consent'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
