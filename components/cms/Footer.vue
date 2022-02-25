@@ -5,12 +5,12 @@
     <nav class="footer__nav">
       <ul class="footer__list">
         <li v-for="item in items" :key="item.id" class="footer__item">
-          <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug">
+          <NuxtLink :to="(item.slug === 'index') ? '/' : '/' + item.slug" class="footer__link">
             {{ item.title }}
           </NuxtLink>
         </li>
         <li class="footer__item">
-          <a href="#" data-cc="c-settings">Cookie Settings</a>
+          <a href="#" data-cc="c-settings" class="footer__link">Cookie Preferences</a>
         </li>
       </ul>
     </nav>
@@ -124,13 +124,19 @@ export default Vue.extend({
   flex-grow: 1;
   flex-basis: auto;
   margin: 0;
-  padding: 0 .7em;
   border-left: 1px solid #ccc;
 
-  a {
-    color: $colour-text-light;
-    text-decoration: none;
+  &:first-child {
+    .footer__link {
+      padding-left: 0;
+    }
   }
+}
+
+.footer__link {
+  padding: 1em;
+  color: $colour-text-light;
+  text-decoration: none;
 }
 
 .footer__copyright {
