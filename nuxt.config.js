@@ -54,19 +54,14 @@ export default {
     '@nuxt/typescript-build',
 
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-
-    // https://google-analytics.nuxtjs.org/setup
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/eslint-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/markdownit',
-    '@nuxtjs/style-resources',
     
-    // https://www.npmjs.com/package/@nuxtjs/svg
-    '@nuxtjs/svg',
+    '@nuxtjs/style-resources',
 
     // https://sitemap.nuxtjs.org/guide/setup
     '@nuxtjs/sitemap'
