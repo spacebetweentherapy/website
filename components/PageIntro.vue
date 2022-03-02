@@ -15,7 +15,7 @@
         <slot name="introImage" />
       </div>
 
-      <hr class="intro__line">
+      <hr v-if="introText" class="intro__line">
     </div>
   </section>
 </template>
