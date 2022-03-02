@@ -29,11 +29,15 @@
         </template>
       </PageIntro>
 
-      <CmsRichText v-if="$data.page.fields.section1Content" :raw="$data.page.fields.section1Content" :slug="$data.slug" />
-      <CmsRichText v-if="$data.page.fields.section2Content" :raw="$data.page.fields.section2Content" :slug="$data.slug" />
-      <CmsRichText v-if="$data.page.fields.section3Content" :raw="$data.page.fields.section3Content" :slug="$data.slug" />
+      <!-- If this is the homepage hardcode the rainbow image  -->
+      <CmsRichText v-if="$data.page.fields.section1Content && slug === 'index'" :raw="$data.page.fields.section1Content" :show-homepage-image="true" />
+      <CmsRichText v-else-if="$data.page.fields.section1Content" :raw="$data.page.fields.section1Content" />
 
+      <!-- Allow specific page content after the first section -->
       <Nuxt />
+
+      <CmsRichText v-if="$data.page.fields.section2Content" :raw="$data.page.fields.section2Content" />
+      <CmsRichText v-if="$data.page.fields.section3Content" :raw="$data.page.fields.section3Content" />
 
       <CmsQuote v-if="$data.page.fields.quote" :quote-id="$data.page.fields.quote.sys.id" />
     </div>
@@ -63,7 +67,6 @@ export default Vue.extend({
     const page = await this.$contentful.getEntries({
       content_type: this.$config.CTF_CONTENT_TYPE_PAGE,
       limit: 1,
-      include: 10,
       'fields.slug[match]': slug
     })
 
