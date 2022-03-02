@@ -2,7 +2,7 @@
   <section class="content">
     <div class="content-main">
       <!-- TODO Hard code our home page image -->
-      <div v-if="slug === 'index'" class="content__image">
+      <div v-if="showHomepageImage" class="content__image">
         <CmsImage
           asset-id="4QKYgZ75hpQq30yOokKwVj"
           class-name="page-home__image"
@@ -13,7 +13,7 @@
         />
       </div>
       <!-- eslint-disable -->
-      <div class="content-wrapper" :style="(slug === 'index' ? 'padding:0' : '')" v-html="markup" />
+      <div class="content-wrapper" :style="(showHomepageImage ? 'padding:0' : '')" v-html="markup" />
     </div>
   </section>
 </template>
@@ -28,10 +28,9 @@ export default Vue.extend({
       default: null,
       required: true
     },
-    slug: {
-      type: String,
-      default: '',
-      required: false
+    showHomepageImage: {
+      type: Boolean,
+      default: false
     }
   },
 

@@ -89,7 +89,8 @@ export default {
     CTF_CONTENT_TYPE_BLOG_POST: process.env.CTF_CONTENT_TYPE_BLOG_POST || 'blogPost',
     CTF_CONTENT_TYPE_CONTACT_INFO: process.env.CTF_CONTENT_TYPE_CONTACT_INFO || 'contactInfo',
     CTF_CONTENT_TYPE_MAIN_MENU: process.env.CTF_CONTENT_TYPE_MAIN_MENU || 'mainMenu',
-    CTF_CONTENT_TYPE_FOOTER_MENU: process.env.CTF_CONTENT_TYPE_FOOTER_MENU || 'footerMenu'
+    CTF_CONTENT_TYPE_FOOTER_MENU: process.env.CTF_CONTENT_TYPE_FOOTER_MENU || 'footerMenu',
+    CTF_CONTENT_TYPE_HOME_MENU: process.env.CTF_CONTENT_TYPE_HOME_MENU || 'homeMenu'
   },
 
   // Module configs
