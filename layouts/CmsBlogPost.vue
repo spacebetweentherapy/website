@@ -16,7 +16,8 @@
         :sub-text="$data.page.fields.hero.fields.shortText"
       />
 
-      <PageIntro :title="$data.page.fields.title" :intro-text="$data.page.fields.intro" />
+      <!-- Don't display intro text on the blog post page -->
+      <PageIntro :title="$data.page.fields.title" />
 
       <section class="post">
         <div class="post-content">
