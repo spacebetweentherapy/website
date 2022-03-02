@@ -3,13 +3,9 @@
     <div class="quote__wrapper">
       <div class="quote__overlay">
         <p class="quote__text">
-          <span class="quote__quote-mark">&ldquo;</span>
-          {{ cmsAsset.fields.text }}
-          <span class="quote__quote-mark">&rdquo;</span>
+          <span class="quote__quote-mark">&ldquo;</span>{{ cmsAsset.fields.text }}<span class="quote__quote-mark">&rdquo;</span>
         </p>
-        <p class="quote__author">
-          {{ cmsAsset.fields.author }}
-        </p>
+        <p class="quote__author">{{ cmsAsset.fields.author }}</p>
       </div>
       <CmsImage :asset-id="cmsAsset.fields.image.sys.id" class-name="quote__image" />
     </div>
@@ -92,14 +88,12 @@ export default Vue.extend({
 }
 
 @include small-screens {
-  .quote__text {
+  .quote__text, .quote__author {
     margin: 1em;
-    font-size: 1.3em;
   }
 
-  .quote__author {
-    margin: 1em;
-    font-size: 1.2em;
+  .quote__text {
+    font-size: 1.7em;
   }
 }
 </style>

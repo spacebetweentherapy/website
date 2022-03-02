@@ -1,14 +1,20 @@
 <template>
-  <section class="recent-blog-posts">
-    <BlogPostList :posts="posts">
-      <template #prepend>
-        <h1>
-          <NuxtLink to="/journal">
-            Journal
+  <section class="homepage-menu">
+    <div class="links">
+      <ul class="links__list">
+        <li v-for="link in links" :key="link.sys.id" class="links__item">
+          <NuxtLink :to="link.fields.slug" class="links__link">
+            <CmsImage :asset-id="link.fields.thumbnail.sys.id" :width="200" :height="200" :include2x="true" />
+            <h2 class="links__title">
+              {{ link.fields.title }}
+            </h2>
+            <p class="links__text">
+              {{ link.fields.thumbnailText }}
+            </p>
           </NuxtLink>
-        </h1>
-      </template>
-    </BlogPostList>
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -19,53 +25,74 @@ export default Vue.extend({
 
   data () {
     return {
-      posts: []
+      links: []
     }
   },
 
   async fetch () {
-    // Retrieve recent blog posts
-    const posts = await this.$contentful.getEntries({
-      content_type: this.$config.CTF_CONTENT_TYPE_BLOG_POST,
-      order: '-fields.date',
-      include: 3
+    // Retrieve home page menu
+    const entries = await this.$contentful.getEntries({
+      content_type: this.$config.CTF_CONTENT_TYPE_HOME_MENU
     })
-    this.$data.posts = posts.items
+    this.$data.links = entries.items[0].fields.links
   }
 })
 </script>
 
 <style lang="scss" scoped>
-.recent-blog-posts {
-  padding-bottom: 5em;
-
-  h1 {
-    margin-top: 1.2em;
-    margin-bottom: 0;
-    flex: 0 0 100%;
-    font-size: 3em;
-    font-weight: $weight-heavy;
-
-    a {
-      font-family: $font-serif;
-      color: $colour-bg-lightest;
-      text-decoration: none;
-      text-decoration-color: $colour-highlight;
-      text-underline-offset: .2em;
-      font-weight: normal;
-      text-transform: uppercase;
-    }
-  }
+.homepage-menu {
+  padding: 5em 0;
 }
 
-@include medium-screens {
-  .recent-blog-posts {
-    padding: 1em 2em;
+.links {
+  margin: auto;
+  max-width: $max-width;
+}
+
+.links__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 2em;
+}
+
+.links__item {
+  flex-basis: 30%;
+  text-align: center;
+}
+
+.links__link {
+  text-decoration: none;
+}
+
+.links__title {
+  margin: 0;
+  color: $colour-bg-lightest;
+  text-transform: uppercase;
+  font-family: $font-serif;
+  font-weight: $weight-heavy;
+  font-size: $size-section-title;
+}
+
+.links__text {
+  margin: 0;
+  color: $colour-text;
+}
+
+@include small-screens {
+  .homepage-menu {
+    padding: 2em 0;
   }
 
-  .recent-blog-post-image {
-    width: 100%;
-    height: auto;
+  .links__list {
+    flex-wrap: wrap;
+    row-gap: 2em;
+  }
+
+  .links__item {
+    flex-basis: 100%;
   }
 }
 </style>
