@@ -37,6 +37,7 @@ const contentfulPlugin: Plugin = (context, inject) => {
   // See https://www.contentful.com/blog/2021/04/14/rendering-linked-assets-entries-in-contentful/
   inject('renderRichText', (richText: any) => {
     const options: Partial<Options> = {
+      
       renderNode: {
         // Handle embedded images
         [BLOCKS.EMBEDDED_ASSET]: (node: any): string => {
@@ -57,6 +58,14 @@ const contentfulPlugin: Plugin = (context, inject) => {
           if (node.data.target.sys.contentType.sys.id === context.$config.CTF_CONTENT_TYPE_PAGE) {
             return (
               '<a href="/' +
+              node.data.target.fields.slug +
+              '">' +
+              node.content[0].value +
+              '</a>'
+            )
+          } else if (node.data.target.sys.contentType.sys.id === context.$config.CTF_CONTENT_TYPE_BLOG_POST) {
+            return (
+              '<a href="/journal/' +
               node.data.target.fields.slug +
               '">' +
               node.content[0].value +
