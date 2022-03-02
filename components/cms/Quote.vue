@@ -88,12 +88,12 @@ export default Vue.extend({
 }
 
 @include small-screens {
-  .quote__text {
+  .quote__text, .quote__author {
     margin: 1em;
   }
 
-  .quote__author {
-    margin: 1em;
+  .quote__text {
+    font-size: 1.7em;
   }
 }
 </style>
