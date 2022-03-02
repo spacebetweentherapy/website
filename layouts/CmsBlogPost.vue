@@ -17,7 +17,7 @@
       />
 
       <!-- Don't display intro text on the blog post page -->
-      <PageIntro :title="$data.page.fields.title" />
+      <PageIntro />
 
       <section class="post">
         <div class="post-content">
@@ -74,7 +74,6 @@ export default Vue.extend({
     const page = await this.$contentful.getEntries({
       content_type: this.$config.CTF_CONTENT_TYPE_BLOG_POST,
       limit: 1,
-      include: 10,
       'fields.slug[match]': slug
     })
 
