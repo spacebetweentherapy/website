@@ -35,32 +35,34 @@
 
     <section>
       <div class="form">
-        <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
-          <label class="form__label">
-            Name
-            <input type="text" name="q4_typeA" class="form__input" required>
-          </label>
-          <label class="form__label">
-            Email
-            <input type="email" name="q5_email" class="form__input" required>
-          </label>
-          <label class="form__label">
-            Phone
-            <input type="tel" name="q8_typeA8" class="form__input" required>
-          </label>
-          <label class="form__label">
-            Your message
-            <textarea name="q7_typeA7" rows="6" class="form__input" required />
-          </label>
+        <div class="form__wrapper">
+          <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
+            <label class="form__label">
+              Name
+              <input type="text" name="q4_typeA" class="form__input" required>
+            </label>
+            <label class="form__label">
+              Email
+              <input type="email" name="q5_email" class="form__input" required>
+            </label>
+            <label class="form__label">
+              Phone
+              <input type="tel" name="q8_typeA8" class="form__input" required>
+            </label>
+            <label class="form__label">
+              Your message
+              <textarea name="q7_typeA7" rows="6" class="form__input" required />
+            </label>
 
-          <input type="hidden" name="formID" value="220134543182042">
+            <input type="hidden" name="formID" value="220134543182042">
 
-          <div class="button-container">
-            <button type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
+            <div class="button-container">
+              <button type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </div>
@@ -136,6 +138,10 @@ export default Vue.extend({
   }
 }
 
+.form__wrapper {
+  padding: 0 8em;
+}
+
 .form__label {
   display: block;
   margin: 1em 0;
@@ -150,6 +156,10 @@ export default Vue.extend({
 @include medium-screens {
   .form {
     padding: 1em;
+  }
+
+  .form__wrapper {
+    padding: 0;
   }
 }
 
