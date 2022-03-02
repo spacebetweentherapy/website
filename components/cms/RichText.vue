@@ -62,6 +62,8 @@ export default Vue.extend({
     font-family: $font-serif;
     font-weight: $weight-heavy;
     font-size: $size-section-title;
+    color: $colour-highlight;
+    text-align: left;
   }
 
   hr {
