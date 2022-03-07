@@ -9,5 +9,5 @@ jobs:
         with:
           node-version: 14
       - run: npm install && npm install -g @lhci/cli@0.8.x
-      - run: npm run build
+      - run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
       - run: lhci autorun
