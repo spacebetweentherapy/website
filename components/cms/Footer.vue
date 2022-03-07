@@ -133,10 +133,14 @@ export default Vue.extend({
   }
 }
 
-.footer__link {
+.footer__link, .footer__link:visited {
   padding: 1em;
   color: $colour-text-light;
   text-decoration: none;
+}
+
+.footer__link.current {
+  color: $colour-highlight;
 }
 
 .footer__copyright {
