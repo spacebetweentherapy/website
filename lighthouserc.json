@@ -1,0 +1,15 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./dist",
+      "chromePath": false,
+      "numberOfRuns": 3,
+      "url": [
+        "http://localhost/index.html",
+        "http://localhost/about.html",
+        "http://localhost/journal/index.html",
+        "http://localhost/contact.html"
+      ]
+    }
+  }
+}
