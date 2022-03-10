@@ -73,7 +73,7 @@ export default Vue.extend({
 .hero__title {
   margin-bottom: -.2em;
   padding-top: .6em;
-  font-size: 5vw;
+  font-size: 4em;
   transform: translateY(5vw);
   letter-spacing: 0.45rem;
   color: $colour-text;
@@ -93,20 +93,10 @@ export default Vue.extend({
 
 .hero__text {
   margin: 0;
-  font-size: 2vw;
+  font-size: 1.5em;
   transform: translateY(5vw);
   letter-spacing: 0.45rem;
   font-weight: 500;
-}
-
-@include medium-screens {
-  .hero__title {
-    font-size: 4em;
-  }
-
-  .hero__text {
-    font-size: 1.5em;
-  }
 }
 
 @include small-screens {
