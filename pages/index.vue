@@ -1,21 +1,38 @@
 <template>
-  <section class="homepage-menu">
-    <div class="links">
-      <ul class="links__list">
-        <li v-for="link in links" :key="link.sys.id" class="links__item">
-          <NuxtLink :to="link.fields.slug" class="links__link">
-            <CmsImage :asset-id="link.fields.thumbnail.sys.id" :width="200" :height="200" :include2x="true" />
-            <h2 class="links__title">
-              {{ link.fields.title }}
-            </h2>
-            <p class="links__text">
-              {{ link.fields.thumbnailText }}
-            </p>
-          </NuxtLink>
-        </li>
-      </ul>
-    </div>
-  </section>
+  <div>
+    <!--  -->
+    <div />
+    <section class="homepage-menu">
+      <div class="links">
+        <ul class="links__list">
+          <li v-for="link in links" :key="link.sys.id" class="links__item">
+            <NuxtLink :to="link.fields.slug" class="links__link">
+              <CmsImage :asset-id="link.fields.thumbnail.sys.id" :width="200" :height="200" :include2x="true" />
+              <h2 class="links__title">
+                {{ link.fields.title }}
+              </h2>
+              <p class="links__text">
+                {{ link.fields.thumbnailText }}
+              </p>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="content-main">
+        <div class="content-wrapper">
+          <p class="contact__text">
+            If you would like to arrange a free consultation, check my availability or ask a question, please feel free to get in touch.
+          </p>
+          <p class="button-container">
+            <a class="button" href="/contact">Contact</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -79,6 +96,10 @@ export default Vue.extend({
 .links__text {
   margin: 0;
   color: $colour-text;
+}
+
+.contact__text {
+  text-align: center;
 }
 
 @include small-screens {
