@@ -95,6 +95,7 @@ export default Vue.extend({
 
 .links__text {
   margin: 0;
+  padding: 0 2em;
   color: $colour-text;
 }
 
