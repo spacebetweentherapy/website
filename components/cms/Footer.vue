@@ -98,14 +98,14 @@ export default Vue.extend({
   font-size: .8em;
 }
 
-.footer__image {
-  flex-basis: 50%;
+// .footer__image {
+//   flex-basis: 50%;
 
-  &:last-of-type {
-    align-self: baseline;
-    text-align: right;
-  }
-}
+//   &:last-of-type {
+//     align-self: baseline;
+//     text-align: right;
+//   }
+// }
 
 .footer__nav {
   overflow: hidden;
@@ -143,9 +143,9 @@ export default Vue.extend({
   color: $colour-highlight;
 }
 
-.footer__copyright {
-  align-self: baseline;
-}
+// .footer__copyright {
+//   align-self: baseline;
+// }
 
 @include small-screens {
   .footer {
@@ -160,6 +160,14 @@ export default Vue.extend({
   .footer__list  {
     display: block;
     margin: 1em 0;
+  }
+
+  .footer__item {
+    &:first-child {
+      .footer__link {
+        padding-left: 1em;
+      }
+    }
   }
 }
 </style>
