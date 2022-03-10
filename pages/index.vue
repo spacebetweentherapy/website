@@ -99,6 +99,7 @@ export default Vue.extend({
 }
 
 .contact__text {
+  padding: 0 7em;
   text-align: center;
 }
 
@@ -114,6 +115,10 @@ export default Vue.extend({
 
   .links__item {
     flex-basis: 100%;
+  }
+
+  .contact__text {
+    padding: 0;
   }
 }
 </style>
