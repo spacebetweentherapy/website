@@ -11,6 +11,7 @@ name: Deploy PR
   
 jobs:
   build_and_deploy:
+    name: Build static website
     runs-on: ubuntu-latest
     environment: dev
 
@@ -25,9 +26,11 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install && npm install -g @lhci/cli@0.8.x chromium
+        run: |
+          npm install
+          npm install -g @lhci/cli@0.8.x chromium
 
-      - name: Generate static website
+      - name: Generate website files
         run: npm run generate
         env:
           SITE_TITLE: Space Between Therapy
@@ -35,7 +38,7 @@ jobs:
           CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
       
       - name: Run Lighthouse
-        run:  lhci autorun
+        run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
