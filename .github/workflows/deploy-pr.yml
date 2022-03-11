@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_TITLE: Space Between Therapy
+      CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+      CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     environment: dev
 
     steps:
@@ -30,10 +33,10 @@ jobs:
         run: npm install && npm install -g @lhci/cli@0.8.x chromium
 
       - name: Generate static website
-        run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
+        run: npm run generate
       
       - name: Run Lighthouse
-        run:  LHCI_GITHUB_APP_TOKEN=${{ secrets.LHCI_GITHUB_APP_TOKEN }} lhci autorun
+        run:  lhci autorun
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0

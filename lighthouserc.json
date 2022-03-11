@@ -10,6 +10,9 @@
         "http://localhost/journal.html",
         "http://localhost/contact.html"
       ]
+    },
+    "upload": {
+      "target": "temporary-public-storage"
     }
   }
 }
