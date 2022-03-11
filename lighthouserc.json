@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
-      "chromePath": false,
+      "chromePath": "/usr/bin/chromium-browser",
       "numberOfRuns": 3,
       "url": [
         "http://localhost/index.html",

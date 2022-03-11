@@ -53,3 +53,27 @@ $ npm run start
 $ npm run generate
 ```
 For a detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+### Google Lighthouse
+
+We run Google [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) against builds to ensure site performance, SEO and accessibility scores remain high.
+
+Lighthouse is configured to run automatically in a GitHub action when code is committed.
+
+You can also install and test it locally:
+
+```bash
+# If you're using WSL, run this first
+$ sudo apt-get update
+$ sudo apt-get install -yqq daemonize dbus-user-session fontconfig
+$ sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+$ exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME
+
+# Install dependencies
+$ sudo apt-get update
+$ sudo apt install chromium-browser
+$ sudo snap install chromium
+
+# Test Lighthouse CI
+CHROME_PATH=/usr/bin/chromium-browser lhci autorun
+```
