@@ -1,5 +1,13 @@
 {
   "ci": {
+    "collect": {
+      "url": [
+        "http://localhost/index.html",
+        "http://localhost/about.html",
+        "http://localhost/journal.html",
+        "http://localhost/contact.html"
+      ]
+    },
     "assert": {
 			"preset": "lighthouse:recommended"
 		},
