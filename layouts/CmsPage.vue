@@ -33,11 +33,11 @@
       <CmsRichText v-if="$data.page.fields.section1Content && slug === 'index'" :raw="$data.page.fields.section1Content" :show-homepage-image="true" />
       <CmsRichText v-else-if="$data.page.fields.section1Content" :raw="$data.page.fields.section1Content" />
 
-      <!-- Allow specific page content after the first section -->
-      <Nuxt />
-
       <CmsRichText v-if="$data.page.fields.section2Content" :raw="$data.page.fields.section2Content" />
       <CmsRichText v-if="$data.page.fields.section3Content" :raw="$data.page.fields.section3Content" />
+
+      <!-- Allow specific page content after the CMS content -->
+      <Nuxt />
 
       <CmsQuote v-if="$data.page.fields.quote" :quote-id="$data.page.fields.quote.sys.id" />
     </div>
