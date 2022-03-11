@@ -1,7 +1,7 @@
 # 
-# GitHub Action to build and deploy the static site to a temporary test URL
+# GitHub Action to build and deploy the static site to a temporary URL
 # 
-name: Deploy STAGING
+name: Deploy PR
 'on':
   # Trigger on code pull request
   pull_request:
@@ -11,9 +11,8 @@ name: Deploy STAGING
   
 jobs:
   build_and_deploy:
+    name: Build static website
     runs-on: ubuntu-latest
-    env:
-      SITE_TITLE: Space Between Therapy
     environment: dev
 
     steps:
@@ -27,10 +26,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g @lhci/cli@0.8.x chromium
 
-      - name: Generate static website
-        run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
+      - name: Generate website files
+        run: npm run generate
+        env:
+          SITE_TITLE: Space Between Therapy
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
+      
+      - name: Run Lighthouse
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0

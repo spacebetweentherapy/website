@@ -53,3 +53,9 @@ $ npm run start
 $ npm run generate
 ```
 For a detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+### Google Lighthouse
+
+We run Google [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) against builds to ensure site performance, SEO and accessibility scores remain high.
+
+Lighthouse is configured to run automatically in a GitHub action when a PR is raised. Information about the results are included in the "checks" section of each PR. This relies on the official [Lighthouse CI GitHub app](https://github.com/apps/lighthouse-ci) being installed and authorised on this repository.

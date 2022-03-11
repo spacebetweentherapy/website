@@ -1,13 +1,12 @@
 # 
 # GitHub Action to build and deploy the static site to the production URL
-# https://spacebetweentherapy.com/
 # 
-name: Deploy PRODUCTION
+name: Deploy Production
 'on':
-  # Trigger on code pushed to the staging branch
+  # Trigger on code pushed to the main branch
   push:
     branches:
-      - master
+      - main
 
   # Trigger on Contentful webhook
   repository_dispatch:
@@ -23,6 +22,7 @@ concurrency:
   
 jobs:
   build_and_deploy:
+    name: Build static website
     runs-on: ubuntu-latest
     env:
       SITE_TITLE: Space Between Therapy
@@ -42,7 +42,11 @@ jobs:
         run: npm install
 
       - name: Generate static website
-        run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
+        run: npm run generate
+        env:
+          SITE_TITLE: Space Between Therapy
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
