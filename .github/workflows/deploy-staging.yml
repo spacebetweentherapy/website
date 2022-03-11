@@ -1,8 +1,7 @@
 # 
-# GitHub Action to build and deploy the static site to the staging URL
-# https://spacebetweentherapy-d8430--staging-mleha23p.web.app/
+# GitHub Action to build and deploy the static site to a staging URL
 # 
-name: Deploy STAGING
+name: Deploy Staging
 'on':
   # Trigger on code pushed to the staging branch
   push:
@@ -23,9 +22,8 @@ concurrency:
   
 jobs:
   build_and_deploy:
+    name: Build static website
     runs-on: ubuntu-latest
-    env:
-      SITE_TITLE: Space Between Therapy
     environment: staging
 
     steps:
@@ -44,7 +42,11 @@ jobs:
         run: npm install
 
       - name: Generate static website
-        run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
+        run: npm run generate
+        env:
+          SITE_TITLE: Space Between Therapy
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
