@@ -9,6 +9,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - run: npm ci && npm install -g @lhci/cli@0.8.x chromium
+      - run: npm install
+      - run: npm install -g @lhci/cli@0.8.x chromium
       - run: SITE_TITLE=$SITE_TITLE CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} npm run generate
       - run: lhci autorun
