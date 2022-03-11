@@ -12,11 +12,6 @@ name: Deploy PR
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    env:
-      SITE_TITLE: Space Between Therapy
-      CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
-      CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
-      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     environment: dev
 
     steps:
@@ -34,9 +29,15 @@ jobs:
 
       - name: Generate static website
         run: npm run generate
+        env:
+          SITE_TITLE: Space Between Therapy
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
       
       - name: Run Lighthouse
         run:  lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
