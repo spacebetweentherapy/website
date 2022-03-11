@@ -1,16 +1,8 @@
 {
   "ci": {
-    "collect": {
-      "staticDistDir": "./dist",
-      "chromePath": "/usr/bin/chromium-browser",
-      "numberOfRuns": 3,
-      "url": [
-        "http://localhost/index.html",
-        "http://localhost/about.html",
-        "http://localhost/journal.html",
-        "http://localhost/contact.html"
-      ]
-    },
+    "assert": {
+			"preset": "lighthouse:recommended"
+		},
     "upload": {
       "target": "temporary-public-storage"
     }
