@@ -82,7 +82,7 @@ cc.run({
         blocks: [
           {
             title: 'Cookie usage 📢',
-            description: 'We use cookies to ensure the basic functionality of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/privacy-and-cookies" class="cc-link">privacy policy</a>.'
+            description: 'We use cookies to ensure the basic functionality of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details, please read the full <a href="/privacy" class="cc-link">privacy statement</a>.'
           }, {
             title: 'Strictly necessary cookies',
             description: 'These cookies are essential for the proper functioning of the website.',
@@ -110,7 +110,7 @@ cc.run({
             ]
           }, {
             title: 'More information',
-            description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="#yourcontactpage">contact us</a>.',
+            description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="/contact">contact us</a>.',
           }
         ]
       }
