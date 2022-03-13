@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_TITLE: Space Between Therapy
-    environment: staging
+    environment: live
 
     steps:
       - name: Checkout code
