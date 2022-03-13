@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <CmsImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" class-name="footer__image" />
+    <CmsImage v-for="image in images" :key="image.sys.id" :asset-id="image.sys.id" :width="250" :height="107" :include2x="true" class-name="footer__image" />
 
     <nav class="footer__nav">
       <ul class="footer__list">
