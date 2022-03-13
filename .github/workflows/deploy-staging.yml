@@ -11,7 +11,7 @@ name: Deploy Staging
   # Trigger on Contentful webhook
   repository_dispatch:
     types:
-      - ctf-master-publish
+      - ctf-master-save
 
   # Allow manual trigger from the Actions tab on github.com
   workflow_dispatch:
