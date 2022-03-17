@@ -54,7 +54,9 @@ export default {
     '@nuxt/typescript-build',
 
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+
+    '@nuxtjs/robots'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -97,6 +99,11 @@ export default {
   markdownit: {
     injected: true,
     linkify: true
+  },
+
+  robots: {
+    UserAgent: '*',
+    Disallow: ''
   },
 
   render: {
