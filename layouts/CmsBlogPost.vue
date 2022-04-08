@@ -29,6 +29,7 @@
             :show-border="true"
             :focus="true"
           />
+          <BlogAudioPlayer v-if="$data.page.fields.audioId" :show-id="showId" :episode-id="$data.page.fields.audioId" />
         </div>
       </section>
 
@@ -109,6 +110,12 @@ export default Vue.extend({
           content: ((this.$data.page.fields.noIndex) ? 'noindex' : 'index') + ', ' + ((this.$data.page.fields.noFollow) ? 'nofollow' : 'follow')
         }
       ]
+    }
+  },
+
+  computed: {
+    showId () {
+      return this.$config.ACAST_SHOW_ID
     }
   }
 })
