@@ -1,7 +1,7 @@
 <template>
   <iframe
     class="audio-player"
-    src="https://embed.acast.com/6230990be23a6d0012c856e6/623099f4ef1f4a00130374e6?accentColor=4a4a4a&bgColor=ebebeb&secondaryColor=ae854c"
+    src="https://embed.acast.com/6230990be23a6d0012c856e6/623099f4ef1f4a00130374e6?accentColor=4a4a4a&bgColor=fff&secondaryColor=ae854c"
     frameBorder="0"
     height="110px"
   />
@@ -29,6 +29,8 @@ export default Vue.extend({
   display: block;
   margin: auto;
   width: 744px;
+  padding-top: 2em;
+  padding-bottom: 3em;
 }
 
 @include medium-screens {
