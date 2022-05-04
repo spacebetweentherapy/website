@@ -23,13 +23,13 @@
         <div class="post-content">
           <!-- eslint-disable -->
           <div v-html="content" class="content-wrapper" />
+          <BlogAudioPlayer v-if="$data.page.fields.audioId" :show-id="showId" :episode-id="$data.page.fields.audioId" />
           <CmsImage
             :asset-id="$data.page.fields.image.sys.id"
             className="post-content__image"
             :show-border="true"
             :focus="true"
           />
-          <BlogAudioPlayer v-if="$data.page.fields.audioId" :show-id="showId" :episode-id="$data.page.fields.audioId" />
         </div>
       </section>
 
