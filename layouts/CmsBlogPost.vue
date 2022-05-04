@@ -23,6 +23,7 @@
         <div class="post-content">
           <!-- eslint-disable -->
           <div v-html="content" class="content-wrapper" />
+          <BlogAudioPlayer v-if="$data.page.fields.audioId" :show-id="showId" :episode-id="$data.page.fields.audioId" />
           <CmsImage
             :asset-id="$data.page.fields.image.sys.id"
             className="post-content__image"
@@ -109,6 +110,12 @@ export default Vue.extend({
           content: ((this.$data.page.fields.noIndex) ? 'noindex' : 'index') + ', ' + ((this.$data.page.fields.noFollow) ? 'nofollow' : 'follow')
         }
       ]
+    }
+  },
+
+  computed: {
+    showId () {
+      return this.$config.ACAST_SHOW_ID
     }
   }
 })

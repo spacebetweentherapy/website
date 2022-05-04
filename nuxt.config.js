@@ -92,7 +92,9 @@ export default {
     CTF_CONTENT_TYPE_CONTACT_INFO: process.env.CTF_CONTENT_TYPE_CONTACT_INFO || 'contactInfo',
     CTF_CONTENT_TYPE_MAIN_MENU: process.env.CTF_CONTENT_TYPE_MAIN_MENU || 'mainMenu',
     CTF_CONTENT_TYPE_FOOTER_MENU: process.env.CTF_CONTENT_TYPE_FOOTER_MENU || 'footerMenu',
-    CTF_CONTENT_TYPE_HOME_MENU: process.env.CTF_CONTENT_TYPE_HOME_MENU || 'homeMenu'
+    CTF_CONTENT_TYPE_HOME_MENU: process.env.CTF_CONTENT_TYPE_HOME_MENU || 'homeMenu',
+
+    ACAST_SHOW_ID: process.env.ACAST_SHOW_ID || '6230990be23a6d0012c856e6'
   },
 
   // Module configs
