@@ -12,7 +12,7 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@contentful/rich-text-html-renderer": "^15.11.1",
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/recaptcha": "^1.0.4",
