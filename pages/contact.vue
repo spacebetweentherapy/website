@@ -36,7 +36,7 @@
     <section>
       <div class="form">
         <div class="form__wrapper">
-          <form accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
+          <form id="contact-form" accept-charset="UTF-8" enctype="multipart/form-data" method="post" action="https://submit.jotformeu.com/submit/220134543182042/">
             <label class="form__label">
               Name
               <input type="text" name="q4_typeA" class="form__input" required>
@@ -57,10 +57,12 @@
             <input type="hidden" name="formID" value="220134543182042">
 
             <div class="button-container">
-              <button type="submit">
+              <button type="submit" form="contact-form" onClick="formSubmitBtn(event)">
                 Submit
               </button>
             </div>
+
+            <input type="hidden" name="g-recaptcha-response" value="">
           </form>
         </div>
       </div>
@@ -92,6 +94,15 @@ export default Vue.extend({
     return {
       email: email.items[0].fields.contact,
       phone: phone.items[0].fields.contact
+    }
+  },
+
+  head () {
+    return {
+      script: [
+        { src: 'https://www.google.com/recaptcha/api.js?render=6LcWIZ8eAAAAAKU4FyIdJiV6CrM_Y0255GyNKvGn', async: true, defer: true },
+        { src: '/js/contact.js', body: true }
+      ]
     }
   }
 })
@@ -168,5 +179,11 @@ export default Vue.extend({
     flex-wrap: wrap;
     row-gap: 2em;
   }
+}
+</style>
+
+<style lang="scss">
+.grecaptcha-badge {
+  display: none;
 }
 </style>
