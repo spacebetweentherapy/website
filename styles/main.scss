@@ -1,36 +1,5 @@
 @import "variables";
-
-
-// MIXINS
-// =================================================
-@mixin box-reset {
-	padding: 0;
-	border: 0;
-	margin: 0;
-}
-
-@mixin hide-text {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-@mixin small-screens {
-	@media screen and (max-width: 820px) {
-		@content;
-	}
-}
-
-@mixin medium-screens {
-	@media screen and (max-width: $max-width) {
-		@content;
-	}
-}
-
-@mixin content-image {
-	border: 3px solid $colour-bg-lightest;
-  border-radius: 5px;
-}
+@import "mixins";
 
 
 // GLOBAL STYLES
@@ -43,6 +12,7 @@ body {
 	height: 100%;
 	line-height: 1.5;
 	text-align: justify;
+	margin: 0;
 }
 
 strong {
@@ -328,6 +298,72 @@ a {
 	  );
 	  }
 	}
+  }
+
+  .quote {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	min-height: 500px;
+  }
+  
+  .quote__wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .quote__overlay {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	width: 100%;
+	max-width: $max-width;
+	text-align: center;
+  }
+  
+  .quote__text, .quote__author {
+	margin: 1em 4em;
+	font-size: 2em;
+	color: $colour-bg-lightest;
+	font-family: $font-serif;
+	font-weight: $weight-heavy;
+	line-height: 1.5em;
+  }
+  
+  .quote__author {
+	margin: 0;
+	font-family: $font-sans;
+	font-size: 1em;
+  }
+  
+  .quote__quote-mark {
+	color: $colour-highlight;
+	font-family: $font-sans;
+	font-size: 1.5em;
+	line-height: .8em;
+  }
+  
+  @include small-screens {
+	.quote__text, .quote__author {
+	  margin: 1em;
+	}
+  
+	.quote__text {
+	  font-size: 1.7em;
+	}
+  }
+
+  .quote__image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 100%;
+	object-position: 15% 50%;
+	object-fit: cover;
   }
 
 .footer {

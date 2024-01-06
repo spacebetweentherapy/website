@@ -1,0 +1,30 @@
+// MIXINS
+// =================================================
+@mixin box-reset {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+@mixin hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin small-screens {
+	@media screen and (max-width: 820px) {
+		@content;
+	}
+}
+
+@mixin medium-screens {
+	@media screen and (max-width: $max-width) {
+		@content;
+	}
+}
+
+@mixin content-image {
+	border: 3px solid $colour-bg-lightest;
+  border-radius: 5px;
+}
