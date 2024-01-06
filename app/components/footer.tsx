@@ -1,5 +1,6 @@
 import { fetchGraphQL } from'../lib/cms'
 import Link from "next/link";
+import Image from './image'
 
 export async function fetchFooterMenuItems() {
     const menuItems = await fetchGraphQL(`query {
@@ -60,17 +61,15 @@ export default async function Footer() {
     return (
         <footer className="footer">
             {footerImages.map((image) => (
-                <picture key={image.sys.id} className="footer__item">
-                    {/* <source srcSet="srcSet('webp')" type="image/webp"/> */}
-                    <source srcSet={image.url} type={image.contentType}/>
-                    <img
-                        src={`${image.url}?w=224&h=96`}
-                        width={imgWidth}
-                        height={imgHeight}
-                        alt={image.description}
-                        className="image footer__image"
-                    />
-                </picture>
+                <Image key={image.sys.id}
+                    url={image.url} 
+                    contentType={image.contentType} 
+                    width={imgWidth} 
+                    height={imgHeight} 
+                    description={image.description} 
+                    className="footer__item"
+                    x2={true}
+                />
             ))}
 
             <nav className="footer__nav">

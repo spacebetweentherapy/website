@@ -2,6 +2,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.0",
     "next": "^14.0.4",
+    "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

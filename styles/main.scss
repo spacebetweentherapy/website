@@ -244,9 +244,91 @@ a {
       }
     }
   }
-
-  
 }
+
+.hero {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	min-height: 500px;
+  }
+  
+  .hero__wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .hero__content {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+  }
+  
+  .hero__title {
+	margin-bottom: -.2em;
+	padding-top: .6em;
+	font-size: 4em;
+	transform: translateY(5vw);
+	letter-spacing: 0.45rem;
+	color: $colour-text;
+	text-align: center;
+	font-family: $font-serif;
+	letter-spacing: .2em;
+	word-spacing: -.2em;
+	font-weight: normal;
+	text-transform: uppercase;
+  }
+  
+  .hero__first-word {
+	display: inline-block;
+	color: $colour-bg-lightest;
+	margin-right: -.2em;
+  }
+  
+  .hero__text {
+	margin: 0;
+	font-size: 1.5em;
+	transform: translateY(5vw);
+	letter-spacing: 0.45rem;
+	font-weight: 500;
+  }
+  
+  @include small-screens {
+	.hero__content {
+	  display: none;
+	}
+  }
+ 
+  .hero__image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 100%;
+	object-position: 15% 30%;
+	object-fit: cover;
+  }
+  
+  // TODO Remove this hardcoded logo on homepage Hero
+  .page-home {
+	.hero__content {
+	  p:after {
+		box-sizing: border-box;
+		position: absolute;
+		top: 2em;
+		left: 50%;
+		width: 250px;
+		margin-left: -125px;
+		text-align: center;
+		content: image-set(
+		url('../public/images/circles.png') 1x,
+		url('../public/images/circles-2x.png') 2x,
+		url('../public/images/circles-3x.png') 3x
+	  );
+	  }
+	}
+  }
 
 .footer {
 	display: flex;
