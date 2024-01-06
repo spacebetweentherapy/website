@@ -177,7 +177,6 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* Page specific content here */}
       <div>
         <div />
         <section className="homepage-menu">

@@ -1,12 +1,8 @@
 import '../styles/main.scss'
-import MainMenu from './components/main-menu'
-import Footer from './components/footer'
+import MainMenu from './components/cms-main-menu'
+import Footer from './components/cms-footer'
 
-export default function RootLayout({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
+export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
       <html lang="en">
         <body>

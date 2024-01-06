@@ -1,6 +1,6 @@
 import Image from './image'
 
-export default async function Quote({text, author, imgUrl, imgWidth, imgHeight, imgDescription, imgContentType}) {
+export default function Quote({text, author, imgUrl, imgWidth, imgHeight, imgDescription, imgContentType}) {
    return (
         <div className="quote">
             <div className="quote__wrapper">

@@ -1,6 +1,6 @@
 import Image from './image'
 
-export default async function Hero({heading, shortText, url, width, height, contentType, description, className}) {
+export default function Hero({heading, shortText, url, width, height, contentType, description, className}) {
     let firstWord = ""
     let otherWords = ""
     if (heading) {
