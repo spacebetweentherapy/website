@@ -5,6 +5,7 @@ import Link from "next/link";
 import Hero from './components/hero'
 import Image from './components/image'
 import Quote from './components/quote'
+import RichText from './components/rich-text'
 import '../styles/home.scoped.scss'
 
 export async function fetchPages() {
@@ -53,6 +54,9 @@ export async function fetchPages() {
                   height
                   description
                 }
+              }
+              section1Content {
+                json
               }
           }
       }
@@ -172,8 +176,9 @@ export default async function Page() {
             />
           </div>
 
-          {/* The style attribute is specific to the home page */}
-          <div className="content-wrapper" style={{ padding: 0 }} v-html="markup" />
+          {page.section1Content ?
+            <RichText richText={page.section1Content.json} style="{padding: 0}" />
+            : ''}
         </div>
       </section>
 
@@ -183,8 +188,8 @@ export default async function Page() {
           <div className="links">
             <ul className="links__list">
               {homeMenu.map((link) => (
-                <li key="link.sys.id" className="links__item">
-                  <Link href="link.slug" className="links__link">
+                <li key={link.sys.id} className="links__item">
+                  <Link href={link.slug} className="links__link">
                     <Image url={link.thumbnail.url} contentType={link.thumbnail.contentType} description={link.thumbnail.description} width="200" height="200" x2={true} />
                     <h2 className="links__title">
                       {link.title}

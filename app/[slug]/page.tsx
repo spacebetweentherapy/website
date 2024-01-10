@@ -5,6 +5,7 @@ import Link from "next/link";
 import Hero from '../components/hero'
 import Image from '../components/image'
 import Quote from '../components/quote'
+import RichText from '../components/rich-text'
 
 export async function fetchPages(slug) {
     const query = `query {
@@ -52,6 +53,15 @@ export async function fetchPages(slug) {
                       height
                       description
                     }
+                  }
+                  section1Content {
+                    json
+                  }
+                  section2Content {
+                    json
+                  }
+                  section3Content {
+                    json
                   }
               }
           }
@@ -113,11 +123,29 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
-            <section className="content">
-                <div className="content-main">
-                    <div className="content-wrapper" v-html="markup" />
-                </div>
-            </section>
+            {page.section1Content ?
+                <section className="content">
+                    <div className="content-main">
+                        <RichText richText="page.section1Content.json" />
+                    </div>
+                </section>
+                : ''}
+
+            {page.section2Content ?
+                <section className="content">
+                    <div className="content-main">
+                        <RichText richText="page.section2Content.json" />
+                    </div>
+                </section>
+                : ''}
+
+            {page.section3Content ?
+                <section className="content">
+                    <div className="content-main">
+                        <RichText richText="page.section3Content.json" />
+                    </div>
+                </section>
+                : ''}
 
             {page.quote ?
                 <Quote text={page.quote.text} author={page.quote.author} imgUrl={page.quote.image.url} imgWidth={page.quote.image.width} imgHeight={page.quote.image.height} imgDescription={page.quote.image.description} imgContentType={page.quote.image.contentType} />
