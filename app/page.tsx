@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { fetchGraphQL } from './lib/cms'
+import { fetchGraphQL, richTextOverrides } from './lib/cms'
 import Link from "next/link";
 import Hero from './components/hero'
 import Image from './components/image'
 import Quote from './components/quote'
-import RichText from './components/rich-text'
+import RichText from '@madebyconnor/rich-text-to-jsx';
 import '../styles/home.scoped.scss'
 
 export async function fetchPages() {
@@ -180,7 +180,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
 
           {page.section1Content ?
-            <RichText richText={page.section1Content.json} style="{padding: 0}" />
+            <div className="content-wrapper">
+              <RichText richText={page.section1Content.json} style="{padding: 0}" overrides={richTextOverrides} />
+            </div>
             : ''}
         </div>
       </section>

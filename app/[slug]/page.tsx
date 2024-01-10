@@ -1,11 +1,10 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { fetchGraphQL } from '../lib/cms'
-import Link from "next/link";
+import { fetchGraphQL, richTextOverrides } from '../lib/cms'
 import Hero from '../components/hero'
 import Image from '../components/image'
 import Quote from '../components/quote'
-import RichText from '../components/rich-text'
+import RichText from '@madebyconnor/rich-text-to-jsx'
 
 export async function fetchPages(slug) {
     const query = `query {
@@ -144,7 +143,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section1Content ?
                 <section className="content">
                     <div className="content-main">
-                        <RichText richText={page.section1Content.json} />
+                        <div className="content-wrapper">
+                            <RichText richText={page.section1Content.json} overrides={richTextOverrides} />
+                        </div>
                     </div>
                 </section>
                 : ''}
@@ -152,7 +153,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section2Content ?
                 <section className="content">
                     <div className="content-main">
-                        <RichText richText={page.section2Content.json} />
+                        <div className="content-wrapper">
+                            <RichText richText={page.section2Content.json} />
+                        </div>
                     </div>
                 </section>
                 : ''}
@@ -160,7 +163,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section3Content ?
                 <section className="content">
                     <div className="content-main">
-                        <RichText richText={page.section3Content.json} />
+                        <div className="content-wrapper">
+                            <RichText richText={page.section3Content.json} />
+                        </div>
                     </div>
                 </section>
                 : ''}
