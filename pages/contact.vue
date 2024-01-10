@@ -100,7 +100,7 @@ export default Vue.extend({
   head () {
     return {
       script: [
-        { src: 'https://www.google.com/recaptcha/api.js?render=6LcWIZ8eAAAAAKU4FyIdJiV6CrM_Y0255GyNKvGn', async: true, defer: true },
+        { src: 'https://www.google.com/recaptcha/api.js?render=6LcWIZ8eAAAAAKU4FyIdJiV6CrM_Y0255GyNKvGn', body: true, async: true, defer: true },
         { src: '/js/contact.js', body: true }
       ]
     }
