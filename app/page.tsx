@@ -19,6 +19,9 @@ export async function fetchPages() {
               }
               slug
               title
+              metaDescription
+              noIndex
+              noFollow
               intro
               introImage {
                 contentType
@@ -104,11 +107,18 @@ export async function fetchHomeMenuItems() {
   return menuItems?.data?.homeMenuCollection?.items[0].linksCollection.items
 }
 
-export const metadata: Metadata = {
-  title: 'Home - Space Between Therapy',
+export async function generateMetadata(): Promise<Metadata> {
+  const pages = await fetchPages()
+  const page = pages[0]
+
+  return {
+      title: page.title + " - " + process.env.SITE_TITLE,
+      description: page.metaDescription,
+      robots: ((page.noIndex) ? 'noindex' : 'index') + ', ' + ((page.noFollow) ? 'nofollow' : 'follow')
+  }
 }
 
-export default async function Page() {
+export default async function Page({ params }: { params: { slug: string } }) {
   const pages = await fetchPages()
   const page = pages[0]
 
@@ -129,12 +139,6 @@ export default async function Page() {
 
       <section key={page.sys.id} className="intro">
         <div className="intro__content">
-          {page.title ?
-            <h1 v-if="title" className="intro__title">
-              {page.title}
-            </h1>
-            : ''}
-
           {page.intro ?
             <div className="intro__text">
               <div>

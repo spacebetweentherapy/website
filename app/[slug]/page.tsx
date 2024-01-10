@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { fetchGraphQL } from '../lib/cms'
 import Link from "next/link";
@@ -18,6 +18,9 @@ export async function fetchPages(slug) {
                   }
                   slug
                   title
+                  metaDescription
+                  noIndex
+                  noFollow
                   intro
                   introImage {
                     contentType
@@ -70,8 +73,23 @@ export async function fetchPages(slug) {
     return pages?.data?.pageCollection?.items
 }
 
-export const metadata: Metadata = {
-    title: 'Home - Space Between Therapy',
+type Props = {
+    params: { slug: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const pages = await fetchPages(params.slug)
+    const page = pages[0]
+
+    return {
+        title: page.title + " - " + process.env.SITE_TITLE,
+        description: page.metaDescription,
+        robots: ((page.noIndex) ? 'noindex' : 'index') + ', ' + ((page.noFollow) ? 'nofollow' : 'follow')
+    }
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -93,7 +111,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <section key={page.sys.id} className="intro">
                 <div className="intro__content">
                     {page.title ?
-                        <h1 v-if="title" className="intro__title">
+                        <h1 className="intro__title">
                             {page.title}
                         </h1>
                         : ''}
