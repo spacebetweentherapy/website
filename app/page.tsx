@@ -162,7 +162,6 @@ export default async function Page() {
 
       <section className="content">
         <div className="content-main">
-          {/* Image is specific to the home page */}
           <div className="content__image">
             <Image
               url={homepageImage.url}

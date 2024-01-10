@@ -79,7 +79,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const page = pages[0]
 
     return (
-        <div className="page page-home">
+        <div className="page">
             <Hero
                 heading={page.hero.heading}
                 shortText={page.hero.shortText}
@@ -126,7 +126,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section1Content ?
                 <section className="content">
                     <div className="content-main">
-                        <RichText richText="page.section1Content.json" />
+                        <RichText richText={page.section1Content.json} />
                     </div>
                 </section>
                 : ''}
@@ -134,7 +134,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section2Content ?
                 <section className="content">
                     <div className="content-main">
-                        <RichText richText="page.section2Content.json" />
+                        <RichText richText={page.section2Content.json} />
                     </div>
                 </section>
                 : ''}
@@ -142,7 +142,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section3Content ?
                 <section className="content">
                     <div className="content-main">
-                        <RichText richText="page.section3Content.json" />
+                        <RichText richText={page.section3Content.json} />
                     </div>
                 </section>
                 : ''}
