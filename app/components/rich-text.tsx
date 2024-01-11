@@ -43,15 +43,8 @@ function renderOptions(links) {
         if (entry && entry.__typename === "CodeBlock") {
           return (
             <pre><code>{entry.code}</code></pre>
-          );
-        }
-
-        if (entry && entry.__typename === "VideoEmbed") {
-          return (
-            <iframe src={entry.embedUrl} height="100%" width="100%" title={entry.title} allowFullScreen={true} />
           )
         }
-
       },
       [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
         // find the asset in the assetMap by ID

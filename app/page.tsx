@@ -208,9 +208,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
 
           {page.section1Content ?
-            <div className="content-wrapper">
-              <RichText body={page.section1Content.json} links={page.section1Content.links} style="{padding: 0}" />
-            </div>
+            <RichText body={page.section1Content.json} links={page.section1Content.links} style="{padding: 0}" />
             : ''}
         </div>
       </section>

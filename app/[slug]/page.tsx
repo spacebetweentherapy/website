@@ -224,9 +224,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section1Content ?
                 <section className="content">
                     <div className="content-main">
-                        <div className="content-wrapper">
-                            <RichText body={page.section1Content.json} links={page.section1Content.links} />
-                        </div>
+                        <RichText body={page.section1Content.json} links={page.section1Content.links} />
                     </div>
                 </section>
                 : ''}
@@ -234,9 +232,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section2Content ?
                 <section className="content">
                     <div className="content-main">
-                        <div className="content-wrapper">
-                            <RichText body={page.section2Content.json} links={page.section2Content.links} />
-                        </div>
+                        <RichText body={page.section2Content.json} links={page.section2Content.links} />
                     </div>
                 </section>
                 : ''}
@@ -244,9 +240,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {page.section3Content ?
                 <section className="content">
                     <div className="content-main">
-                        <div className="content-wrapper">
-                            <RichText body={page.section3Content.json} links={page.section3Content.links} />
-                        </div>
+                        <RichText body={page.section3Content.json} links={page.section3Content.links} />
                     </div>
                 </section>
                 : ''}
