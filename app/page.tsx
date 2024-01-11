@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { fetchGraphQL, richTextOverrides } from './lib/cms'
+import { fetchGraphQL } from './lib/cms'
 import Link from "next/link";
 import Hero from './components/hero'
 import Image from './components/image'
 import Quote from './components/quote'
-import RichText from '@madebyconnor/rich-text-to-jsx';
+import RichText from './components/rich-text';
 import '../styles/home.scoped.scss'
 
 export async function fetchPages() {
@@ -60,6 +60,34 @@ export async function fetchPages() {
               }
               section1Content {
                 json
+                links {
+                  assets {
+                    block {
+                      sys {
+                          id
+                      }
+                      url
+                      title
+                      width
+                      height
+                      description
+                    }
+                  }
+                  entries {
+                    inline {
+                      sys {
+                          id
+                      }
+                      __typename
+                    }
+                    block {
+                      sys {
+                          id
+                      }
+                      __typename
+                    }
+                  }
+                }
               }
           }
       }
@@ -112,9 +140,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const page = pages[0]
 
   return {
-      title: page.title + " - " + process.env.SITE_TITLE,
-      description: page.metaDescription,
-      robots: ((page.noIndex) ? 'noindex' : 'index') + ', ' + ((page.noFollow) ? 'nofollow' : 'follow')
+    title: page.title + " - " + process.env.SITE_TITLE,
+    description: page.metaDescription,
+    robots: ((page.noIndex) ? 'noindex' : 'index') + ', ' + ((page.noFollow) ? 'nofollow' : 'follow')
   }
 }
 
@@ -181,7 +209,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
           {page.section1Content ?
             <div className="content-wrapper">
-              <RichText richText={page.section1Content.json} style="{padding: 0}" overrides={richTextOverrides} />
+              <RichText body={page.section1Content.json} links={page.section1Content.links} style="{padding: 0}" />
             </div>
             : ''}
         </div>

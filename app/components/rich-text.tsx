@@ -1,61 +1,73 @@
-import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
-import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { INLINES, BLOCKS } from '@contentful/rich-text-types'
 
-export default function RichText({ richText, style = "" }) {
-  const CTF_CONTENT_TYPE_PAGE = "page"
-  const CTF_CONTENT_TYPE_BLOG_POST = "blogPost"
-  const CTF_CONTENT_TYPE_CONTACT_INFO = "contactInfo"
+// Render embedded entries and assets from Contentful rich text
+// Used example from https://www.contentful.com/blog/rendering-linked-assets-entries-in-contentful/
+function renderOptions(links) {
+  // create an asset map
+  const assetMap = new Map()
+  // loop through the assets and add them to the map
+  for (const asset of links.assets.block) {
+    assetMap.set(asset.sys.id, asset)
+  }
 
-  const options: Partial<Options> = {
+  // create an entry map
+  const entryMap = new Map()
+  // loop through the block linked entries and add them to the map
+  for (const entry of links.entries.block) {
+    entryMap.set(entry.sys.id, entry)
+  }
+  // loop through the inline linked entries and add them to the map
+  for (const entry of links.entries.inline) {
+    entryMap.set(entry.sys.id, entry)
+  }
+
+  return {
     renderNode: {
-      [INLINES.ENTRY_HYPERLINK]: {
-        
-      }
+      [INLINES.ENTRY_HYPERLINK]: (node, children) => {
+        // find the entry in the entryMap by ID
+        const entry = entryMap.get(node.data.target.sys.id)
 
-      // Handle embedded images
-      // [BLOCKS.EMBEDDED_ASSET]: (node: any): string => {
-      //   return (
-      //     '<CmsImage id={node.data.target.sys.id}/>'
-      //   )
-      // },
-      // Handle links to other CMS pages
-      // [INLINES.ENTRY_HYPERLINK]: (node: any): string => {
-        //   if (node.data.target.sys.contentType.sys.id === CTF_CONTENT_TYPE_PAGE) {
-        //     return (
-        //       '<a href="/' +
-        //       node.data.target.fields.slug +
-        //       '">' +
-        //       node.content[0].value +
-        //       '</a>'
-        //     )
-        //   } else if (node.data.target.sys.contentType.sys.id === CTF_CONTENT_TYPE_BLOG_POST) {
-        //     return (
-        //       '<a href="/journal/' +
-        //       node.data.target.fields.slug +
-        //       '">' +
-        //       node.content[0].value +
-        //       '</a>'
-        //     )
-        //   } else if (node.data.target.sys.contentType.sys.id === CTF_CONTENT_TYPE_CONTACT_INFO) {
-        //     return (
-        //       node.data.target.fields.contact
-        //     )
-        //   } else {
-        //     return node.content[0].value
-        //   }
-      // },
-      // Embedded contact info
-      [INLINES.EMBEDDED_ENTRY]: (node: any) => {
-        if (node.data.target.sys.contentType.sys.id === CTF_CONTENT_TYPE_CONTACT_INFO) {
+        // render the entries as needed
+        if (entry && entry.__typename === "Page") {
           return (
-            node.data.target.fields.contact
+            <a href={`/${entry.slug}`}>{entry.title}</a>
           )
         }
+      },
+      [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+        // find the entry in the entryMap by ID
+        const entry = entryMap.get(node.data.target.sys.id)
+
+        // render the entries as needed by looking at the __typename referenced in the GraphQL query
+        if (entry && entry.__typename === "CodeBlock") {
+          return (
+            <pre><code>{entry.code}</code></pre>
+          );
+        }
+
+        if (entry && entry.__typename === "VideoEmbed") {
+          return (
+            <iframe src={entry.embedUrl} height="100%" width="100%" title={entry.title} allowFullScreen={true} />
+          )
+        }
+
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+        // find the asset in the assetMap by ID
+        const asset = assetMap.get(node.data.target.sys.id)
+
+        // render the asset accordingly
+        return (
+          <img src={asset.url} width={asset.width} height={asset.height} alt={asset.description} />
+        )
       }
     }
   }
+}
 
-  const markup = documentToReactComponents(richText, options)
+export default function RichText({ body, links, style = "" }) {
+  const markup = documentToReactComponents(body, renderOptions(links))
 
   return (
     <div className="content-wrapper">

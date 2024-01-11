@@ -1,22 +1,47 @@
+import { Suspense } from 'react'
 import '../styles/main.scss'
-import MainMenu from './components/cms-main-menu'
+import { fetchGraphQL } from './lib/cms'
+import MainMenu from './components/main-menu'
 import Footer from './components/cms-footer'
 import { Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
-export default function RootLayout({ children, }: { children: React.ReactNode }) {
-    return (
-      <html lang="en">
-        <body className={openSans.className}>
-            <div className="container">
-                <MainMenu/>
+export async function fetchMainMenuItems() {
+  const menuItems = await fetchGraphQL(`query {
+      mainMenuCollection {
+          items {
+              sys {
+                  id
+              }
+              title
+              linksCollection {
+                  items {
+                      sys {
+                          id
+                      }
+                      title
+                      slug
+                  }
+              }
+          }
+      }
+  }`)
+  return menuItems?.data?.mainMenuCollection?.items[0].linksCollection.items
+}
 
-                {children}
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const mainMenu = await fetchMainMenuItems()
 
-                <Footer/>
-            </div>
-        </body>
-      </html>
-    )
-  }
+  return (
+    <html lang="en">
+      <body className={openSans.className}>
+        <div className="container">
+          <MainMenu menuItems={mainMenu} />
+          {children}
+          <Footer />
+        </div>
+      </body>
+    </html>
+  )
+}

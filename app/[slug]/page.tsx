@@ -1,10 +1,10 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { fetchGraphQL, richTextOverrides } from '../lib/cms'
+import { fetchGraphQL } from '../lib/cms'
 import Hero from '../components/hero'
 import Image from '../components/image'
 import Quote from '../components/quote'
-import RichText from '@madebyconnor/rich-text-to-jsx'
+import RichText from '../components/rich-text'
 
 export async function fetchPages(slug) {
     const query = `query {
@@ -58,12 +58,93 @@ export async function fetchPages(slug) {
                   }
                   section1Content {
                     json
+                    links {
+                        assets {
+                            block {
+                                sys {
+                                    id
+                                }
+                                url
+                                width
+                                height
+                                description
+                            }
+                        }
+                        entries {
+                            inline {
+                                sys {
+                                    id
+                                }
+                                __typename
+                            }
+                            block {
+                                sys {
+                                    id
+                                }
+                                __typename
+                            }
+                        }
+                    }
                   }
                   section2Content {
                     json
+                    links {
+                        assets {
+                            block {
+                                sys {
+                                    id
+                                }
+                                url
+                                width
+                                height
+                                description
+                            }
+                        }
+                        entries {
+                            inline {
+                                sys {
+                                    id
+                                }
+                                __typename
+                            }
+                            block {
+                                sys {
+                                    id
+                                }
+                                __typename
+                            }
+                        }
+                    }
                   }
                   section3Content {
                     json
+                    links {
+                        assets {
+                            block {
+                                sys {
+                                    id
+                                }
+                                url
+                                width
+                                height
+                                description
+                            }
+                        }
+                        entries {
+                            inline {
+                                sys {
+                                    id
+                                }
+                                __typename
+                            }
+                            block {
+                                sys {
+                                    id
+                                }
+                                __typename
+                            }
+                        }
+                    }
                   }
               }
           }
@@ -144,7 +225,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <section className="content">
                     <div className="content-main">
                         <div className="content-wrapper">
-                            <RichText richText={page.section1Content.json} overrides={richTextOverrides} />
+                            <RichText body={page.section1Content.json} links={page.section1Content.links} />
                         </div>
                     </div>
                 </section>
@@ -154,7 +235,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <section className="content">
                     <div className="content-main">
                         <div className="content-wrapper">
-                            <RichText richText={page.section2Content.json} />
+                            <RichText body={page.section2Content.json} links={page.section2Content.links} />
                         </div>
                     </div>
                 </section>
@@ -164,7 +245,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <section className="content">
                     <div className="content-main">
                         <div className="content-wrapper">
-                            <RichText richText={page.section3Content.json} />
+                            <RichText body={page.section3Content.json} links={page.section3Content.links} />
                         </div>
                     </div>
                 </section>
