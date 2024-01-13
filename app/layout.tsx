@@ -7,7 +7,7 @@ import { Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
-export async function fetchMainMenuItems() {
+async function fetchMainMenuItems() {
   const menuItems = await fetchGraphQL(`query {
       mainMenuCollection {
           items {

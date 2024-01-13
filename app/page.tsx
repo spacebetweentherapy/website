@@ -8,7 +8,7 @@ import Quote from './components/quote'
 import RichText from './components/rich-text';
 import '../styles/home.scoped.scss'
 
-export async function fetchPages() {
+async function fetchPages() {
   const pages = await fetchGraphQL(`query {
     pageCollection (limit: 1, where: {
       slug: "index"
@@ -96,7 +96,7 @@ export async function fetchPages() {
 }
 
 // A hardcoded image for the homepage
-export async function fetchHomepageImage() {
+async function fetchHomepageImage() {
   const image = await fetchGraphQL(`query {
     asset (id: "4QKYgZ75hpQq30yOokKwVj") {
       url
@@ -107,7 +107,7 @@ export async function fetchHomepageImage() {
   return image?.data.asset
 }
 
-export async function fetchHomeMenuItems() {
+async function fetchHomeMenuItems() {
   const menuItems = await fetchGraphQL(`query {
       homeMenuCollection {
           items {

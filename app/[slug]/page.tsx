@@ -6,7 +6,7 @@ import Image from '../components/image'
 import Quote from '../components/quote'
 import RichText from '../components/rich-text'
 
-export async function fetchPages(slug) {
+async function fetchPages(slug: string) {
     const query = `query {
         pageCollection (limit: 1, where: {
           slug: "${slug}"

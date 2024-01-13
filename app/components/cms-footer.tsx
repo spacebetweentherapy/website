@@ -2,7 +2,7 @@ import { fetchGraphQL } from'../lib/cms'
 import Link from "next/link";
 import Image from './image'
 
-export async function fetchFooterMenuItems() {
+async function fetchFooterMenuItems() {
     const menuItems = await fetchGraphQL(`query {
         footerMenuCollection {
             items {
@@ -25,7 +25,7 @@ export async function fetchFooterMenuItems() {
     return menuItems?.data?.footerMenuCollection?.items[0].linksCollection.items
 }
 
-export async function fetchFooterImages() {
+async function fetchFooterImages() {
     const images = await fetchGraphQL(`query {
         assetCollection (where: {
             contentfulMetadata: {

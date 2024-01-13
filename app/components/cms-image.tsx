@@ -1,6 +1,6 @@
 import { fetchGraphQL } from'../lib/cms'
 
-export async function fetchAsset(id) {
+async function fetchAsset(id: string) {
     const asset = await fetchGraphQL(`query {
         asset (id: "${id}") {
             url
@@ -11,7 +11,7 @@ export async function fetchAsset(id) {
             description
           }
     }`)
-    return asset?.data?.asset?
+    return asset?.data?.asset
 }
 
 export default async function CmsImage({id}) {
