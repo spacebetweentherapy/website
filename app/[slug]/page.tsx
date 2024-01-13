@@ -172,6 +172,25 @@ export async function generateMetadata(
     }
 }
 
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+    const query = `query {
+        pageCollection {
+            items {
+                sys {
+                    id
+                }
+                slug
+            }
+        }
+    }`
+    const pages = await fetchGraphQL(query)
+
+    return pages.data.pageCollection.items.map((post) => ({
+        slug: post.slug,
+    }))
+}
+
 export default async function Page({ params }: { params: { slug: string } }) {
     const pages = await fetchPages(params.slug)
     const page = pages[0]
