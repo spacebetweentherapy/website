@@ -38,21 +38,22 @@ a {
 	color: $colour-bg;
 	box-sizing: border-box;
 	padding-right: 2em;
-  }
-  
-  .menu__title {
+}
+
+.menu__title {
 	display: none;
-  }
-  
-  .menu__logo {
+}
+
+.menu__logo {
 	display: none;
-  }
-  
-  .menu__hamburger, #hamburger {
+}
+
+.menu__hamburger,
+#hamburger {
 	display: none;
-  }
-  
-  .menu__list {
+}
+
+.menu__list {
 	box-sizing: border-box;
 	display: flex;
 	justify-content: flex-end;
@@ -60,90 +61,91 @@ a {
 	padding: 0;
 	margin: 0;
 	list-style: none;
-  }
-  
-  .menu__item {
+}
+
+.menu__item {
 	font-size: 1.2em;
 	text-transform: uppercase;
-  }
-  
-  .menu__link, .menu__link:visited {
+}
+
+.menu__link,
+.menu__link:visited {
 	display: block;
 	padding: .5em;
 	color: $colour-bg;
 	text-decoration: none;
-  
+
 	&.current {
-	  text-decoration: underline;
-	  text-decoration-color: $colour-highlight;
-	  text-underline-offset: .2em;
+		text-decoration: underline;
+		text-decoration-color: $colour-highlight;
+		text-underline-offset: .2em;
 	}
-  }
-  
-  .menu__link:hover {
+}
+
+.menu__link:hover {
 	text-decoration: underline;
 	text-decoration-color: $colour-bg-lightest;
 	text-underline-offset: .2em;
-  }
-  
-  @include small-screens {
+}
+
+@include small-screens {
 	.menu {
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
-	  padding-right: 0;
-	  height: 49px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 0;
+		height: 49px;
 	}
-  
+
 	.menu__logo {
-	  display: block;
-	  margin: 0;
-	  padding: 0;
-	  border: 0;
-	  height: 27px;
-  
-	  a {
+		display: block;
 		margin: 0;
 		padding: 0;
 		border: 0;
-	  }
+		height: 27px;
+
+		a {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
 	}
-  
+
 	.menu__logo-image {
-	  margin: 0;
-	  padding: 0 0 0 .25em;
-	  border: 0;
+		margin: 0;
+		padding: 0 0 0 .25em;
+		border: 0;
 	}
-  
+
 	.menu__list {
-	  display: none;
-	  position: absolute;
-	  top: 49px;
-	  right: 0;
+		display: none;
+		position: absolute;
+		top: 49px;
+		right: 0;
 	}
-  
+
 	.menu__hamburger {
-	  display: inline-block;
-	  background: $colour-highlight;
-	  font-size: 1.2em;
-	  padding: 10px;
+		display: inline-block;
+		background: $colour-highlight;
+		font-size: 1.2em;
+		padding: 10px;
 	}
-  
-	#hamburger:checked ~ .menu__list {
-	  display: block;
-  
-	  a {
-		background-color: rgba(175, 132, 77, 0.8);
-	  }
+
+	#hamburger:checked~.menu__list {
+		display: block;
+
+		a {
+			background-color: rgba(175, 132, 77, 0.8);
+		}
 	}
-  
+
 	.menu__link:hover {
-	  color: $colour-bg-lightest;
+		color: $colour-bg-lightest;
 	}
-  }
+}
 
 .page {
-  margin-top: -3em;
+	margin-top: -3em;
 
 	&.no-hero {
 		margin-top: 0;
@@ -151,7 +153,10 @@ a {
 
 	section {
 		.content-main {
-			h1, h2, h3 {
+
+			h1,
+			h2,
+			h3 {
 				text-align: left;
 				text-transform: uppercase;
 				font-family: $font-serif;
@@ -173,7 +178,10 @@ a {
 		}
 
 		.content-main {
-			h1, h2, h3 {
+
+			h1,
+			h2,
+			h3 {
 				color: $colour-bg-lightest;
 			}
 		}
@@ -183,37 +191,40 @@ a {
 		background-color: $colour-bg;
 
 		.content-main {
-			h1, h2, h3 {
+
+			h1,
+			h2,
+			h3 {
 				color: $colour-highlight;
 			}
 		}
 	}
 
 	.button-container {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+		display: inline-block;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 
-    .button,
-    button {
-      display: inline-block;
-      box-sizing: border-box;
-      padding: 35% 1.2em;
-      border: 1px solid $colour-highlight;
-      border-radius: 50%;
-      text-transform: lowercase;
-      text-decoration: none;
-      background-color: $colour-bg-lightest;
-      font-weight: $weight-heavy;
-      color: $colour-text;
+		.button,
+		button {
+			display: inline-block;
+			box-sizing: border-box;
+			padding: 35% 1.2em;
+			border: 1px solid $colour-highlight;
+			border-radius: 50%;
+			text-transform: lowercase;
+			text-decoration: none;
+			background-color: $colour-bg-lightest;
+			font-weight: $weight-heavy;
+			color: $colour-text;
 
-      &:hover {
-        background-color: $colour-highlight;
-        color: $colour-bg-lightest;
-      }
-    }
-  }
+			&:hover {
+				background-color: $colour-highlight;
+				color: $colour-bg-lightest;
+			}
+		}
+	}
 }
 
 .hero {
@@ -221,21 +232,21 @@ a {
 	width: 100%;
 	height: 50vh;
 	min-height: 500px;
-  }
-  
-  .hero__wrapper {
+}
+
+.hero__wrapper {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-  }
-  
-  .hero__content {
+}
+
+.hero__content {
 	position: absolute;
 	text-align: center;
 	width: 100%;
-  }
-  
-  .hero__title {
+}
+
+.hero__title {
 	margin-bottom: -.2em;
 	padding-top: .6em;
 	font-size: 4em;
@@ -248,29 +259,29 @@ a {
 	word-spacing: -.2em;
 	font-weight: normal;
 	text-transform: uppercase;
-  }
-  
-  .hero__first-word {
+}
+
+.hero__first-word {
 	display: inline-block;
 	color: $colour-bg-lightest;
 	margin-right: -.2em;
-  }
-  
-  .hero__text {
+}
+
+.hero__text {
 	margin: 0;
 	font-size: 1.5em;
 	transform: translateY(5vw);
 	letter-spacing: 0.45rem;
 	font-weight: 500;
-  }
-  
-  @include small-screens {
+}
+
+@include small-screens {
 	.hero__content {
-	  display: none;
+		display: none;
 	}
-  }
- 
-  .hero__image {
+}
+
+.hero__image {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -278,33 +289,31 @@ a {
 	height: 100%;
 	object-position: 15% 30%;
 	object-fit: cover;
-  }
-  
-  // TODO Remove this hardcoded logo on homepage Hero
-  .page-home {
-	.hero__content {
-	  p:after {
-		box-sizing: border-box;
-		position: absolute;
-		top: 2em;
-		left: 50%;
-		width: 250px;
-		margin-left: -125px;
-		text-align: center;
-		content: image-set(
-		url('../public/images/circles.png') 1x,
-		url('../public/images/circles-2x.png') 2x,
-		url('../public/images/circles-3x.png') 3x
-	  );
-	  }
-	}
-  }
+}
 
-  .intro {
+// TODO Remove this hardcoded logo on homepage Hero
+.page-home {
+	.hero__content {
+		p:after {
+			box-sizing: border-box;
+			position: absolute;
+			top: 2em;
+			left: 50%;
+			width: 250px;
+			margin-left: -125px;
+			text-align: center;
+			content: image-set(url('../public/images/circles.png') 1x,
+					url('../public/images/circles-2x.png') 2x,
+					url('../public/images/circles-3x.png') 3x);
+		}
+	}
+}
+
+.intro {
 	background-color: $colour-bg !important;
-  }
-  
-  .intro__title {
+}
+
+.intro__title {
 	display: block;
 	max-width: $max-width;
 	padding: 1em 2.4em 0 2.4em;
@@ -317,9 +326,9 @@ a {
 	word-wrap: break-word;
 	line-height: 1.1em;
 	color: $colour-highlight;
-  }
-  
-  .intro__text {
+}
+
+.intro__text {
 	padding: 2em 6em;
 	display: flex;
 	column-gap: 4em;
@@ -328,45 +337,45 @@ a {
 	max-width: $max-width;
 	margin: auto;
 	font-weight: $weight-heavy;
-  }
-  
-  .intro__line {
+}
+
+.intro__line {
 	margin: auto;
 	border: 0;
 	border-top: 1px solid $colour-highlight;
 	width: 85%;
-  }
-  
-  @include small-screens {
-	.intro__title {
-	  padding: .5em .8em;
-	}
-  
-	.intro__text {
-	  padding: 1.2em 2em;
-	  flex-wrap: wrap;
-	  justify-content: center;
-	}
-  
-	.intro__line {
-	  width: 100%;
-	}
-  }
+}
 
-  .quote {
+@include small-screens {
+	.intro__title {
+		padding: .5em .8em;
+	}
+
+	.intro__text {
+		padding: 1.2em 2em;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.intro__line {
+		width: 100%;
+	}
+}
+
+.quote {
 	position: relative;
 	width: 100%;
 	height: 50vh;
 	min-height: 500px;
-  }
-  
-  .quote__wrapper {
+}
+
+.quote__wrapper {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-  }
-  
-  .quote__overlay {
+}
+
+.quote__overlay {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -375,41 +384,44 @@ a {
 	width: 100%;
 	max-width: $max-width;
 	text-align: center;
-  }
-  
-  .quote__text, .quote__author {
+}
+
+.quote__text,
+.quote__author {
 	margin: 1em 4em;
 	font-size: 2em;
 	color: $colour-bg-lightest;
 	font-family: $font-serif;
 	font-weight: $weight-heavy;
 	line-height: 1.5em;
-  }
-  
-  .quote__author {
+}
+
+.quote__author {
 	margin: 0;
 	font-family: $font-sans;
 	font-size: 1em;
-  }
-  
-  .quote__quote-mark {
+}
+
+.quote__quote-mark {
 	color: $colour-highlight;
 	font-family: $font-sans;
 	font-size: 1.5em;
 	line-height: .8em;
-  }
-  
-  @include small-screens {
-	.quote__text, .quote__author {
-	  margin: 1em;
-	}
-  
-	.quote__text {
-	  font-size: 1.7em;
-	}
-  }
+}
 
-  .quote__image {
+@include small-screens {
+
+	.quote__text,
+	.quote__author {
+		margin: 1em;
+	}
+
+	.quote__text {
+		font-size: 1.7em;
+	}
+}
+
+.quote__image {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -417,7 +429,7 @@ a {
 	height: 100%;
 	object-position: 15% 50%;
 	object-fit: cover;
-  }
+}
 
 .footer {
 	display: flex;
@@ -428,82 +440,83 @@ a {
 	row-gap: 2em;
 	color: $colour-text-light;
 	font-size: .8em;
-  }
-  
-  // .footer__image {
-  //   flex-basis: 50%;
-  
-  //   &:last-of-type {
-  //     align-self: baseline;
-  //     text-align: right;
-  //   }
-  // }
-  
-  .footer__nav {
+}
+
+// .footer__image {
+//   flex-basis: 50%;
+
+//   &:last-of-type {
+//     align-self: baseline;
+//     text-align: right;
+//   }
+// }
+
+.footer__nav {
 	overflow: hidden;
 	position: relative;
-  }
-  
-  .footer__list {
+}
+
+.footer__list {
 	display: flex;
 	justify-content: space-between;
 	margin: 0 0 0 -1px;
 	padding: 0;
 	list-style: none;
-  }
-  
-  .footer__item {
+}
+
+.footer__item {
 	flex-grow: 1;
 	flex-basis: auto;
 	margin: 0;
 	border-left: 1px solid #ccc;
-  
+
 	&:first-child {
-	  .footer__link {
-		padding-left: 0;
-	  }
+		.footer__link {
+			padding-left: 0;
+		}
 	}
-  }
-  
-  .footer__link, .footer__link:visited {
+}
+
+.footer__link,
+.footer__link:visited {
 	padding: 1em;
 	color: $colour-text-light;
 	text-decoration: none;
-  }
-  
-  .footer__link.current {
-	color: $colour-highlight;
-  }
-  
-  // .footer__copyright {
-  //   align-self: baseline;
-  // }
-  
-  @include small-screens {
-	.footer {
-	  flex-direction: column;
-	  align-items: baseline;
-	}
-  
-	.footer__image {
-	  margin: 1em 0;
-	}
-  
-	.footer__list  {
-	  display: block;
-	  margin: 1em 0;
-	}
-  
-	.footer__item {
-	  &:first-child {
-		.footer__link {
-		  padding-left: 1em;
-		}
-	  }
-	}
-  }
+}
 
-  .content-main {
+.footer__link.current {
+	color: $colour-highlight;
+}
+
+// .footer__copyright {
+//   align-self: baseline;
+// }
+
+@include small-screens {
+	.footer {
+		flex-direction: column;
+		align-items: baseline;
+	}
+
+	.footer__image {
+		margin: 1em 0;
+	}
+
+	.footer__list {
+		display: block;
+		margin: 1em 0;
+	}
+
+	.footer__item {
+		&:first-child {
+			.footer__link {
+				padding-left: 1em;
+			}
+		}
+	}
+}
+
+.content-main {
 	margin: auto;
 	padding: 4em;
 	max-width: $max-width;
@@ -511,69 +524,73 @@ a {
 	flex-wrap: nowrap;
 	flex-grow: 1;
 	column-gap: 2em;
-  }
-  
-  .content-wrapper {
+}
+
+.content-wrapper {
 	padding: 0 8em;
-  
+
 	h1 {
-	  margin: 0;
-	  text-transform: uppercase;
-	  font-family: $font-serif;
-	  font-weight: $weight-heavy;
-	  font-size: $size-section-title;
-	  color: $colour-highlight;
-	  text-align: left;
+		margin: 0;
+		text-transform: uppercase;
+		font-family: $font-serif;
+		font-weight: $weight-heavy;
+		font-size: $size-section-title;
+		color: $colour-highlight;
+		text-align: left;
 	}
-  
+
 	hr {
-	  border: 1px solid $colour-highlight;
-	  width: 100%;
+		border: 1px solid $colour-highlight;
+		width: 100%;
 	}
-  
+
 	blockquote {
-	  margin: 0 2em;
-	  border-left: 5px solid #ccc;
-  
-	  p {
-		padding: 1em;
-		font-style: italic;
-	  }
+		margin: 0 2em;
+		border-left: 5px solid #ccc;
+
+		p {
+			padding: 1em;
+			font-style: italic;
+		}
 	}
-  
+
 	img {
-	  @include content-image;
+		@include content-image;
 	}
-  
+
 	p:nth-child(1) {
-	  margin-top: 0;
+		margin-top: 0;
 	}
-  }
-  
-  @include medium-screens {
+}
+
+.page-home .content-wrapper {
+	padding: 0;
+}
+
+@include medium-screens {
 	.content-main {
-	  flex-wrap: wrap;
-	  padding: 1em 2em;
+		flex-wrap: wrap;
+		padding: 1em 2em;
 	}
-  
+
 	.content__image {
-	  width: 100%;
-	  text-align: center;
+		width: 100%;
+		text-align: center;
 	}
-  
+
 	.content-wrapper {
-	  padding: 0;
-  
-	  img {
-		max-width: 100%;
-		height: auto;
-	  }
+		padding: 0;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	}
-  }
-  
-  @include small-screens {
+}
+
+@include small-screens {
 	.page-home__image {
-	  width: 100%;
-	  height: auto;
+		width: 100%;
+		height: auto;
 	}
-  }
+}
