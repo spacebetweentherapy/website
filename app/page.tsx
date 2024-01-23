@@ -250,7 +250,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </div>
 
       {page.quote ?
-        <Quote text={page.quote.text} author={page.quote.author} imgUrl={page.quote.image.url} imgWidth={page.quote.image.width} imgHeight={page.quote.image.height} imgDescription={page.quote.image.description} imgContentType={page.quote.image.contentType} />
+        <Quote
+          text={page.quote.text}
+          author={page.quote.author}
+          imgUrl={page.quote.image.url}
+          imgWidth={page.quote.image.width}
+          imgHeight={page.quote.image.height}
+          imgDescription={page.quote.image.description}
+          imgContentType={page.quote.image.contentType} />
         : ''}
     </div>
   )
