@@ -29,7 +29,8 @@ export default {
     ],
     script: [
       { src: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js', body: true, defer: true },
-      { src: '/js/cookie-consent-init.js', body: true, defer: true }
+      { src: '/js/cookie-consent-init.js', body: true, defer: true },
+      { src: '/js/cdp.js', body: false }
     ]
   },
 
