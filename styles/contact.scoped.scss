@@ -1,0 +1,79 @@
+@import "variables";
+@import "mixins";
+
+.contact {
+    padding: 4em 1em;
+}
+
+.contact__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 8em;
+    list-style: none;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.contact__image,
+.contact__image img {
+    border: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.contact__label {
+    display: block;
+}
+
+.form {
+    margin: auto;
+    padding: 1em 0;
+    max-width: $max-width;
+
+    form {
+        width: 100%;
+    }
+}
+
+.form__wrapper {
+    padding: 0 8em;
+}
+
+.form__label {
+    display: block;
+    margin: 1em 0;
+}
+
+.form__input {
+    display: block;
+    padding: .2em;
+    width: 100%;
+}
+
+@include medium-screens {
+    .form {
+        padding: 1em;
+    }
+
+    .form__wrapper {
+        padding: 0;
+    }
+}
+
+@include small-screens {
+    .contact__list {
+        flex-wrap: wrap;
+        row-gap: 2em;
+    }
+}
+
+.grecaptcha-badge {
+    display: none;
+}
