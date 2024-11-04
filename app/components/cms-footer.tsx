@@ -67,7 +67,7 @@ export default async function Footer() {
                     width={imgWidth} 
                     height={imgHeight} 
                     description={image.description} 
-                    className="footer__item"
+                    className="footer__image"
                     x2={true}
                 />
             ))}
